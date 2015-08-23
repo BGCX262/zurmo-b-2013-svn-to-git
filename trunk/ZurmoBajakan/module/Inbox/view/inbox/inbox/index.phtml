@@ -1,0 +1,446 @@
+
+<!DOCTYPE html><!--[if IE 8]><html class="zurmo ie8" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="zurmo" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes" /><link rel="apple-touch-icon" sizes="144x144" href="/zurmo/app/themes/default/images/touch-icon-iphone4.png" /><style>@font-face{font-family: 'zurmo_gamification_symbly_rRg';src: url('/zurmo/app/assets/69021e3b/zurmogamificationsymblyregular-regular-webfont.eot');src: url('/zurmo/app/assets/69021e3b/zurmogamificationsymblyregular-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/zurmo/app/assets/69021e3b/zurmogamificationsymblyregular-regular-webfont.woff') format('woff'), url('/zurmo/app/assets/69021e3b/zurmogamificationsymblyregular-regular-webfont.ttf') format('truetype'), url('/zurmo/app/assets/69021e3b/zurmogamificationsymblyregular-regular-webfont.svg#zurmo_gamification_symbly_rRg') format('svg');font-weight: normal;font-style: normal;unicode-range: U+00-FFFF;}</style><link rel="shortcut icon" href="/zurmo/app/themes/default/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/themes/default/css/keyframes.css" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/index.php/min/serve/g/css/lm/1384189324" />
+<script type="text/javascript" src="/zurmo/app/index.php/min/serve/g/js/lm/1384189324"></script>
+<script type="text/javascript" src="/zurmo/app/assets/d3067450/ZurmoDialog.js"></script>
+<script type="text/javascript" src="/zurmo/app/assets/d3067450/mobile-interactions.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+            var desktopNotifications =
+            {
+                notify:function(image, title, body)
+                {
+                    
+                    return false;
+                },
+                isSupported:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        return true
+                    }
+                    else
+                    {
+                        return false
+                    }
+                },
+                requestAutorization:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        if (window.webkitNotifications.checkPermission() == 1)
+                        {
+                            window.webkitNotifications.requestPermission();
+                        }
+                        else if (window.webkitNotifications.checkPermission() == 2)
+                        {
+                            alert('You have blocked desktop notifications for this browser.');
+                        }
+                        else
+                        {
+                            alert('You have already activated desktop notifications for Chrome');
+                        }
+                    }
+                    else
+                    {
+                        alert('This is only available in Chrome.');
+                    }
+                }
+            };
+            
+$(document).ready(function()
+{
+    $('#FlashMessageBar').jnotifyInizialize(
+    {
+        oneAtTime: false,
+        appendType: 'append'
+    }
+    );
+}
+);
+/*]]>*/
+</script>
+<title>ZurmoCRM - Inboxes</title></head><body class="blue"><div id="MashableInboxPageView" class="ZurmoDefaultPageView ZurmoPageView PageView"><div id="ZurmoDefaultView"><div class="GridView"><div id="HeaderView"><!-- Start of themes/default/templates/HeaderView.xhtml --><div id="MainLogo" class="zurmo-logo"></div>
+<div class="GridView"><div id="HeaderLinksView"><div class="clearfix"><a href="#" id="nav-trigger" title="Toggle Navigation">&rsaquo;</a><div id="corp-logo"><a href="/zurmo/app/index.php/home/default"><img src="/zurmo/app/themes/default/images/Zurmo_logo.png" alt="Zurmo Logo" height="32" width="107" /></a></div><div id="user-toolbar" class="clearfix"><div id="header-game-dashboard-link-wrapper" class="user-menu-item"><a id="header-game-dashboard-link" href="#">∂</a></div><ul id="user-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>super</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/users/default/profile"><span>My Profile</span></a></li>
+<li><a href="/zurmo/app/index.php/gamification/default/leaderboard"><span>Leaderboard</span></a></li>
+<li><a href="/zurmo/app/index.php/emailMessages/default/matchingList"><span>Data Cleanup</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/logout"><span>Sign out</span></a></li>
+</ul>
+</li>
+</ul><ul id="settings-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Administration</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/configuration"><span>Administration</span></a></li>
+<li><a href="/zurmo/app/index.php/designer/default"><span>Designer</span></a></li>
+<li><a href="/zurmo/app/index.php/import/default"><span>Import</span></a></li>
+<li><a href="/zurmo/app/index.php/users/default"><span>Users</span></a></li>
+<li><a href="http://www.zurmo.com/needSupport.php"><span>Need Support?</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/about"><span>About Zurmo</span></a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="GridView"><div id="GlobalSearchAndShortcutsCreateMenuView"><div id="app-search" class="clearfix"><select class="ignore-style" id="globalSearchScope" multiple="multiple" style="display:none;" size="4" name="globalSearchScope[]">
+<option value="All" selected="selected">All</option>
+<option value="accounts">Accounts</option>
+<option value="contacts">Contacts</option>
+<option value="leads">Leads</option>
+<option value="opportunities">Opportunities</option>
+</select><input class="global-search global-search-hint" onfocus="$(this).removeClass(&quot;global-search-hint&quot;); $(this).val(&quot;&quot;);" onblur="$(this).val(&quot;&quot;)" id="globalSearchInput" type="text" value="Search by name, phone, or e-mail" name="globalSearchInput" /><span class="z-spinner"></span></div><ul id="ShortcutsMenu" class="nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/accounts/default/create"><span>Account</span></a></li>
+<li><a href="/zurmo/app/index.php/contacts/default/create"><span>Contact</span></a></li>
+<li><a href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/Conversation.phtml"><span>Conversation</span></a></li>
+<li><a href="/zurmo/app/index.php/leads/default/create"><span>Lead</span></a></li>
+<li><a href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/Mission.phtml"><span>Mission</span></a></li>
+<li><a href="/zurmo/app/index.php/opportunities/default/create"><span>Opportunity</span></a></li>
+<li><a href="/zurmo/app/index.php/reports/default/selectType"><span>Report</span></a></li>
+<li class="last"><a href="#" id="yt0"><span>Task</span></a></li>
+</ul>
+</li>
+</ul></div></div></div>
+
+
+
+<!-- End of themes/default/templates/HeaderView.xhtml --></div><div class="AppContainer clearfix GridView"><div class="AppNavigation clearfix GridView"><div id="MenuView"><ul class="nav">
+<li id="home"><a href="/zurmobajakan/public/application/index/index"><span></span><em></em><span>Home</span></a></li>
+<li id="mashableInbox" class="active"><a href="/zurmobajakan/public/inbox/inbox/index"><span></span><em></em><span>Inbox<span class="unread-inbox-count">1</span></span></a></li>
+<li id="accounts"><a href="/zurmobajakan/public/account/account/index"><span></span><em></em><span>Accounts</span></a></li>
+<li id="leads"><a href="/zurmobajakan/public/leads/leads/index"><span></span><em></em><span>Leads</span></a></li>
+<li id="contacts"><a href="/zurmobajakan/public/contact/contact/index"><span></span><em></em><span>Contacts</span></a></li>
+<li id="opportunities"><a href="/zurmobajakan/public/opportunity/opportunity/index"><span></span><em></em><span>Opportunities</span></a></li>
+<li id="marketing"><a href="/zurmobajakan/public/marketing/marketing/index"><span></span><em></em><span>Marketing</span></a></li>
+<li id="projects"><a href="/zurmobajakan/public/project/project/index"><span></span><em></em><span>Projects</span></a></li>
+<li id="products"><a href="/zurmobajakan/public/product/"><span></span><em></em><span>Products</span></a></li>
+<li id="reports"><a href="/zurmobajakan/public/report/report/index"><span></span><em></em><span>Reports</span></a></li>
+</ul><a class="toggle-hidden-nav-items"></a></div><div id="RecentlyViewedView"><h3>Recently Viewed</h3></div></div><div id="MashableInboxActionBarForViews" class="GridView AppContent ConfigurableMetadataView MetadataView"><nav class="pillbox clearfix"><div class="active default-button" id="MashableInboxModelMenuActionElement--yt1">
+<a class="button-action" href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/Combined.phtml"><i class="icon-combined"></i><span class="button-label">Combined</span><span class="unread-count">1</span></a></div><div class="split-button" id="MashableInboxModelMenuActionElement--yt2">
+<a class="button-action" href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/Conversation.phtml"><i class="icon-conversation"></i><span class="button-label">Conversations</span><span class="unread-count">0</span></a><a class="button-trigger"><i class="icon-trigger"></i></a><ul class="button-actions"><li><a href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/CreateConversation.phtml">Create Conversation</a></li></ul></div><div class="split-button" id="MashableInboxModelMenuActionElement--yt3">
+<a class="button-action" href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/Mission.phtml"><i class="icon-mission"></i><span class="button-label">Missions</span><span class="unread-count">0</span></a><a class="button-trigger"><i class="icon-trigger"></i></a><ul class="button-actions"><li><a href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/CreateMission.phtml">Create Mission</a></li></ul></div><div class="default-button" id="MashableInboxModelMenuActionElement--yt4">
+<a class="button-action" href="/ZurmoBajakan/module/Inbox/view/inbox/inbox/Notification.phtml"><i class="icon-notification"></i><span class="button-label">Notifications</span><span class="unread-count">1</span></a></div><div id="MashableInboxMassActionMenu" class="default-button">
+<a class="button-action-trigger"><i class="icon-options"></i><span class="button-label">Options</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="list-view-markRead"><a href="#">Mark selected as read</a></li><li id="list-view-markUnread"><a href="#">Mark selected as unread</a></li></ul></div></nav><form id="search-form" action="/zurmo/app/index.php/mashableInbox/default" method="post">
+<div style="display:none"><input type="hidden" value="6502c5a17637e983e0ae9d8c989b8c6bbc0a27bd" name="YII_CSRF_TOKEN" /></div><div class="search-view-0"><th></th><td colspan="1"><button type="button" class="global-search-loopa" aria-haspopup="true"><span></span></button><input id="MashableInboxForm_searchTerm" name="MashableInboxForm[searchTerm]" type="text" /></td><div id="list-view-summary-clone" class="list-view-items-summary-clone"></div></div><div class="filters-bar"><div id="MashableInboxForm_optionForModel_area"></div><div id="MashableInboxForm_filteredBy_area"><strong>Status:</strong><input id="ytMashableInboxForm_filteredBy" type="hidden" value="" name="MashableInboxForm[filteredBy]" /><input id="MashableInboxForm_filteredBy_0" value="all" checked="checked" type="radio" name="MashableInboxForm[filteredBy]" /><label for="MashableInboxForm_filteredBy_0">All</label><input id="MashableInboxForm_filteredBy_1" value="unread" type="radio" name="MashableInboxForm[filteredBy]" /><label for="MashableInboxForm_filteredBy_1">Unread</label></div></div><input name="MashableInboxForm[selectedIds]" id="MashableInboxForm_selectedIds" type="hidden" /><input name="MashableInboxForm[massAction]" id="MashableInboxForm_massAction" type="hidden" /></form><div id="MashableInboxListView" class="ListView ModelView ConfigurableMetadataView MetadataView"><div class="cgrid-view type-mashableInbox" id="list-view">
+<div class="summary">1 result(s)</div><div class="items-wrapper"><table class="items">
+<thead>
+<tr>
+<th class="checkbox-column" id="list-view-rowSelector"><label class="hasCheckBox"><input type="checkbox" value="1" name="list-view-rowSelector_all" id="list-view-rowSelector_all" /></label></th><th id="list-view_c1">Summary</th></tr>
+</thead>
+<tbody>
+<tr class="unread odd">
+<td class="checkbox-column"><label class="hasCheckBox"><input value="Notification_2" id="list-view-rowSelector_0" type="checkbox" name="list-view-rowSelector[]" /></label></td><td><div class="inbox-item"><div class="model-tag notification"><span>Notification</span></div><span>Remove the api test entry script for production use. <span class="last-comment">If this website is in production mode, please remove the app/test.php file.</span></span><span  class="list-item-details">19 minutes ago</span></div></td></tr>
+</tbody>
+</table></div><div class="pager vertical"></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/mashableInbox/default"><span>2</span></div>
+</div>
+<input type="hidden" value="" name="list-view-selectedIds" id="list-view-selectedIds" />
+</div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                $('#list-view-markRead').unbind('click.action');
+                $('#list-view-markRead').bind('click.action', function()
+                    {
+                        
+                        if ($('#list-view-selectedIds').val() == '')
+                        {
+                            alert('You must select at least one record');
+                            $(this).val('');
+                            return false;
+                        }
+                        $('#MashableInboxForm_massAction').val('markRead');
+                        $('#MashableInboxForm_selectedIds').val($('#list-view-selectedIds').val());
+                        $.fn.yiiGridView.update('list-view',
+                                        {
+                                            data: $('#search-form').serialize(),
+                                            complete: 
+                    function()
+                    {
+                        $('#list-view-selectedIds').val('');
+                        jQuery.ajax({'url':'/zurmo/app/index.php/mashableInbox/default/getUnreadCount','success':function(data)
+                                                        {
+                                                            data  = JSON.parse(data);
+                                                            total = 0;
+                                                            for (var key in data) {
+                                                                $('i.icon-' + key).siblings('span.unread-count').html(data[key]);
+                                                                total += data[key];
+                                                            }
+                                                            $('i.icon-combined').siblings('span.unread-count').html(total);
+                                                            $('span.unread-inbox-count').html(total);
+                                                        },'cache':false});
+                    }
+                
+                                        });;
+                    }
+                );
+            
+                $('#list-view-markUnread').unbind('click.action');
+                $('#list-view-markUnread').bind('click.action', function()
+                    {
+                        
+                        if ($('#list-view-selectedIds').val() == '')
+                        {
+                            alert('You must select at least one record');
+                            $(this).val('');
+                            return false;
+                        }
+                        $('#MashableInboxForm_massAction').val('markUnread');
+                        $('#MashableInboxForm_selectedIds').val($('#list-view-selectedIds').val());
+                        $.fn.yiiGridView.update('list-view',
+                                        {
+                                            data: $('#search-form').serialize(),
+                                            complete: 
+                    function()
+                    {
+                        $('#list-view-selectedIds').val('');
+                        jQuery.ajax({'url':'/zurmo/app/index.php/mashableInbox/default/getUnreadCount','success':function(data)
+                                                        {
+                                                            data  = JSON.parse(data);
+                                                            total = 0;
+                                                            for (var key in data) {
+                                                                $('i.icon-' + key).siblings('span.unread-count').html(data[key]);
+                                                                total += data[key];
+                                                            }
+                                                            $('i.icon-combined').siblings('span.unread-count').html(total);
+                                                            $('span.unread-inbox-count').html(total);
+                                                        },'cache':false});
+                    }
+                
+                                        });;
+                    }
+                );
+            
+
+                    $('#MashableInboxForm_searchTerm').keyup(function(e)
+                    {
+                        clearTimeout($.data(this, 'timer'));
+                        $(this).data('timer', setTimeout(search, 500));
+                        if (e.keyCode == 13)
+                        {
+                            e.preventDefault();
+                            search();
+                            return false;
+                        }
+                    });
+                    function search()
+                    {
+                        $.fn.yiiGridView.update('list-view',
+                                {
+                                        data: $('#search-form').serialize()
+                                });
+                    }
+                
+
+                    $('#MashableInboxForm_optionForModel_area').find('input:checked').next().addClass('ui-state-active');
+                    $('#MashableInboxForm_filteredBy_area').find('input:checked').next().addClass('ui-state-active');
+                    
+                    $('#MashableInboxForm_filteredBy_area').find('label').each(
+                                function()
+                                {
+                                    $(this).click(function()
+                                    {
+                                        $('#MashableInboxForm_filteredBy_area').find('label').each(function(){$(this).removeClass('ui-state-active')});
+                                        $(this).addClass('ui-state-active');
+                                     })
+                                }
+                            );
+                    $('#MashableInboxForm_optionForModel_area').find('label').each(
+                                function()
+                                {
+                                    $(this).click(function()
+                                    {
+                                        $('#MashableInboxForm_optionForModel_area').find('label').each(function(){$(this).removeClass('ui-state-active')});
+                                        $(this).addClass('ui-state-active');
+                                     })
+                                }
+                            );
+                
+                    $('#MashableInboxForm_optionForModel_area').change(
+                        function()
+                        {
+                            $('#list-view').yiiGridView('update', {data: $('#search-form').serialize()});
+                        }
+                    );
+                    $('#MashableInboxForm_filteredBy_area').change(
+                        function()
+                        {
+                            $('#list-view').yiiGridView('update', {data: $('#search-form').serialize()});
+                        }
+                    );
+                
+jQuery('#list-view-rowSelector_all').live('click', function()
+{
+    var checked = this.checked;
+
+    //custom checkbox style
+    if (this.checked){
+        jQuery(this).parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery(this).parent().removeClass('c_on');
+    }
+
+    jQuery("input[name='list-view-rowSelector\[\]']").each(function()
+    {
+        this.checked = checked;
+        updateListViewSelectedIds('list-view', $(this).val(), checked);
+
+        //custom checkbox style
+        if (this.checked){
+            jQuery(this).parent().addClass('c_on');
+        }
+        else
+        {
+            jQuery(this).parent().removeClass('c_on');
+        }
+    });
+});
+jQuery("input[name='list-view-rowSelector\[\]']").live('click', function()
+{
+    jQuery('#list-view-rowSelector_all').attr( 'checked', jQuery("input[name='list-view-rowSelector\[\]']").length == jQuery("input[name='list-view-rowSelector\[\]']:checked").length);
+    updateListViewSelectedIds('list-view', $(this).val(), $(this).attr('checked'));
+
+    //custom checkbox style
+    if ( jQuery('#list-view-rowSelector_all').attr( 'checked') === 'checked' ){
+        jQuery('#list-view-rowSelector_all').parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery('#list-view-rowSelector_all').parent().removeClass('c_on');
+    }
+    if ( this.checked )
+    {
+        jQuery(this).parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery(this).parent().removeClass('c_on');
+    }
+});
+jQuery('#list-view').yiiGridView({'ajaxUpdate':['list-view'],'ajaxVar':'ajax','pagerClass':'pager vertical','loadingClass':'loading','filterClass':'filters','tableClass':'items','selectableRows':2,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'MashableInbox_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); addListViewSelectedIdsToUrl(id, options); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                        var $data = $(data);
+                        jQuery.globalEval($data.filter("script").last().text());
+                    }});
+
+                processListViewSummaryClone("list-view", "summary", "list-view-summary-clone");
+            
+});
+/*]]>*/
+</script>
+</body></html>

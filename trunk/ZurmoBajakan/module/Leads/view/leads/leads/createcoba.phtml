@@ -1,0 +1,439 @@
+
+<?php 
+
+$form = $this->form;
+$form->setAttribute('action', $this->url(NULL, array('controller'=>'Create', 'action' => 'process')));
+$form->setAttribute('method', 'post');
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+
+<body class="blue"><div id="LeadsPageView" class="ZurmoDefaultPageView ZurmoPageView PageView"><div id="ZurmoDefaultView"><div class="GridView"><div id="HeaderView"><!-- Start of themes/default/templates/HeaderView.xhtml --><div id="MainLogo" class="zurmo-logo"></div>
+<div class="GridView"><div id="HeaderLinksView"><div class="clearfix"><a href="#" id="nav-trigger" title="Toggle Navigation">&rsaquo;</a><div id="corp-logo"><a href="/zurmo/app/index.php/home/default"><img src="/zurmo/app/themes/default/images/Zurmo_logo.png" alt="Zurmo Logo" height="32" width="107" /></a></div><div id="user-toolbar" class="clearfix"><div id="header-game-dashboard-link-wrapper" class="user-menu-item"><a id="header-game-dashboard-link" href="#">∂</a></div><ul id="user-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>super</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/users/default/profile"><span>My Profile</span></a></li>
+<li><a href="/zurmo/app/index.php/gamification/default/leaderboard"><span>Leaderboard</span></a></li>
+<li><a href="/zurmo/app/index.php/emailMessages/default/matchingList"><span>Data Cleanup</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/logout"><span>Sign out</span></a></li>
+</ul>
+</li>
+</ul><ul id="settings-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Administration</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/configuration"><span>Administration</span></a></li>
+<li><a href="/zurmo/app/index.php/designer/default"><span>Designer</span></a></li>
+<li><a href="/zurmo/app/index.php/import/default"><span>Import</span></a></li>
+<li><a href="/zurmo/app/index.php/users/default"><span>Users</span></a></li>
+<li><a href="http://www.zurmo.com/needSupport.php"><span>Need Support?</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/about"><span>About Zurmo</span></a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="GridView"><div id="GlobalSearchAndShortcutsCreateMenuView"><div id="app-search" class="clearfix"><select class="ignore-style" id="globalSearchScope" multiple="multiple" style="display:none;" size="4" name="globalSearchScope[]">
+<option value="All" selected="selected">All</option>
+<option value="accounts">Accounts</option>
+<option value="contacts">Contacts</option>
+<option value="leads">Leads</option>
+<option value="opportunities">Opportunities</option>
+</select><input class="global-search global-search-hint" onfocus="$(this).removeClass(&quot;global-search-hint&quot;); $(this).val(&quot;&quot;);" onblur="$(this).val(&quot;&quot;)" id="globalSearchInput" type="text" value="Search by name, phone, or e-mail" name="globalSearchInput" /><span class="z-spinner"></span></div><ul id="ShortcutsMenu" class="nav">
+<li class="parent last active"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/accounts/default/create"><span>Account</span></a></li>
+<li><a href="/zurmo/app/index.php/contacts/default/create"><span>Contact</span></a></li>
+<li><a href="/zurmo/app/index.php/conversations/default/create"><span>Conversation</span></a></li>
+<li><a href="/zurmo/app/index.php/leads/default/create"><span>Lead</span></a></li>
+<li><a href="/zurmo/app/index.php/missions/default/create"><span>Mission</span></a></li>
+<li><a href="/zurmo/app/index.php/opportunities/default/create"><span>Opportunity</span></a></li>
+<li><a href="/zurmo/app/index.php/reports/default/selectType"><span>Report</span></a></li>
+<li class="last"><a href="#" id="yt0"><span>Task</span></a></li>
+</ul>
+</li>
+</ul></div></div></div>
+
+
+
+<!-- End of themes/default/templates/HeaderView.xhtml --></div><div class="AppContainer clearfix GridView"><div class="AppNavigation clearfix GridView"><div id="MenuView"><ul class="nav">
+<li id="home"><a href="/zurmo/app/index.php/home/default"><span></span><em></em><span>Home</span></a></li>
+<li id="mashableInbox"><a href="/zurmo/app/index.php/mashableInbox/default"><span></span><em></em><span>Inbox<span class="unread-inbox-count">1</span></span></a></li>
+<li id="accounts"><a href="/zurmo/app/index.php/accounts/default"><span></span><em></em><span>Accounts</span></a></li>
+<li id="leads" class="active"><a href="/zurmo/app/index.php/leads/default"><span></span><em></em><span>Leads</span></a></li>
+<li id="contacts"><a href="/zurmo/app/index.php/contacts/default"><span></span><em></em><span>Contacts</span></a></li>
+<li id="opportunities"><a href="/zurmo/app/index.php/opportunities/default"><span></span><em></em><span>Opportunities</span></a></li>
+<li id="marketing" class="hidden-nav-item"><a href="/zurmo/app/index.php/marketing/default/dashboardDetails"><span></span><em></em><span>Marketing</span></a></li>
+<li id="projects" class="hidden-nav-item"><a href="/zurmo/app/index.php/projects/default/dashboardDetails"><span></span><em></em><span>Projects</span></a></li>
+<li id="products" class="hidden-nav-item"><a href="/zurmo/app/index.php/products/default"><span></span><em></em><span>Products</span></a></li>
+<li id="reports" class="hidden-nav-item last"><a href="/zurmo/app/index.php/reports/default"><span></span><em></em><span>Reports</span></a></li>
+</ul><a class="toggle-hidden-nav-items"></a></div><div id="RecentlyViewedView"><h3>Recently Viewed</h3><ul class="nav">
+<li class="type-LeadsModule"><a href="/zurmo/app/index.php/leads/default/details?id=30"><span></span><em></em><span>Jongin Kim</span></a></li>
+<li class="type-LeadsModule last"><a href="/zurmo/app/index.php/leads/default/details?id=29"><span></span><em></em><span>Jongin Kim</span></a></li>
+</ul></div></div><div id="LeadEditAndDetailsView" class="AppContent SecuredEditAndDetailsView EditAndDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wrapper"><h1><span class="truncated-title"><span class="ellipsis-content">Create Lead</span></span></h1><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;edit-form&quot;)" id="edit-form" action="/zurmo/app/index.php/leads/default/create" method="post">
+
+
+
+<div style="display:none"><input type="hidden" value="8dbe84ca51cd8c643a97b60eca512dfb05174a98" name="YII_CSRF_TOKEN" /></div><div class="attributesContainer"><div class="left-column"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label>Name</label></th><td colspan="1"><div class="hasParallelFields"><div class="overlay-label-field fifth"><div class="hasDropDown"><span class="select-arrow"></span>
+
+							<div>
+				    			<?php echo $this->formLabel($form->get('valuetitle')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('valuetitle'));
+								?>
+								<?php echo $this->formLabel($form->get('firstname')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('firstname'));
+								?>
+								<?php echo $this->formLabel($form->get('lastname')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('lastname'));
+								?>
+								
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('contactstate_id')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('contactstate_id'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('jobtitle')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('jobtitle'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('companyname')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('companyname'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('department')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('department'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('officephone')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('officephone'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('valuesource')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('valuesource'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('mobilephone')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('mobilephone'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('officefax')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('officefax'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('emailaddress1')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('emailaddress1'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('street11')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('street11'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('street21')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('street21'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('city1')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('city1'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('state1')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('state1'));
+								?>
+								
+								<?php echo $this->formLabel($form->get('postalcode1')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('postalcode1'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('country1')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('country1'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('street12')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('street12'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('street22')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('street22'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('city2')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('city2'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('state2')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('state2'));
+								?>
+								
+								<?php echo $this->formLabel($form->get('postalcode2')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('postalcode2'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('country2')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('country2'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('valueindustry')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('valueindustry'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('website')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('website'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('description')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('description'));
+								?>
+				    		</div>
+				    		<div class="float-bar"><div class="view-toolbar-container clearfix dock"><div class="form-toolbar"><a id="saveyt2" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span></a>
+				    		<?php echo $this->formLabel($form->get('save')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('save'));
+								?>
+				    		</div>
+				    		</div>
+				    		<?php echo $this->form()->closeTag() ?>
+</section>
+
+/*<![CDATA[*/
+ */
+
+ function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+
+                function clearIdFromAutoCompleteField(value, id)
+                {
+                    if (value == '')
+                    {
+                        $('#' + id).val('');
+                    }
+                }
+            
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+jQuery('#Contact_owner_name').autocomplete({'select':function(event, ui){ jQuery("#Contact_owner_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Contact_owner_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Contact_owner_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Contact_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Contact_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Contact_owner_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/users/default/autoComplete'});
+$('body').off('click.selectLink', '#Contact_owner_SelectLink'); $('body').on('click.selectLink', '#Contact_owner_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'User Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/users/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Contact_owner_id&modalTransferInformation%5BsourceNameFieldId%5D=Contact_owner_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+});
+/*]]>*/
+</script>
+</body>

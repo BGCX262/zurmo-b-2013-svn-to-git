@@ -1,0 +1,71 @@
+<?php echo $this->doctype(); ?>
+
+<!DOCTYPE html><!--[if IE 8]><html class="zurmo ie8" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="zurmo" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes" /><link rel="apple-touch-icon" sizes="144x144" href="/zurmo/app/themes/default/images/touch-icon-iphone4.png" /><style>@font-face{font-family: 'zurmo_gamification_symbly_rRg';src: url('/zurmo/app/assets/69b9cd0e/zurmogamificationsymblyregular-regular-webfont.eot');src: url('/zurmo/app/assets/69b9cd0e/zurmogamificationsymblyregular-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/zurmo/app/assets/69b9cd0e/zurmogamificationsymblyregular-regular-webfont.woff') format('woff'), url('/zurmo/app/assets/69b9cd0e/zurmogamificationsymblyregular-regular-webfont.ttf') format('truetype'), url('/zurmo/app/assets/69b9cd0e/zurmogamificationsymblyregular-regular-webfont.svg#zurmo_gamification_symbly_rRg') format('svg');font-weight: normal;font-style: normal;unicode-range: U+00-FFFF;}</style><link rel="shortcut icon" href="/zurmo/app/themes/default/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/themes/default/css/keyframes.css" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/index.php/min/serve/g/css/lm/1384189324" />
+<script type="text/javascript" src="/zurmo/app/index.php/min/serve/g/js/lm/1384189324"></script>
+<script type="text/javascript" src="/zurmo/app/assets/d3bda765/ZurmoDialog.js"></script>
+<script type="text/javascript" src="/zurmo/app/assets/d3bda765/mobile-interactions.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+            var desktopNotifications =
+            {
+                notify:function(image, title, body)
+                {
+                    
+                    return false;
+                },
+                isSupported:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        return true
+                    }
+                    else
+                    {
+                        return false
+                    }
+                },
+                requestAutorization:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        if (window.webkitNotifications.checkPermission() == 1)
+                        {
+                            window.webkitNotifications.requestPermission();
+                        }
+                        else if (window.webkitNotifications.checkPermission() == 2)
+                        {
+                            alert('You have blocked desktop notifications for this browser.');
+                        }
+                        else
+                        {
+                            alert('You have already activated desktop notifications for Chrome');
+                        }
+                    }
+                    else
+                    {
+                        alert('This is only available in Chrome.');
+                    }
+                }
+            };
+            
+$(document).ready(function()
+{
+    $('#FlashMessageBar').jnotifyInizialize(
+    {
+        oneAtTime: false,
+        appendType: 'append'
+    }
+    );
+}
+);
+/*]]>*/
+</script>
+<title>Zurmo Bajakan</title></head>
+    
+        <?php echo $this->content; ?>
+        <?php echo $this->inlineScript() ?>
+
+</html>

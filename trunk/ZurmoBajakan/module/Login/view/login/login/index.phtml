@@ -1,0 +1,110 @@
+<?php 
+$form = $this->form;
+$form->prepare();
+$form->setAttribute('action', $this->url(NULL, 
+array('controller'=>'Login', 'action' => 'process')));
+$form->setAttribute('method', 'post');
+echo $this->form()->openTag($form);
+?>
+
+<body class="blue">
+	<div id="LoginPageView" class="ZurmoPageView PageView">
+		<div class="GridView">
+			<div id="FlashMessageView">
+				<div id = "FlashMessageBar"></div>
+			</div>
+			<div id="LoginView" class="clearfix background-2"><!-- Start of themes/default/templates/LoginView.xhtml -->
+				<div id="login-box" class="clearfix">
+				    <div id="LoginLogo" class="zurmo-logo"></div>
+				    <div class="form">
+				    	<form id="login-form" action="/zurmo/app/index.php/zurmo/default/login" method="post">
+				    		<div style="display:none"><input type="hidden" value="f215adf21e42ab28df37df72b6cec530331f7ce3" name="YII_CSRF_TOKEN" /></div>
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('username')); ?>
+				    			<?php 
+									echo $this->formElement($form->get('username'));
+									echo $this->formElementErrors($form->get('username'));
+								?>
+				    		</div>
+				    		
+				    		<div>
+				    			<?php echo $this->formLabel($form->get('password'));?>
+				    			<?php 
+									echo $this->formElement($form->get('password'));
+									echo $this->formElementErrors($form->get('password'));
+								?>
+				    		</div>
+				    		
+				    		<br>
+				    		<br>
+				    		
+				    		<div>
+				    			<a id="Login" name="Login" class="attachLoading z-button">
+				    				<?php 
+									echo $this->formElement($form->get('submit'));
+									echo $this->formElementErrors($form->get('submit'));
+									?>
+				    			</a>
+				    			
+				  			</div>
+				  		</form>
+				  	</div>
+				</div>
+<!-- End of themes/default/templates/LoginView.xhtml -->
+			</div>
+		
+			<div id="FooterView">
+				<a href="http://www.zurmo.com" id="credit-link" class="clearfix">
+				<span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+
+                $('#LoginForm_password').keypress(function(e)
+                {
+                    c = e.which ? e.which : e.keyCode;
+                    if (c == 13)
+                    {
+                        $(this).closest('form').submit();
+                    }
+                });
+            
+jQuery(function($) {
+
+                function updateFlashBar(data, flashBarId)
+                {
+                    $("#" + flashBarId).jnotifyAddMessage(
+                    {
+                        text: data.message,
+                        permanent: false,
+                        showIcon: true,
+                        type: data.type
+                    });
+                }
+            
+
+                var notificationBarId         = "FlashMessageBar";
+                var sessionTimeoutCookieName  = "sessionTimeoutCookie";
+                var sessionTimeoutCookieValue = $.cookie(sessionTimeoutCookieName);
+                if (sessionTimeoutCookieValue == 1)
+                {
+                    $.cookie(sessionTimeoutCookieName, null,
+                                        {
+                                            expires : -1,
+                                            path:  "/"
+                                        });
+                    var data = {   "message" : "You have been logged out due to inactivity.",
+                                    "type"    : "error"
+                                };
+                    updateFlashBar(data, notificationBarId);
+                }
+            
+$('#login-form').yiiactiveform({'validateOnSubmit':true,'validateOnChange':false,'beforeValidate':$(this).beforeValidateAction,'afterValidate':$(this).afterValidateAction,'attributes':[{'id':'LoginForm_username','inputID':'LoginForm_username','errorID':'LoginForm_username_em_','model':'LoginForm','name':'username','enableAjaxValidation':true},{'id':'LoginForm_password','inputID':'LoginForm_password','errorID':'LoginForm_password_em_','model':'LoginForm','name':'password','enableAjaxValidation':true},{'id':'LoginForm_rememberMe','inputID':'LoginForm_rememberMe','errorID':'LoginForm_rememberMe_em_','model':'LoginForm','name':'rememberMe','enableAjaxValidation':true}]});
+});
+/*]]>*/
+</script>
+</body>

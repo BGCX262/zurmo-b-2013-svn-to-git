@@ -1,0 +1,563 @@
+
+
+<body>
+<?php include 'header.phtml';?>*
+
+
+
+<div id="ActionBarSearchAndListView" class="AppContent GridView"><div id="SecuredActionBarForSearchAndListView" class="ActionBarForSearchAndListView ActionBarConfigurableMetadataView ConfigurableMetadataView MetadataView"><div class="view-toolbar-container clearfix"><nav class="pillbox clearfix"><div id="CreateMenuActionElement--yt1" class="default-button">
+<a class="button-action" href="/zurmobajakan/module/Account/view/account/account/create.php"><i class="icon-create"></i><span class="button-label">Create</span></a></div><div id="MassEditMenuActionElement--yt2" class="default-button">
+<a class="button-action-trigger"><i class="icon-edit"></i><span class="button-label">Update</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="list-view-massActionSelected"><a href="#">Selected</a></li><li id="list-view-massActionAll"><a href="#">All Results</a></li></ul></div><div id="ExportMenuActionElement--yt3" class="default-button">
+<a class="button-action-trigger"><i class="icon-export"></i><span class="button-label">Export</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="list-view-exportActionSelected"><a href="#">Selected</a></li><li id="list-view-exportActionAll"><a href="#">All Results</a></li></ul></div><div id="MassDeleteMenuActionElement--yt4" class="default-button">
+<a class="button-action-trigger"><i class="icon-delete"></i><span class="button-label">Delete</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="list-view-deleteMassActionSelected"><a href="#">Selected</a></li><li id="list-view-deleteMassActionAll"><a href="#">All Results</a></li></ul></div></nav></div></div><div id="AccountsSearchView" class="SavedDynamicSearchView DynamicSearchView SearchView ModelView ConfigurableMetadataView MetadataView"><div class="wide form"><form id="search-form" action="/zurmo/app/index.php/zurmo/default/validateDynamicSearch?viewClassName=AccountsSearchView&amp;modelClassName=Account&amp;formModelClassName=AccountsSearchForm" method="post">
+<div style="display:none"><input type="hidden" value="d95bda53da3650780c9ccf3a9c745c6f900701af" name="YII_CSRF_TOKEN" /></div><div id="list-view-summary-clone" class="list-view-items-summary-clone"></div><div class="search-view-0" ><table><tr><th></th><td colspan="3"><select class="ignore-style ignore-clearform" id="AccountsSearchForm_anyMixedAttributesScope" multiple="multiple" style="display:none;" size="4" name="AccountsSearchForm[anyMixedAttributesScope][]">
+<option value="All" selected="selected">All</option>
+<option value="name">Name</option>
+<option value="anyEmail">Any Email Address</option>
+<option value="officePhone">Office Phone</option>
+</select><input class="input-hint anyMixedAttributes-input" onfocus="$(this).select();" size="80" id="AccountsSearchForm_anyMixedAttributes" name="AccountsSearchForm[anyMixedAttributes]" type="text" /><div class="errorMessage" id="AccountsSearchForm_anyMixedAttributes_em_" style="display:none"></div></td></tr></table><input class="search-form_filterByStarred" name="AccountsSearchForm[filterByStarred]" id="AccountsSearchForm_filterByStarred" type="hidden" /></div><div class="search-view-1" style='display:none;'><div class="hasDropDown"><span class="select-arrow"></span><select id="savedSearchId" name="savedSearchId">
+<option value="">Load a saved search</option>
+</select></div><div id="search-form_es_" class="errorSummary" style="display:none"><p>Please fix the following input errors:</p>
+<ul><li>dummy</li></ul></div><div style="display:none;"><input id="AccountsSearchForm_dynamicClausesNotUsed" name="dynamicClausesValidationHelper" value="notUsed" type="hidden" /><div id="AccountsSearchForm_dynamicClauses" class="errorMessage" style="display:none"></div></div><div class="add-fields-container"><input id="rowCounter-search-form" type="hidden" value="0" name="rowCounter" /><a id="addExtraAdvancedSearchRowButton-search-form" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Add criteria</span></a></div><div class="search-save-container"><strong class="mp-divider"> &middot; </strong><a id="save-as-advanced-search" href="#">Save search</a></div><div id="save-search-area" class="view-toolbar-container clearfix" style="display:none;"><input name="AccountsSearchForm[savedSearchName]" id="AccountsSearchForm_savedSearchName" type="text" maxlength="64" /><input name="AccountsSearchForm[savedSearchId]" id="AccountsSearchForm_savedSearchId" type="hidden" /><input name="AccountsSearchForm[sortAttribute]" id="AccountsSearchForm_sortAttribute" type="hidden" /><input name="AccountsSearchForm[sortDescending]" id="AccountsSearchForm_sortDescending" type="hidden" /><a id="save-advanced-search" name="save" class="attachLoading z-button" value="saveSearch" onclick="js:$(this).addClass(&quot;attachLoadingTarget&quot;);jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Save</span></a><div class="errorMessage" id="AccountsSearchForm_savedSearchName_em_" style="display:none"></div></div><div id="show-dynamic-search-structure-wrapper-search-form" style="display:none;"><a id="show-dynamic-search-structure-div-link-search-form" style="" href="#">Modify Structure</a><div id="show-dynamic-search-structure-div-search-form" class="has-lang-label" style="display:none;"><input id="AccountsSearchForm_dynamicStructure" name="AccountsSearchForm[dynamicStructure]" class="dynamic-search-structure-input" type="text" /><span>Search Operator</span><div class="errorMessage" id="AccountsSearchForm_dynamicStructure_em_" style="display:none"></div></div></div><div class="view-toolbar-container clearfix"><div class="form-toolbar"><a id="cancel-advanced-search" class="z-button" href="#"><span class="z-label">Close</span></a><a id="search-advanced-search" name="save" class="attachLoading z-button" onclick="js:$(this).addClass(&quot;attachLoadingTarget&quot;);jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Search</span></a></div></div></div><div class="select-list-attributes-view" style="display:none"><div class="attributesContainer"><table><tbody><tr><td><div class="multiselect-holder"><div class="multiselect-left"><label>Hidden Columns</label><select size="10" multiple="multiple" class="ignore-style multiple" id="AccountsSearchForm_selectedListAttributes_hidden" name="AccountsSearchForm[selectedListAttributes]_hidden[]">
+<option value="annualRevenue">Annual Revenue</option>
+<option value="billingAddress">Billing Address</option>
+<option value="createdByUser">Created By User</option>
+<option value="createdDateTime">Created Date Time</option>
+<option value="description">Description</option>
+<option value="employees">Employees</option>
+<option value="id">Id</option>
+<option value="industry">Industry</option>
+<option value="latestActivityDateTime">Latest Activity Date Time</option>
+<option value="modifiedByUser">Modified By User</option>
+<option value="modifiedDateTime">Modified Date Time</option>
+<option value="officeFax">Office Fax</option>
+<option value="officePhone">Office Phone</option>
+<option value="primaryEmail">Primary Email</option>
+<option value="secondaryEmail">Secondary Email</option>
+<option value="shippingAddress">Shipping Address</option>
+<option value="website">Website</option>
+</select></div><div class="multiselect-nav"><input id="yw2moveRight" class="icon-right-arrow" name="yt7" type="button" value="7" /><input id="yw2moveLeft" class="icon-left-arrow" name="yt8" type="button" value="8" /></div><div class="multiselect-right"><label>Visible Columns</label><select size="10" multiple="multiple" class="ignore-style multiple" id="AccountsSearchForm_selectedListAttributes" name="AccountsSearchForm[selectedListAttributes][]">
+<option value="name">Name</option>
+<option value="type">Type</option>
+<option value="owner">Owner</option>
+</select></div><div class="multiselect-nav multiselect-nav-updown"><input id="yw2moveUp" class="icon-up-arrow" name="yt9" type="button" value="5" /><input id="yw2moveDown" class="icon-down-arrow" name="yt10" type="button" value="6" /></div></div></td></tr></tbody></table></div><div class="view-toolbar-container"><div class="form-toolbar clearfix"><a id="list-attributes-reset" name="save" class="default-btn z-button" onclick="js:$(this).addClass(&quot;attachLoadingTarget&quot;);jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Reset</span></a><a id="list-attributes-apply" name="save" class="attachLoading z-button" onclick="js:$(this).addClass(&quot;attachLoadingTarget&quot;);jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Apply</span></a></div></div></div><div class="search-form-tools"><a id="more-search-link" href="#">Advanced</a><a id="select-list-attributes-link" href="#">Columns</a><a id="clear-search-link" style="display:none;" href="#"><span class="clear-search-link-criteria-selected-count"></span>Criteria Selected <span class="icon-clear">Z</span></a><input id="clearingSearch-search-form" type="hidden" name="clearingSearch" /></div></form><div id="modalContainer-search-form"></div></div></div><div id="AccountsListView" class="StarredListView SecuredListView ListView ModelView ConfigurableMetadataView MetadataView"><div class="cgrid-view type-accounts" id="list-view">
+<div class="summary">4 result(s)</div><div class="items-wrapper"><table class="items">
+<thead>
+<tr>
+<th class="checkbox-column" id="list-view-rowSelector"><label class="hasCheckBox"><input type="checkbox" value="1" name="list-view-rowSelector_all" id="list-view-rowSelector_all" /></label></th><th id="list-view_columnStar"><a class="icon-star unstarred" id="starDataColumn_filterByStarred" onclick="
+                var newVal = (parseInt($(&#039;.search-form_filterByStarred&#039;).val()) + 1) % 2;
+                if (isNaN(newVal))
+                {
+                    newVal = 1;
+                }
+                $(&#039;.search-form_filterByStarred&#039;).val(newVal);
+                $(&#039;#list-view&#039;).yiiGridView(&#039;update&#039;, {url: &#039;/zurmo/app/index.php/accounts/default/index?modelClassName=Account&#039;, data: $(&#039;#search-form&#039;).serialize()});
+                " href="#">w</a></th><th id="list-view_c2"><a class="sort-link" href="/zurmo/app/index.php/accounts/default/index?Account_sort=name">Name</a></th><th id="list-view_c3"><a class="sort-link" href="/zurmo/app/index.php/accounts/default/index?Account_sort=type">Type</a></th><th id="list-view_c4"><a class="sort-link" href="/zurmo/app/index.php/accounts/default/index?Account_sort=owner">Owner</a></th><th class="button-column" id="list-view_c5">&#160;</th></tr>
+</thead>
+
+<tbody>
+<?php foreach ($accounts as $account) : ?>
+												<tr>
+													<td><?php echo $this->escapeHtml($account->name);?></td>
+													<td><?php echo $this->escapeHtml($account->type_customfield_id);?></td>
+													<td><?php echo $this->escapeHtml($account->account_id);?></td>
+													<td>
+														<a href="<?php echo $this->url('account',
+															array('action'=>'edit', 'id' => $account->id));?>">Edit</a>
+														<a href="<?php echo $this->url('account',
+															array('action'=>'delete', 'id' => $account->id));?>">Delete</a>
+													</td>
+												</tr>
+												<?php endforeach; ?>
+</tbody>
+
+</table></div><div class="pager vertical"></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/accounts/default"><span>2</span><span>3</span><span>1</span><span>4</span></div>
+</div>
+<input type="hidden" value="" name="list-view-selectedIds" id="list-view-selectedIds" />
+</div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+
+                function deleteSavedSearchAndRemoveFromView(modelId)
+                {
+                        $.ajax({
+                            url : '/zurmo/app/index.php/zurmo/default/deleteSavedSearch?id=' + modelId,
+                            type : 'GET',
+                            dataType : 'json',
+                            success : function(data)
+                            {
+                               var inputId = 'savedSearchId';
+                               $('#' + inputId + ' > option').each(function(){
+                                   if (this.value == modelId)
+                                   {
+                                       $('#' + inputId + ' option[value=\'' + this.value + '\']').remove();
+                                   }
+                               });
+                               $('#removeSavedSearch').remove();
+                               $('#AccountsSearchForm_savedSearchId').val('');
+                            },
+                            error : function()
+                            {
+                                //todo: error call
+                            }
+                        });
+                }
+            
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                        function massActionMenuActionElementEventHandler(elementType, gridId, baseUrl, actionId, pageVarName)
+                        {
+                            selectAll = '';
+                            if (elementType == 1)
+                            {
+                                if ($('#' + gridId + '-selectedIds').val() == '')
+                                {
+                                    alert('You must select at least one record');
+                                    $(this).val('');
+                                    return false;
+                                }
+                            }
+                            else
+                            {
+                                selectAll = 1;
+                            }
+                            var options =
+                            {
+                                url     : $.fn.yiiGridView.getUrl(gridId),
+                                baseUrl : baseUrl
+                            }
+                            if (options.url.split( '?' ).length == 2)
+                            {
+                                options.url = options.baseUrl + '/' + actionId + '?' + options.url.split( '?' )[1];
+                            }
+                            else
+                            {
+                                options.url = options.baseUrl + '/' + actionId;
+                            }
+                            if (elementType == 1)
+                            {
+                                addListViewSelectedIdsToUrl(gridId, options);
+                            }
+                            var data = '' + actionId + '=' + '&selectAll=' + selectAll + '&ajax=&' + pageVarName + '=1';
+                            url = $.param.querystring(options.url, data);
+                            url += '';
+                            window.location.href = url;
+                            return false;
+                        }
+                
+$('#list-view-massActionAll').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(0, 'list-view', '/zurmo/app/index.php/accounts/default', 'massEdit', 'Account_page')
+                                }
+                            );
+$('#list-view-massActionSelected').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(1, 'list-view', '/zurmo/app/index.php/accounts/default', 'massEdit', 'Account_page')
+                                }
+                            );
+$('#list-view-exportActionAll').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(0, 'list-view', '/zurmo/app/index.php/accounts/default', 'export', 'Account_page')
+                                }
+                            );
+$('#list-view-exportActionSelected').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(1, 'list-view', '/zurmo/app/index.php/accounts/default', 'export', 'Account_page')
+                                }
+                            );
+$('#list-view-deleteMassActionAll').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(0, 'list-view', '/zurmo/app/index.php/accounts/default', 'massDelete', 'Account_page')
+                                }
+                            );
+$('#list-view-deleteMassActionSelected').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(1, 'list-view', '/zurmo/app/index.php/accounts/default', 'massDelete', 'Account_page')
+                                }
+                            );
+$("#AccountsSearchForm_anyMixedAttributesScope").bind("multiselectclick", function(event, ui){
+                            if ($("#AccountsSearchForm_anyMixedAttributesScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#AccountsSearchForm_anyMixedAttributesScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#AccountsSearchForm_anyMixedAttributesScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#AccountsSearchForm_anyMixedAttributesScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#AccountsSearchForm_anyMixedAttributesScope').multiselect({'selectedText':'','noneSelectedText':'','header':false}); $(this).setupCheckboxStyling($('#AccountsSearchForm_anyMixedAttributesScope').parent())
+ basicSearchQueued = 0; basicSearchOldValue = '';   var basicSearchHandler = function(event)
+                            {
+                                if (basicSearchOldValue != $(this).val())
+                                {
+                                    basicSearchOldValue = $(this).val();
+                                    basicSearchQueued = basicSearchQueued  + 1;
+                                    setTimeout('basicSearchQueued = basicSearchQueued - 1', 900);
+                                    setTimeout('$(this).searchByQueuedSearch("AccountsSearchForm_anyMixedAttributes")', 1000);
+                                }
+                            };   $('#AccountsSearchForm_anyMixedAttributes').unbind('input.ajax propertychange.ajax keyup.ajax');
+                                $('#AccountsSearchForm_anyMixedAttributes').bind('input.ajax propertychange.ajax keyup.ajax', basicSearchHandler);
+                            
+
+                $('#savedSearchId').unbind('change'); $('#savedSearchId').bind('change', function()
+                {
+                    if ($(this).val() != '')
+                    {
+                        savedSearchId = $(this).val();
+                        $.ajax(
+                        {
+                          url: '/zurmo/app/index.php/zurmo/default/clearStickySearch?key=AccountsSearchView',
+                          complete: function(data)
+                          {
+                              window.location = '/zurmo/app/index.php/accounts/default/list?savedSearchId=' + savedSearchId;
+                          }
+                        });
+                    }
+                });
+$('body').off('click.add', '#addExtraAdvancedSearchRowButton-search-form'); $('body').on('click.add', '#addExtraAdvancedSearchRowButton-search-form', function(){jQuery.ajax({'type':'GET','data':'rowNumber=' + $('#rowCounter-search-form').val(),'beforeSend':function(){
+                                            $(this).makeOrRemoveLoadingSpinner(true, "#search-form", "dark");
+                                            },'success':function(data){
+                                            $('#rowCounter-search-form').val(parseInt($('#rowCounter-search-form').val()) + 1)
+                                            $('#addExtraAdvancedSearchRowButton-search-form').parent().before(data);
+                                            rebuildDynamicSearchRowNumbersAndStructureInput("search-form");
+                                            resolveClearLinkPrefixLabelAndVisibility("search-form");
+                                            $(this).makeOrRemoveLoadingSpinner(false, "#search-form");
+                                          },'url':'/zurmo/app/index.php/zurmo/default/dynamicSearchAddExtraRow?viewClassName=AccountsSearchView&modelClassName=Account&formModelClassName=AccountsSearchForm&suffix=search-form','cache':false});return false;});
+
+                $('#select-list-attributes-link').unbind('click.more');
+                $('#select-list-attributes-link').bind('click.more',  function(event)
+                    {
+                        $(this).closest('form').find('.search-view-1').hide();
+                        $(this).closest('form').find('.kanban-board-options-view').hide();
+                        $('.select-list-attributes-view').toggle();
+                        return false;
+                    }
+                );
+                $('#list-attributes-reset').unbind('click.close');
+                $('#list-attributes-reset').bind('click.close', function()
+                    {
+                        $('.select-list-attributes-view').hide();
+                    }
+                );
+                $('#list-attributes-apply').unbind('click.close');
+                $('#list-attributes-apply').bind('click.close', function()
+                    {
+                        $('.select-list-attributes-view').hide();
+                    }
+                );
+                
+$('#yw2moveRight').click(function()
+                            {
+                                return !$('#AccountsSearchForm_selectedListAttributes_hidden option:selected')
+                                .remove().appendTo('#AccountsSearchForm_selectedListAttributes');
+                            });
+                            $('#yw2moveLeft').click(function()
+                            {
+                                return !$('#AccountsSearchForm_selectedListAttributes option:selected')
+                                .remove().appendTo('#AccountsSearchForm_selectedListAttributes_hidden');
+                            });$('#search-form').submit(function()
+                            {
+                                $('#AccountsSearchForm_selectedListAttributes_hidden option').each(function(i)
+                                {
+                                    $(this).attr('selected', 'selected');
+                                });
+                            });$('#search-form').submit(function()
+                            {
+                                $('#AccountsSearchForm_selectedListAttributes option').each(function(i)
+                                {
+                                    $(this).attr('selected', 'selected');
+                                });
+                            });$('#yw2moveUp').click(function()
+                            {
+                                if ($('#AccountsSearchForm_selectedListAttributes option:selected').first().index() > 0)
+                                {
+                                    $('#AccountsSearchForm_selectedListAttributes option:selected').each(function()
+                                    {
+                                       $(this).insertBefore($(this).prev());
+                                    });
+                                }
+                            });
+                            $('#yw2moveDown').click(function()
+                            {
+                                if ($('#AccountsSearchForm_selectedListAttributes option:selected').last().index() < ($('#AccountsSearchForm_selectedListAttributes option').length - 1))
+                                {
+                                    $($('#AccountsSearchForm_selectedListAttributes option:selected').get().reverse()).each(function(i, selected)
+                                    {
+                                        if (!$(this).next().length) return false;
+                                        $(this).insertAfter($(this).next());
+                                    });
+                                }
+                            });
+
+                $('#list-attributes-reset').unbind('click.reset');
+                $('#list-attributes-reset').bind('click.reset', function()
+                    {
+                        $('.select-list-attributes-view').hide();
+                        resetSelectedListAttributes('AccountsSearchForm_selectedListAttributes', 'AccountsSearchForm_selectedListAttributes_hidden', ["name","type","owner"]);
+                    }
+                );
+
+                $('#clear-search-link').removeAttr('clearForm');
+                $('#clear-search-link').clearform({
+                        form: '#search-form'
+                    }
+                );
+                $('#clear-search-link').unbind('click.clear');
+                $('#clear-search-link').bind('click.clear', function(){
+                        $('#clearingSearch-search-form').val('1');
+                        $('#clear-search-link').hide();
+                        $(this).closest('form').find('.search-view-1').find('.dynamic-search-row').each(function()
+                    {
+                        $(this).remove();
+                    });
+                    $('#rowCounter-search-form').val(0);
+                    $('#AccountsSearchForm_dynamicStructure').val('');
+                    $(this).closest('form').find('.search-view-1').hide();
+                    $('.select-list-attributes-view').hide();
+                    resolveClearLinkPrefixLabelAndVisibility('search-form');
+                    rebuildDynamicSearchRowNumbersAndStructureInput('search-form');
+            $('#savedSearchId').val();
+                     $('#AccountsSearchForm_savedSearchId').val('');
+                     $('#save-search-area').hide();
+                     jQuery.yii.submitForm(this, '', {}); return false;
+            
+                        $(this).closest('form').submit();
+                        $('#clearingSearch-search-form').val('');
+                        return false;
+                    }
+                );
+                $('#more-search-link').unbind('click.more');
+                $('#more-search-link').bind('click.more',  function(event){
+                        $('.select-list-attributes-view').hide();
+                        $('.kanban-board-options-view').hide();
+                        $(this).closest('form').find('.search-view-1').toggle();
+                        return false;
+                    }
+                );
+                $('#cancel-advanced-search').unbind('click');
+                $('#cancel-advanced-search').live('click', function(event){
+                    $(this).closest('form').find('.search-view-1').hide();
+                });
+            
+                $('#search-form').find('.anyMixedAttributes-input').unbind('input.clear propertychange.clear keyup.clear');
+                $('#search-form').find('.anyMixedAttributes-input').bind('input.clear propertychange.clear keyup.clear', function(event)
+                {
+                    $('#clear-search-link').show();
+                });
+            $('#search-form').find('.anyMixedAttributes-input').unbind('input.clear propertychange.clear keyup.clear');
+                     $('#search-form').find('.anyMixedAttributes-input').bind('input.clear propertychange.clear keyup.clear', function(event)
+                     {
+                         resolveClearLinkPrefixLabelAndVisibility('search-form');
+                     });$('#save-as-advanced-search').click( function()
+                    {
+                        $('#save-search-area').show();
+                        return false;
+                    }
+                );
+
+                $('#show-dynamic-search-structure-div-link-search-form').click( function()
+                    {
+                        $('#show-dynamic-search-structure-div-search-form').show();
+                        $('#show-dynamic-search-structure-div-link-search-form').hide();
+                        return false;
+                    }
+                );
+$('#search-form').yiiactiveform({'validateOnSubmit':true,'validateOnChange':false,'beforeValidate':$(this).beforeValidateAction,'afterValidate':afterDynamicSearchValidateAjaxAction,'afterValidateAjax':'var inputId = \'savedSearchId\';\n                        if (data.id != undefined)\n                        {\n                            var existingSearchFound = false;\n                            $(\'#\' + inputId + \' > option\').each(function()\n                            {\n                               if (this.value == data.id)\n                               {\n                                   $(\'#\' + inputId + \' option[value=\\\'\' + this.value + \'\\\']\').text(data.name);\n                                   existingSearchFound = true;\n                               }\n                            });\n                            if (!existingSearchFound)\n                            {\n                                $(\'#\' + inputId).removeClass(\'ignore-style\');\n                                $(\'#\' + inputId)\n                                    .append($(\'<option><\/option>\')\n                                    .attr(\'value\', data.id)\n                                    .text(data.name))\n                                //$(\'#\' + inputId).val(data.id); Do not select new saved search since it is not sticky at this point.\n                                $(\'#AccountsSearchForm_savedSearchId\').val(data.id);\n                            }\n                        }\n                        $(\'#search-form\').find(\'.attachLoadingTarget\').removeClass(\'loading\');\n                        $(\'#search-form\').find(\'.attachLoadingTarget\').removeClass(\'loading-ajax-submit\');\n                        $(\'#search-form\').find(\'.attachLoadingTarget\').removeClass(\'attachLoadingTarget\');$(this).closest(\'form\').find(\'.search-view-1\').hide();\n                        $(\'.select-list-attributes-view\').hide();\n                        $(\'#search-form\').find(\'.attachLoading:first\').removeClass(\'loading\');\n                        $(\'#search-form\').find(\'.attachLoading:first\').removeClass(\'loading-ajax-submit\');\n                        $(\'#list-view-selectedIds\').val(null);\n                        $.fn.yiiGridView.update(\'list-view\',\n                        {\n                            data: $(\'#search-form\').serialize() + \'&Account_page=&Account_sort=\' // Not Coding Standard\n                         }\n                        );\n                        $(\'#clearingSearch-search-form\').val(\'\');\n                        ','attributes':[{'id':'AccountsSearchForm_anyMixedAttributes','inputID':'AccountsSearchForm_anyMixedAttributes','errorID':'AccountsSearchForm_anyMixedAttributes_em_','model':'AccountsSearchForm','name':'anyMixedAttributes','enableAjaxValidation':true},{'id':'AccountsSearchForm_dynamicClauses','inputID':'AccountsSearchForm_dynamicClauses','errorID':'AccountsSearchForm_dynamicClauses','model':'AccountsSearchForm','name':'dynamicClauses','enableAjaxValidation':true},{'id':'AccountsSearchForm_savedSearchName','inputID':'AccountsSearchForm_savedSearchName','errorID':'AccountsSearchForm_savedSearchName_em_','model':'AccountsSearchForm','name':'savedSearchName','enableAjaxValidation':true},{'id':'AccountsSearchForm_dynamicStructure','inputID':'AccountsSearchForm_dynamicStructure','errorID':'AccountsSearchForm_dynamicStructure_em_','model':'AccountsSearchForm','name':'dynamicStructure','enableAjaxValidation':true},{'id':'AccountsSearchForm','inputID':'AccountsSearchForm_','errorID':'AccountsSearchForm__em_','model':'AccountsSearchForm','name':null,'enableAjaxValidation':true}],'summaryID':'search-form_es_'});
+jQuery('#list-view-rowSelector_all').live('click', function()
+{
+    var checked = this.checked;
+
+    //custom checkbox style
+    if (this.checked){
+        jQuery(this).parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery(this).parent().removeClass('c_on');
+    }
+
+    jQuery("input[name='list-view-rowSelector\[\]']").each(function()
+    {
+        this.checked = checked;
+        updateListViewSelectedIds('list-view', $(this).val(), checked);
+
+        //custom checkbox style
+        if (this.checked){
+            jQuery(this).parent().addClass('c_on');
+        }
+        else
+        {
+            jQuery(this).parent().removeClass('c_on');
+        }
+    });
+});
+jQuery("input[name='list-view-rowSelector\[\]']").live('click', function()
+{
+    jQuery('#list-view-rowSelector_all').attr( 'checked', jQuery("input[name='list-view-rowSelector\[\]']").length == jQuery("input[name='list-view-rowSelector\[\]']:checked").length);
+    updateListViewSelectedIds('list-view', $(this).val(), $(this).attr('checked'));
+
+    //custom checkbox style
+    if ( jQuery('#list-view-rowSelector_all').attr( 'checked') === 'checked' ){
+        jQuery('#list-view-rowSelector_all').parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery('#list-view-rowSelector_all').parent().removeClass('c_on');
+    }
+    if ( this.checked )
+    {
+        jQuery(this).parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery(this).parent().removeClass('c_on');
+    }
+});
+jQuery('#list-view').yiiGridView({'ajaxUpdate':['list-view'],'ajaxVar':'ajax','pagerClass':'pager vertical','loadingClass':'loading','filterClass':'filters','tableClass':'items','selectableRows':2,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'Account_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); addListViewSelectedIdsToUrl(id, options); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                        var $data = $(data);
+                        jQuery.globalEval($data.filter("script").last().text());
+                    }});
+
+                processListViewSummaryClone("list-view", "summary", "list-view-summary-clone");
+            
+$('body').off('click.starDataColumn', '#starDataColumn_filterByStarred'); $('body').on('click.starDataColumn', '#starDataColumn_filterByStarred', function(){jQuery.ajax({'url':'/zurmo/app/index.php/accounts/default','cache':false});return false;});
+$('body').off('click.update', '#star-Account-2'); $('body').on('click.update', '#star-Account-2', function(){jQuery.ajax({'success':function(data){$('#star-Account-2').removeClass().addClass(data)},'url':'/zurmo/app/index.php/zurmo/default/toggleStar?modelClassName=Account&modelId=2','cache':false});return false;});
+$('body').off('click.update', '#star-Account-3'); $('body').on('click.update', '#star-Account-3', function(){jQuery.ajax({'success':function(data){$('#star-Account-3').removeClass().addClass(data)},'url':'/zurmo/app/index.php/zurmo/default/toggleStar?modelClassName=Account&modelId=3','cache':false});return false;});
+$('body').off('click.update', '#star-Account-1'); $('body').on('click.update', '#star-Account-1', function(){jQuery.ajax({'success':function(data){$('#star-Account-1').removeClass().addClass(data)},'url':'/zurmo/app/index.php/zurmo/default/toggleStar?modelClassName=Account&modelId=1','cache':false});return false;});
+$('body').off('click.update', '#star-Account-4'); $('body').on('click.update', '#star-Account-4', function(){jQuery.ajax({'success':function(data){$('#star-Account-4').removeClass().addClass(data)},'url':'/zurmo/app/index.php/zurmo/default/toggleStar?modelClassName=Account&modelId=4','cache':false});return false;});
+});
+/*]]>*/
+</script>
+</body></html>

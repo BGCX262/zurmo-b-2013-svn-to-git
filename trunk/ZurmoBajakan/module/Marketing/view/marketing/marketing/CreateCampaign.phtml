@@ -1,0 +1,638 @@
+<body class="blue"><div id="CampaignsPageView" class="ZurmoDefaultPageView ZurmoPageView PageView"><div id="ZurmoDefaultView"><div class="GridView"><div id="HeaderView"><!-- Start of themes/default/templates/HeaderView.xhtml --><div id="MainLogo" class="zurmo-logo"></div>
+<div class="GridView"><div id="HeaderLinksView"><div class="clearfix"><a href="#" id="nav-trigger" title="Toggle Navigation">&rsaquo;</a><div id="corp-logo"><a href="/zurmo/app/index.php/home/default"><img src="/zurmo/app/themes/default/images/Zurmo_logo.png" alt="Zurmo Logo" height="32" width="107" /></a></div><div id="user-toolbar" class="clearfix"><div id="header-game-dashboard-link-wrapper" class="user-menu-item"><a id="header-game-dashboard-link" href="#">?</a></div><ul id="user-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>super</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/users/default/profile"><span>My Profile</span></a></li>
+<li><a href="/zurmo/app/index.php/gamification/default/leaderboard"><span>Leaderboard</span></a></li>
+<li><a href="/zurmo/app/index.php/emailMessages/default/matchingList"><span>Data Cleanup</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/logout"><span>Sign out</span></a></li>
+</ul>
+</li>
+</ul><ul id="settings-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Administration</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/configuration"><span>Administration</span></a></li>
+<li><a href="/zurmo/app/index.php/designer/default"><span>Designer</span></a></li>
+<li><a href="/zurmo/app/index.php/import/default"><span>Import</span></a></li>
+<li><a href="/zurmo/app/index.php/users/default"><span>Users</span></a></li>
+<li><a href="http://www.zurmo.com/needSupport.php"><span>Need Support?</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/about"><span>About Zurmo</span></a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="GridView"><div id="GlobalSearchAndShortcutsCreateMenuView"><div id="app-search" class="clearfix"><select class="ignore-style" id="globalSearchScope" multiple="multiple" style="display:none;" size="4" name="globalSearchScope[]">
+<option value="All" selected="selected">All</option>
+<option value="accounts">Accounts</option>
+<option value="contacts">Contacts</option>
+<option value="leads">Leads</option>
+<option value="opportunities">Opportunities</option>
+</select><input class="global-search global-search-hint" onfocus="$(this).removeClass(&quot;global-search-hint&quot;); $(this).val(&quot;&quot;);" onblur="$(this).val(&quot;&quot;)" id="globalSearchInput" type="text" value="Search by name, phone, or e-mail" name="globalSearchInput" /><span class="z-spinner"></span></div><ul id="ShortcutsMenu" class="nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/accounts/default/create"><span>Account</span></a></li>
+<li><a href="/zurmo/app/index.php/contacts/default/create"><span>Contact</span></a></li>
+<li><a href="/zurmo/app/index.php/conversations/default/create"><span>Conversation</span></a></li>
+<li><a href="/zurmo/app/index.php/leads/default/create"><span>Lead</span></a></li>
+<li><a href="/zurmo/app/index.php/missions/default/create"><span>Mission</span></a></li>
+<li><a href="/zurmo/app/index.php/opportunities/default/create"><span>Opportunity</span></a></li>
+<li><a href="/zurmo/app/index.php/reports/default/selectType"><span>Report</span></a></li>
+<li class="last"><a href="#" id="yt0"><span>Task</span></a></li>
+</ul>
+</li>
+</ul></div></div></div>
+
+
+
+<!-- End of themes/default/templates/HeaderView.xhtml --></div><div class="AppContainer clearfix GridView"><div class="AppNavigation clearfix GridView"><div id="MenuView"><ul class="nav">
+<li id="home"><a href="/zurmo/app/index.php/home/default"><span></span><em></em><span>Home</span></a></li>
+<li id="mashableInbox"><a href="/zurmo/app/index.php/mashableInbox/default"><span></span><em></em><span>Inbox<span class="unread-inbox-count">1</span></span></a></li>
+<li id="accounts"><a href="/zurmo/app/index.php/accounts/default"><span></span><em></em><span>Accounts</span></a></li>
+<li id="leads"><a href="/zurmo/app/index.php/leads/default"><span></span><em></em><span>Leads</span></a></li>
+<li id="contacts"><a href="/zurmo/app/index.php/contacts/default"><span></span><em></em><span>Contacts</span></a></li>
+<li id="opportunities"><a href="/zurmo/app/index.php/opportunities/default"><span></span><em></em><span>Opportunities</span></a></li>
+<li id="marketing" class="active"><a href="/zurmo/app/index.php/marketing/default/dashboardDetails"><span></span><em></em><span>Marketing</span></a></li>
+<li id="projects" class="hidden-nav-item"><a href="/zurmo/app/index.php/projects/default/dashboardDetails"><span></span><em></em><span>Projects</span></a></li>
+<li id="products" class="hidden-nav-item"><a href="/zurmo/app/index.php/products/default"><span></span><em></em><span>Products</span></a></li>
+<li id="reports" class="hidden-nav-item last"><a href="/zurmo/app/index.php/reports/default"><span></span><em></em><span>Reports</span></a></li>
+</ul><a class="toggle-hidden-nav-items"></a></div><div id="RecentlyViewedView"><h3>Recently Viewed</h3><ul class="nav">
+<li class="type-CampaignsModule"><a href="/zurmo/app/index.php/campaigns/default/details?id=1"><span></span><em></em><span>10% discount for new clients</span></a></li>
+<li class="type-EmailTemplatesModule"><a href="/zurmo/app/index.php/emailTemplates/default/details?id=1"><span></span><em></em><span>Discount</span></a></li>
+<li class="type-MarketingListsModule last"><a href="/zurmo/app/index.php/marketingLists/default/details?id=1"><span></span><em></em><span>Clients</span></a></li>
+</ul></div></div>
+
+<div class="AppContent GridView"><div id="MarketingBreadCrumbView" class="BreadCrumbView"><div class="breadcrumbs">
+<a href="/ZurmoBajakan/public/marketing/">Marketing</a> &#47; <a href="/ZurmoBajakan/public/marketing/marketing/campaign">Campaigns</a> &#47; <span>Create</span></div></div><div id="CampaignEditView" class="SecuredEditView EditView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wrapper"><h1><span class="truncated-title"><span class="ellipsis-content">Create Campaign</span></span></h1><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;edit-form&quot;)" id="edit-form" action="/zurmo/app/index.php/campaigns/default/create" method="post">
+<div style="display:none"><input type="hidden" value="77cf7bff288d35c5f1729399ca02e3223d0ebdff" name="YII_CSRF_TOKEN" /></div><div class="attributesContainer"><div class="left-column"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label for="Campaign_name" class="required">Name <span class="required">*</span></label></th><td colspan="1"><input id="Campaign_name" name="Campaign[name]" type="text" maxlength="64" /></td></tr><tr><th><label for="Campaign_marketingList_id" class="required">Marketing List <span class="required">*</span></label></th><td colspan="1"><input name="Campaign[marketingList][id]" id="Campaign_marketingList_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Campaign_marketingList_id&#039;);" id="Campaign_marketingList_name" type="text" value="" name="Campaign_marketingList_name" /><a id="Campaign_marketingList_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr><tr><th><label for="Campaign_fromName" class="required">From Name <span class="required">*</span></label></th><td colspan="1"><input id="Campaign_fromName" name="Campaign[fromName]" type="text" maxlength="64" /></td></tr><tr><th><label for="Campaign_fromAddress" class="required">From Address <span class="required">*</span></label></th><td colspan="1"><input id="Campaign_fromAddress" name="Campaign[fromAddress]" type="text" maxlength="64" /></td></tr><tr><th><label for="Campaign_sendOnDateTime" class="required">Send On <span class="required">*</span></label></th><td colspan="1"><div class="has-date-select"><input id="Campaign_sendOnDateTime" name="Campaign[sendOnDateTime]" style="position:relative;z-index:10000;" type="text" value="11/24/2013 11:23 PM" /></div></td></tr><tr><th><label for="Campaign_subject" class="required">Subject <span class="required">*</span></label></th><td colspan="1"><input id="Campaign_subject" name="Campaign[subject]" type="text" maxlength="64" /></td></tr><tr><th>Enable Tracking<span id="enable-tracking-tooltip" class="tooltip" title="Check to track when recipients open an email or click any links.">?</span></th><td colspan="1"><input id="ytCampaign_enableTracking" type="hidden" value="0" name="Campaign[enableTracking]" /><label class="hasCheckBox c_on"><input id="Campaign_enableTracking" name="Campaign[enableTracking]" value="1" checked="checked" type="checkbox" /></label></td></tr><tr><th>Support HTML<span id="support-rich-text-tooltip" class="tooltip" title="When checked, email will be sent in both text and HTML format.  Uncheck to only send text emails">?</span></th><td colspan="1"><input id="ytCampaign_supportsRichText" type="hidden" value="0" name="Campaign[supportsRichText]" /><label class="hasCheckBox c_on"><input id="Campaign_supportsRichText" name="Campaign[supportsRichText]" value="1" checked="checked" type="checkbox" /></label></td></tr><tr><th></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="Campaign[contactEmailTemplateNames]" id="Campaign_contactEmailTemplateNames_value">
+<option value="">Select a template</option>
+<option value="1">Discount</option>
+</select></div></td></tr><tr><th><label>Attachments</label></th><td colspan="1"><div id="fileUploadCampaign"><div class="fileupload-buttonbar clearfix"><div class="addfileinput-button"><span>Y</span><strong class="add-label">Add Files</strong><input id="Campaign_files" type="file" name="Campaign_files" /></div><span class="max-upload-size">Max upload size: 1MB</span></div><div class="fileupload-content"><table class="files"><tbody></tbody></table></div></div><script id="template-upload" type="text/x-jquery-tmpl">
+    <tr class="template-upload{{if error}} ui-state-error{{/if}}">
+        <td class="name">
+            <span class="z-spinner"></span>
+            ${name} <span class="file-size">(${sizef})</span>
+            {{if error}}
+                <span class="upload-error">${error}</span>
+            {{else}}
+                <span class="upload-actions cancel">
+                    <button class="cancel" title="Cancel"><span>Cancel</span></button>
+                </span>
+            {{/if}}
+        </td>
+    </tr>
+</script><script id="template-download" type="text/x-jquery-tmpl">
+    <tr class="template-download{{if error}} ui-state-error{{/if}}">
+        {{if error}}
+            <td class="error" colspan="4">${error}</td>
+        {{else}}
+            <td class="name">
+                ${name} <span class="file-size">(${size})</span>
+                <span class="upload-actions delete">
+                    <button class="icon-delete" title="Remove" data-url="/zurmo/app/index.php/zurmo/fileModel/delete?id=${id}"><span><!--Delete--><span></button>
+                </span>
+                <input name="filesIds[]" type="hidden" value="${id}"/>
+            </td>
+        {{/if}}
+    </tr>
+</script></td></tr></tbody></table></div></div><div class="right-column"><div class="right-side-edit-view-panel"><h3>Rights and Permissions</h3><div id="owner-box"><label for="Campaign_owner_id" class="required">Owner <span class="required">*</span></label><input name="Campaign[owner][id]" id="Campaign_owner_id" value="1" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Campaign_owner_id&#039;);" id="Campaign_owner_name" type="text" value="Super User" name="Campaign_owner_name" /><a id="Campaign_owner_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></div><label>Who can read and write</label><div class="radio-input"><input id="Campaign_explicitReadWriteModelPermissions_type_0" value="" type="radio" name="Campaign[explicitReadWriteModelPermissions][type]" /><label for="Campaign_explicitReadWriteModelPermissions_type_0">Owner</label></div><div class="radio-input"><input id="Campaign_explicitReadWriteModelPermissions_type_1" value="1" checked="checked" type="radio" name="Campaign[explicitReadWriteModelPermissions][type]" /><label for="Campaign_explicitReadWriteModelPermissions_type_1">Everyone</label></div></div></div></div><div class="email-template-combined-content"><th></th><td colspan="1"><div class="email-template-content"><div class="tabs-nav"><a href="#tab1">Text Content</a><a class="active-tab" href="#tab2">Html Content</a><a id="MergeTagGuideAjaxLinkActionElement--25-yt2" class="simple-link" href="#">MergeTag Guide</a></div><div id="tab1" class=" tab email-template-textContent"><th><label for="Campaign_textContent">Text Content</label></th><td colspan="1"><textarea id="Campaign_textContent" name="Campaign[textContent]" rows="6" cols="50"></textarea></td></div><div id="tab2" class="active-tab tab email-template-htmlContent"><label for="Campaign_htmlContent">Html Content</label><textarea id='Campaign_htmlContent' name='Campaign[htmlContent]'></textarea></div></div></td></div><div class="float-bar"><div class="view-toolbar-container clearfix dock"><div class="form-toolbar"><a id="CancelLinkActionElement--25-yt3" href="/ZurmoBajakan/public/marketing/marketing/campaign"><span class="z-label">Cancel</span></a><a id="saveyt4" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Save and Schedule</span></a></div></div></div></form><div id="modalContainer-edit-form"></div></div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('?').toggleClass('highlighted');
+                       }
+
+                function clearIdFromAutoCompleteField(value, id)
+                {
+                    if (value == '')
+                    {
+                        $('#' + id).val('');
+                    }
+                }
+            
+                       
+            jQuery.datepicker._gotoToday = function (id) {            
+                var inst = this._getInst($(id)[0]);
+                dp = inst.dpDiv;                                
+                var now = new Date();
+                jQuery.datepicker._base_gotoToday(id);
+                now.setMinutes(now.getMinutes()+(-360)+now.getTimezoneOffset());
+                this._setTime(inst, now);     
+                $('.ui-datepicker-today', dp).click();
+            };            
+        
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                $('#Campaign_marketingList_id').live('change', function()
+                    {
+                       if ($('#Campaign_marketingList_id').val())
+                          {
+                            $.ajax(
+                            {
+                                url : '/zurmo/app/index.php/marketingLists/default/getInfoToCopyToCampaign?id=' + $('#Campaign_marketingList_id').val(),
+                                type : 'GET',
+                                dataType: 'json',
+                                success : function(data)
+                                {
+                                    $('#Campaign_fromName').val(data.fromName);
+                                    $('#Campaign_fromAddress').val(data.fromAddress)
+                                },
+                                error : function()
+                                {
+                                    //todo: error call
+                                }
+                            }
+                            );
+                          }
+                    }
+                );
+            
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+jQuery('#Campaign_owner_name').autocomplete({'select':function(event, ui){ jQuery("#Campaign_owner_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Campaign_owner_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Campaign_owner_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Campaign_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Campaign_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Campaign_owner_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/users/default/autoComplete'});
+$('body').off('click.selectLink', '#Campaign_owner_SelectLink'); $('body').on('click.selectLink', '#Campaign_owner_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'User Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/users/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Campaign_owner_id&modalTransferInformation%5BsourceNameFieldId%5D=Campaign_owner_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Campaign_marketingList_name').autocomplete({'select':function(event, ui){ jQuery("#Campaign_marketingList_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Campaign_marketingList_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Campaign_marketingList_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Campaign_marketingList_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Campaign_marketingList_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Campaign_marketingList_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/marketingLists/default/autoComplete'});
+$('body').off('click.selectLink', '#Campaign_marketingList_SelectLink'); $('body').on('click.selectLink', '#Campaign_marketingList_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'Marketing List Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/marketingLists/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Campaign_marketingList_id&modalTransferInformation%5BsourceNameFieldId%5D=Campaign_marketingList_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Campaign_sendOnDateTime').datetimepicker({'stepMinute':5,'timeText':'Time','hourText':'Hour','minuteText':'Minute','secondText':'Second','showOn':'both','buttonText':'<span><!--Date--><\/span>','buttonImageOnly':false,'timeFormat':'h:mm tt','dateFormat':'m/d/yy','currentText':'<span class=\"z-label\">Now<\/span>','closeText':'<span class=\"z-label\">Done<\/span>'});
+$("#enable-tracking-tooltip").qtip([]);
+$("#support-rich-text-tooltip").qtip([]);
+
+                    function updateFlashBar(data, flashBarId)
+                    {
+                        $("#" + flashBarId).jnotifyAddMessage(
+                        {
+                            text: data.message,
+                            permanent: false,
+                            showIcon: true,
+                            type: data.type
+                        });
+                    }
+                
+
+                        function updateContentElementsWithData(textContentElement, htmlContentElement, subjectElement, data)
+                        {
+                            if ($(htmlContentElement).css("display") !== "none")
+                            {
+                                $(htmlContentElement).redactor("toggle");
+                            }
+                            updateElementWithData(textContentElement, data.textContent);
+                            updateElementWithData(subjectElement, data.subject);
+                            $(htmlContentElement).redactor("set", data.htmlContent);
+                            //$(htmlContentElement).redactor("sync");
+                        }
+
+                        function updateElementWithData(element, data)
+                        {
+                            if ($(element).attr("type") == "text")
+                            {
+                                $(element).val(data);
+                            }
+                            else
+                            {
+                                $(element).html(data);
+                            }
+                        }
+
+                        function deleteExistingAttachments()
+                        {
+                            $("table.files tr.template-download td.name span.upload-actions.delete button.icon-delete")
+                                .click();
+                        }
+
+                        function updateAddFilesWithDataFromAjax(filesIds, notificationBarId)
+                        {
+                            if (filesIds != "")
+                            {
+                                var url             = "/zurmo/app/index.php/zurmo/fileModel/cloneExistingFiles";
+                                var templateId      = "#template-download";
+                                var targetClass     = ".files";
+                                var filesIdsString  = filesIds.join();
+                                $.ajax(
+                                    {
+                                        url:        url,
+                                        dataType:   "json",
+                                        data:
+                                        {
+                                            commaSeparatedExistingModelIds: filesIdsString
+                                        },
+                                        success:    function(data, status, request)
+                                                    {
+                                                        $(templateId).tmpl(data).appendTo(targetClass);
+                                                    },
+                                        error:      function(request, status, error)
+                                                    {
+                                                        var data = {   "message" : "There was an error processing your request",
+                                                                    "type"    : "error"
+                                                                    };
+                                                        updateFlashBar(data, notificationBarId);
+                                                    },
+                                    }
+                                );
+                            }
+                        }
+
+                        $("#Campaign_contactEmailTemplateNames_value").unbind("change.action").bind("change.action", function(event, ui)
+                        {
+                            selectedOption          = $(this).find(":selected");
+                            selectedOptionValue     = selectedOption.val();
+                            if (selectedOptionValue)
+                            {
+                                var dropDown            = $(this);
+                                var notificationBarId   = "FlashMessageBar";
+                                var url                 = "/zurmo/app/index.php/emailTemplates/default/details";
+                                var disableDropDown     = "1";
+                                var disableTextBox      = "1";
+                                var textContentId       = "Campaign_textContent";
+                                var htmlContentId       = "Campaign_htmlContent";
+                                var subjectId           = "Campaign_subject";
+                                var subjectElement      = $("#" + subjectId);
+                                var textContentElement  = $("#" + textContentId);
+                                var htmlContentElement  = $("#" + htmlContentId);
+                                var redActorElement     = $("#" + htmlContentId).parent().find(".redactor_editor");
+                                $.ajax(
+                                    {
+                                        url:        url,
+                                        dataType:   "json",
+                                        data:
+                                        {
+                                            id: selectedOptionValue,
+                                            renderJson: true,
+                                            includeFilesInJson: true
+                                        },
+                                        beforeSend: function(request, settings)
+                                                    {
+                                                        $(this).makeLargeLoadingSpinner(true, ".email-template-content");
+                                                        if (disableDropDown == true)
+                                                        {
+                                                            $(dropDown).attr("disabled", "disabled");
+                                                        }
+                                                        if (disableTextBox == true)
+                                                        {
+                                                            $(textContentElement).attr("disabled", "disabled");
+                                                            $(htmlContentElement).attr("disabled", "disabled");
+                                                            $(subjectElement).attr("disabled", "disabled");
+                                                            $(redActorElement).hide();
+                                                        }
+                                                        deleteExistingAttachments();
+                                                    },
+                                        success:    function(data, status, request)
+                                                    {
+                                                        $(this).makeLargeLoadingSpinner(false, ".email-template-content");
+                                                        $(".email-template-content .big-spinner").remove();
+                                                        updateContentElementsWithData(textContentElement,
+                                                                                        htmlContentElement,
+                                                                                        subjectElement,
+                                                                                        data);
+                                                        updateAddFilesWithDataFromAjax(data.filesIds, notificationBarId);
+                                                    },
+                                        error:      function(request, status, error)
+                                                    {
+                                                        var data = {   "message" : "There was an error processing your request",
+                                                                        "type"    : "error"
+                                                                    };
+                                                        updateFlashBar(data, notificationBarId);
+                                                    },
+                                        complete:   function(request, status)
+                                                    {
+                                                        $(dropDown).removeAttr("disabled");
+                                                        $(dropDown).val("");
+                                                        $(textContentElement).removeAttr("disabled");
+                                                        $(htmlContentElement).removeAttr("disabled");
+                                                        $(subjectElement).removeAttr("disabled");
+                                                        $(redActorElement).show();
+                                                        event.preventDefault();
+                                                        return false;
+                                                    }
+                                    }
+                                );
+                            }
+                        }
+                    );
+                
+$(function () {
+    'use strict';
+
+    // Initialize the jQuery File Upload widget:
+    $('#fileUploadCampaign').fileupload({
+        dataType: 'json',
+        url: '/zurmo/app/index.php/zurmo/fileModel/upload?filesVariableName=Campaign_files',
+        autoUpload: true,
+        sequentialUploads: true,
+        maxFileSize: 1048576,
+        add: function (e, data) {
+            
+            
+            var that = $(this).data('fileupload');
+            that._adjustMaxNumberOfFiles(-data.files.length);
+            data.isAdjusted = true;
+            data.isValidated = that._validate(data.files);
+            data.context = that._renderUpload(data.files)
+                .appendTo($(this).find('.files')).fadeIn(function () {
+                    // Fix for IE7 and lower:
+                    $(this).show();
+                    $(this).makeOrRemoveTogglableSpinner(true, '#'+'fileUploadCampaign');
+                }).data('data', data);
+            if ((that.options.autoUpload || data.autoUpload) &&
+                    data.isValidated) {
+                data.jqXHR = data.submit();
+            }
+        }
+    });
+    // Open download dialogs via iframes,
+    // to prevent aborting current uploads:
+    $('#fileUploadCampaign .files a:not([target^=_blank])').live('click', function (e) {
+        e.preventDefault();
+        $('<iframe style="display:none;"></iframe>')
+            .prop('src', this.href)
+            .appendTo('body');
+    });
+    $('.fileupload-buttonbar').removeClass('ui-widget-header ui-corner-top');
+    $('.fileupload-content').removeClass('ui-widget-content ui-corner-bottom');
+    $('#fileUploadCampaign').bind('fileuploaddestroy', function (e, data) {
+            
+
+    });
+    $('#fileUploadCampaign').bind('fileuploadalways', function (e, data) {
+        if (data == undefined || data.result == undefined ||
+          ((data.result[0] != undefined && data.result[0].error != undefined) || data.result.error != undefined))
+        {
+            setTimeout(function () {
+               $('#edit-form').find('.files > tbody').children(':last').fadeOut('slow', function() { $(this).remove();});
+               
+            }, 1000);
+        }
+    });
+    //load existing files
+    var existingFiles = [];
+    var fu = $('#fileUploadCampaign').data('fileupload');
+    fu._adjustMaxNumberOfFiles(-existingFiles.length);
+    fu._renderDownload(existingFiles)
+        .appendTo($('#fileUploadCampaign .files'))
+        .fadeIn(function () {
+            // Fix for IE7 and lower:
+            $(this).show();
+    });
+});
+
+
+                    $(document).ready(
+                        function()
+                        {
+                            $('#Campaign_htmlContent').redactor(
+                            {
+                                buttons:        ['html', '|', 'formatting', 'bold', 'italic', 'deleted', '|',
+                                   'unorderedlist', 'orderedlist', 'outdent', 'indent', '|', 'table', 'link', '|',
+                                   'fontcolor', 'backcolor', '|', 'alignleft', 'aligncenter', 'alignright', 'justify', '|',
+                                   'horizontalrule'],
+                                cleanup:        true,
+                                convertDivs:    false,
+                                deniedTags:     [],
+                                fullpage:       true,
+                                iframe:         false,
+                                minHeight:      100,
+                                observeImages:  false,
+                                source:         false,
+                                paragraphy:     false,
+                                wym:            false,
+                            });
+                        }
+                    );
+
+                        $('.tabs-nav a:not(.simple-link)').click( function()
+                        {
+                            //the menu items
+                            $('.active-tab', $(this).parent()).removeClass('active-tab');
+                            $(this).addClass('active-tab');
+                            //the sections
+                            var _old = $('.tab.active-tab'); //maybe add context here for tab-container
+                            _old.fadeToggle();
+                            var _new = $( $(this).attr('href') );
+                            _new.fadeToggle(150, 'linear', function()
+                            {
+                                    _old.removeClass('active-tab');
+                                    _new.addClass('active-tab');
+                            });
+                            return false;
+                        });
+                    
+$('body').on('click', '#MergeTagGuideAjaxLinkActionElement--25-yt2', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'MergeTag Guide',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/emailTemplates/default/mergeTagGuide','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                $('#FlashMessageBar').jnotifyAddMessage(
+                {
+                    text: 'Campaigns will not run properly until scheduled jobs are set up. Contact your administrator.',
+                    permanent: true,
+                    showIcon: true,
+                }
+                );
+                
+});
+/*]]>*/
+</script>
+</body>

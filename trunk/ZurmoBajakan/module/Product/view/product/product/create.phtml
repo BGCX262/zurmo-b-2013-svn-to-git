@@ -1,0 +1,379 @@
+<body>
+<?php include 'header.phtml';?>
+</div>
+<div class="AppContent GridView"><div id="ProductBreadCrumbView" class="BreadCrumbView"><div class="breadcrumbs">
+<a href="/demos/stable/app/index.php/products/default/list">Products</a> &#47; <span>Create Product</span></div></div><div id="ProductEditAndDetailsView" class="SecuredEditAndDetailsView EditAndDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wrapper"><h1><span class="truncated-title"><span class="ellipsis-content">Create Product</span></span></h1><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;edit-form&quot;)" id="edit-form" action="/demos/stable/app/index.php/products/default/create" method="post">
+<div style="display:none"><input type="hidden" value="16c73dc51f113b6d86c512177237d6c6d4759db6" name="YII_CSRF_TOKEN" /></div><div class="attributesContainer"><div class="left-column"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label for="Product_productTemplate_id">Catalog Item</label></th><td colspan="1"><input name="Product[productTemplate][id]" id="Product_productTemplate_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Product_productTemplate_id&#039;);" id="Product_productTemplate_name" type="text" value="" name="Product_productTemplate_name" /><a id="Product_productTemplate_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr><tr><th><label for="Product_name" class="required">Name <span class="required">*</span></label></th><td colspan="1"><input id="Product_name" name="Product[name]" type="text" maxlength="64" /></td></tr><tr><th><label for="Product_quantity" class="required">Quantity <span class="required">*</span></label></th><td colspan="1"><input id="Product_quantity" name="Product[quantity]" type="text" /></td></tr><tr><th><label for="Product_account_id">Account</label></th><td colspan="1"><input name="Product[account][id]" id="Product_account_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Product_account_id&#039;);" id="Product_account_name" type="text" value="" name="Product_account_name" /><a id="Product_account_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr><tr><th><label for="Product_contact_id">Contact</label></th><td colspan="1"><input name="Product[contact][id]" id="Product_contact_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Product_contact_id&#039;);" id="Product_contact_name" type="text" value="" name="Product_contact_name" /><a id="Product_contact_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr><tr><th><label for="Product_opportunity_id">Opportunity</label></th><td colspan="1"><input name="Product[opportunity][id]" id="Product_opportunity_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Product_opportunity_id&#039;);" id="Product_opportunity_name" type="text" value="" name="Product_opportunity_name" /><a id="Product_opportunity_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr><tr><th><label>Categories</label></th><td colspan="1"><input id="ProductCategoriesForm_ProductCategory_ids" type="text" name="ProductCategoriesForm[categoryIds]" /></td></tr><tr><th><label for="Product_type_value" class="required">Type <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="Product[type]" id="Product_type_value">
+<option value="1">Product</option>
+<option value="2">Service</option>
+<option value="3">Subscription</option>
+</select></div></td></tr><tr><th><label for="Product_priceFrequency_value" class="required">Price Frequency <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="Product[priceFrequency]" id="Product_priceFrequency_value">
+<option value="1">One Time</option>
+<option value="2">Monthly</option>
+<option value="3">Annually</option>
+</select></div></td></tr><tr><th><label for="Product_sellPrice_value" class="required">Sell Price <span class="required">*</span></label></th><td colspan="1"><div class="hasParallelFields"><div class="quarter"><div class="hasDropDown"><span class="select-arrow"></span><select name="Product[sellPrice][currency][id]" id="Product_sellPrice_currency_id">
+<option value="3">CAD</option>
+<option value="2">EUR</option>
+<option value="4">JPY</option>
+<option value="1" selected="selected">USD</option>
+</select></div></div><div class="threeQuarters"><input name="Product[sellPrice][value]" id="Product_sellPrice_value" value="0" type="text" /></div></div></td></tr><tr><th><label for="Product_stage_value" class="required">Stage <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="Product[stage][value]" id="Product_stage_value">
+<option value="Open">Open</option>
+<option value="Lost">Lost</option>
+<option value="Won">Won</option>
+</select></div></td></tr></tbody></table></div></div><div class="right-column"><div class="right-side-edit-view-panel"><h3>Rights and Permissions</h3><div id="owner-box"><label for="Product_owner_id" class="required">Owner <span class="required">*</span></label><input name="Product[owner][id]" id="Product_owner_id" value="1" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Product_owner_id&#039;);" id="Product_owner_name" type="text" value="Super User" name="Product_owner_name" /><a id="Product_owner_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></div><label>Who can read and write</label><div class="radio-input"><input id="Product_explicitReadWriteModelPermissions_type_0" value="" type="radio" name="Product[explicitReadWriteModelPermissions][type]" /><label for="Product_explicitReadWriteModelPermissions_type_0">Owner</label></div><div class="radio-input"><input id="Product_explicitReadWriteModelPermissions_type_1" value="2" type="radio" name="Product[explicitReadWriteModelPermissions][type]" /><label for="Product_explicitReadWriteModelPermissions_type_1">Owner and users in</label>&#160;<div class="hasDropDown"><span class="select-arrow"></span><select id="Product_explicitReadWriteModelPermissions_nonEveryoneGroup" onclick="document.getElementById(&quot;Product_explicitReadWriteModelPermissions_type_1&quot;).checked=&quot;checked&quot;;" name="Product[explicitReadWriteModelPermissions][nonEveryoneGroup]">
+<option value="3">East</option>
+<option value="5">East Channel Sales</option>
+<option value="7">East Direct Sales</option>
+<option value="4">West</option>
+<option value="6">West Channel Sales</option>
+<option value="8">West Direct Sales</option>
+</select></div></div><div class="radio-input"><input id="Product_explicitReadWriteModelPermissions_type_2" value="1" checked="checked" type="radio" name="Product[explicitReadWriteModelPermissions][type]" /><label for="Product_explicitReadWriteModelPermissions_type_2">Everyone</label></div></div></div></div><div class="float-bar"><div class="view-toolbar-container clearfix dock"><div class="form-toolbar"><a id="CancelLinkActionElement--25-yt2" href="/demos/stable/app/index.php/products/default"><span class="z-label">Cancel</span></a><a id="saveyt3" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Save</span></a></div></div></div></form><div id="modalContainer-edit-form"></div></div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/demos/stable/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/demos/stable/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript" src="/demos/stable/app/assets/2ec0dacb/ProductTemplateUtils.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('?').toggleClass('highlighted');
+                       }
+
+                function clearIdFromAutoCompleteField(value, id)
+                {
+                    if (value == '')
+                    {
+                        $('#' + id).val('');
+                    }
+                }
+            
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/demos/stable/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/demos/stable/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/demos/stable/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/demos/stable/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+jQuery('#Product_owner_name').autocomplete({'select':function(event, ui){ jQuery("#Product_owner_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Product_owner_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Product_owner_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Product_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Product_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Product_owner_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/demos/stable/app/index.php/users/default/autoComplete'});
+$('body').off('click.selectLink', '#Product_owner_SelectLink'); $('body').on('click.selectLink', '#Product_owner_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'User Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/demos/stable/app/index.php/users/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Product_owner_id&modalTransferInformation%5BsourceNameFieldId%5D=Product_owner_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Product_productTemplate_name').autocomplete({'select':function(event, ui){ jQuery("#Product_productTemplate_id").val(ui.item["id"]).trigger("change");
+                        copyProductTemplateDataForProduct(ui.item["id"], '/demos/stable/app/index.php/productTemplates/default/getProductTemplateDataForProduct')},'appendTo':$("#Product_productTemplate_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Product_productTemplate_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Product_productTemplate_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Product_productTemplate_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Product_productTemplate_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/demos/stable/app/index.php/productTemplates/default/autoComplete'});
+$('body').off('click.selectLink', '#Product_productTemplate_SelectLink'); $('body').on('click.selectLink', '#Product_productTemplate_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'Catalog Item Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/demos/stable/app/index.php/productTemplates/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Product_productTemplate_id&modalTransferInformation%5BsourceNameFieldId%5D=Product_productTemplate_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Product_account_name').autocomplete({'select':function(event, ui){ jQuery("#Product_account_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Product_account_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Product_account_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Product_account_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Product_account_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Product_account_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/demos/stable/app/index.php/accounts/default/autoComplete'});
+$('body').off('click.selectLink', '#Product_account_SelectLink'); $('body').on('click.selectLink', '#Product_account_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'Account Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/demos/stable/app/index.php/accounts/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Product_account_id&modalTransferInformation%5BsourceNameFieldId%5D=Product_account_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Product_contact_name').autocomplete({'select':function(event, ui){ jQuery("#Product_contact_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Product_contact_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Product_contact_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Product_contact_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Product_contact_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Product_contact_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/demos/stable/app/index.php/contacts/default/autoComplete'});
+$('body').off('click.selectLink', '#Product_contact_SelectLink'); $('body').on('click.selectLink', '#Product_contact_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'Contact Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/demos/stable/app/index.php/contacts/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Product_contact_id&modalTransferInformation%5BsourceNameFieldId%5D=Product_contact_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Product_opportunity_name').autocomplete({'select':function(event, ui){ jQuery("#Product_opportunity_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Product_opportunity_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Product_opportunity_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Product_opportunity_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Product_opportunity_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Product_opportunity_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/demos/stable/app/index.php/opportunities/default/autoComplete'});
+$('body').off('click.selectLink', '#Product_opportunity_SelectLink'); $('body').on('click.selectLink', '#Product_opportunity_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'Opportunity Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/demos/stable/app/index.php/opportunities/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Product_opportunity_id&modalTransferInformation%5BsourceNameFieldId%5D=Product_opportunity_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+$(document).ready(function () { $('#ProductCategoriesForm_ProductCategory_ids').tokenInput('/demos/stable/app/index.php/productTemplates/default/autoCompleteAllProductCategoriesForMultiSelectAutoComplete', { queryParam: 'term',hintText: 'Type a product category',prePopulate: [],propertyToSearch: 'name',searchDelay: 300,minChars: 1,preventDuplicates: 'true',resultsLimit: 'null',classes: {tokenList: 'token-input-list'}});});
+});
+/*]]>*/
+</script>
+<div class="performance-info">Load time: 0.738 seconds.<br /></div></body>

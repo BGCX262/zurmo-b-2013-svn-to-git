@@ -1,0 +1,896 @@
+<body class="blue"><div id="MarketingListsPageView" class="ZurmoDefaultPageView ZurmoPageView PageView"><div id="ZurmoDefaultView"><div class="GridView"><div id="HeaderView"><!-- Start of themes/default/templates/HeaderView.xhtml --><div id="MainLogo" class="zurmo-logo"></div>
+<div class="GridView"><div id="HeaderLinksView"><div class="clearfix"><a href="#" id="nav-trigger" title="Toggle Navigation">&rsaquo;</a><div id="corp-logo"><a href="/zurmo/app/index.php/home/default"><img src="/zurmo/app/themes/default/images/Zurmo_logo.png" alt="Zurmo Logo" height="32" width="107" /></a></div><div id="user-toolbar" class="clearfix"><div id="header-game-dashboard-link-wrapper" class="user-menu-item"><a id="header-game-dashboard-link" href="#">∂</a></div><ul id="user-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>super</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/users/default/profile"><span>My Profile</span></a></li>
+<li><a href="/zurmo/app/index.php/gamification/default/leaderboard"><span>Leaderboard</span></a></li>
+<li><a href="/zurmo/app/index.php/emailMessages/default/matchingList"><span>Data Cleanup</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/logout"><span>Sign out</span></a></li>
+</ul>
+</li>
+</ul><ul id="settings-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Administration</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/configuration"><span>Administration</span></a></li>
+<li><a href="/zurmo/app/index.php/designer/default"><span>Designer</span></a></li>
+<li><a href="/zurmo/app/index.php/import/default"><span>Import</span></a></li>
+<li><a href="/zurmo/app/index.php/users/default"><span>Users</span></a></li>
+<li><a href="http://www.zurmo.com/needSupport.php"><span>Need Support?</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/about"><span>About Zurmo</span></a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="GridView"><div id="GlobalSearchAndShortcutsCreateMenuView"><div id="app-search" class="clearfix"><select class="ignore-style" id="globalSearchScope" multiple="multiple" style="display:none;" size="4" name="globalSearchScope[]">
+<option value="All" selected="selected">All</option>
+<option value="accounts">Accounts</option>
+<option value="contacts">Contacts</option>
+<option value="leads">Leads</option>
+<option value="opportunities">Opportunities</option>
+</select><input class="global-search global-search-hint" onfocus="$(this).removeClass(&quot;global-search-hint&quot;); $(this).val(&quot;&quot;);" onblur="$(this).val(&quot;&quot;)" id="globalSearchInput" type="text" value="Search by name, phone, or e-mail" name="globalSearchInput" /><span class="z-spinner"></span></div><ul id="ShortcutsMenu" class="nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/accounts/default/create"><span>Account</span></a></li>
+<li><a href="/zurmo/app/index.php/contacts/default/create"><span>Contact</span></a></li>
+<li><a href="/zurmo/app/index.php/conversations/default/create"><span>Conversation</span></a></li>
+<li><a href="/zurmo/app/index.php/leads/default/create"><span>Lead</span></a></li>
+<li><a href="/zurmo/app/index.php/missions/default/create"><span>Mission</span></a></li>
+<li><a href="/zurmo/app/index.php/opportunities/default/create"><span>Opportunity</span></a></li>
+<li><a href="/zurmo/app/index.php/reports/default/selectType"><span>Report</span></a></li>
+<li class="last"><a href="#" id="yt0"><span>Task</span></a></li>
+</ul>
+</li>
+</ul></div></div></div>
+
+
+
+<!-- End of themes/default/templates/HeaderView.xhtml --></div><div class="AppContainer clearfix GridView"><div class="AppNavigation clearfix GridView"><div id="MenuView"><ul class="nav">
+<li id="home"><a href="/zurmo/app/index.php/home/default"><span></span><em></em><span>Home</span></a></li>
+<li id="mashableInbox"><a href="/zurmo/app/index.php/mashableInbox/default"><span></span><em></em><span>Inbox<span class="unread-inbox-count">1</span></span></a></li>
+<li id="accounts"><a href="/zurmo/app/index.php/accounts/default"><span></span><em></em><span>Accounts</span></a></li>
+<li id="leads"><a href="/zurmo/app/index.php/leads/default"><span></span><em></em><span>Leads</span></a></li>
+<li id="contacts"><a href="/zurmo/app/index.php/contacts/default"><span></span><em></em><span>Contacts</span></a></li>
+<li id="opportunities"><a href="/zurmo/app/index.php/opportunities/default"><span></span><em></em><span>Opportunities</span></a></li>
+<li id="marketing" class="active"><a href="/ZurmoBajakan/public/marketing"><span></span><em></em><span>Marketing</span></a></li>
+<li id="projects" class="hidden-nav-item"><a href="/zurmo/app/index.php/projects/default/dashboardDetails"><span></span><em></em><span>Projects</span></a></li>
+<li id="products" class="hidden-nav-item"><a href="/zurmo/app/index.php/products/default"><span></span><em></em><span>Products</span></a></li>
+<li id="reports" class="hidden-nav-item last"><a href="/zurmo/app/index.php/reports/default"><span></span><em></em><span>Reports</span></a></li>
+
+
+</ul><a class="toggle-hidden-nav-items"></a></div><div id="RecentlyViewedView"><h3>Recently Viewed</h3><ul class="nav">
+<li class="type-MarketingListsModule"><a href="/zurmo/app/index.php/marketingLists/default/details?id=1"><span></span><em></em><span>Clients</span></a></li>
+<li class="type-ContactsModule"><a href="/zurmo/app/index.php/contacts/default/details?id=1"><span></span><em></em><span>wewe woeo</span></a></li>
+<li class="type-EmailTemplatesModule"><a href="/zurmo/app/index.php/emailTemplates/default/details?id=1"><span></span><em></em><span>Discount</span></a></li>
+<li class="type-CampaignsModule"><a href="/zurmo/app/index.php/campaigns/default/details?id=1"><span></span><em></em><span>10% discount for new clients</span></a></li>
+<li class="type-EmailTemplatesModule"><a href="/zurmo/app/index.php/emailTemplates/default/details?id=2"><span></span><em></em><span>Sales decrease</span></a></li>
+<li class="type-CampaignsModule last"><a href="/zurmo/app/index.php/campaigns/default/details?id=2"><span></span><em></em><span>5% discount for existing clients</span></a></li>
+</ul></div></div><div class="AppContent GridView"><div id="MarketingStickyDetailsAndRelationsBreadCrumbView" class="StickyDetailsAndRelationsBreadCrumbView BreadCrumbView"><div class="breadcrumbs">
+
+
+<a href="/ZurmoBajakan/public/marketing">Marketing</a> &#47; <a href="/ZurmoBajakan/public/marketing/marketing/list">Lists</a> &#47; <span>Clients</span></div></div><div id="MarketingListDetailsAndRelationsView" class="single-column DetailsAndRelationsView ConfigurableMetadataView MetadataView"><div class="GridView"><div id="MarketingListDetailsView" class="SecuredDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><h1><span class="truncated-title"><span class="ellipsis-content">Clients - List</span></span></h1><div class="view-toolbar-container clearfix"><nav class="pillbox clearfix"><div id="MarketingListsDetailsMenuActionElement-1-yt1" class="default-button">
+<a class="button-action-trigger"><i class="icon-details"></i><span class="button-label">Details</span><i class="icon-trigger"></i></a><ul class="button-actions open-on-left"><li><div id="MarketingListDetailsOverlayView" class="overlay-view SecuredDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="marketing-list-member-stats"><strong class="marketing-list-subscribers-stats">0 Subscribed</strong><strong class="marketing-list-unsubscribers-stats">1 Unsubscribed</strong></div><div class="marketing-list-description">Cras tempus lectus sit amet elit pretium mollis. Morbi interdum posuere lorem et gravida.</div><p class="after-form-details-content">Last Modified 11/23/13 7:28 AM&#160;by&#160;Super User&#160;|&#160;Created On 11/23/13 7:28 AM&#160;by&#160;Super User&#160;|&#160;Owner <a href="/zurmo/app/index.php/users/default/details?id=1">Super User</a>&#160;|&#160;Who can read and write Everyone</p></div></li></ul></div><div id="MarketingListsOptionsMenuActionElement-1-yt4" class="default-button">
+<a class="button-action-trigger"><i class="icon-edit"></i><span class="button-label">Options</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="EditLinkActionElement"><a id="EditLinkActionElement-1-yt3" href="/ZurmoBajakan/public/marketing/marketing/listedit">Edit</a></li><li><a id="MarketingListDeleteLinkActionElement-1-yt2" href="/zurmo/app/index.php/marketingLists/default/delete?id=1">Delete</a></li></ul></div></nav></div></div><div class="ModelRelationsSecuredPortletFrameView SecuredPortletFrameView PortletFrameView MetadataView"><div class="juiportlet-columns"> 
+<ul class="juiportlet-columns-MarketingListDetailsAndRelationsViewLeftBottomView juiportlet-widget-column1 juiportlet-column juiportlet-column-no-split">
+<li class="juiportlet-widget MarketingListMembersPortletView portlet-with-toolbar type-marketingLists" id="MarketingListDetailsAndRelationsViewLeftBottomView_2">
+<div class="juiportlet-widget-head">
+<h3>Contacts/Leads</h3>
+</div>
+<div class="juiportlet-widget-content"  >
+<div id="MarketingListMembersPortletView" class="portlet-with-toolbar ConfigurableMetadataView MetadataView"><div class="marketing-list-members-portlet-container"><nav class="pillbox clearfix"><div id="MarketingListAddSubscriberMenuActionElement" class="clickable-dividedmenu default-button">
+<a class="button-action-trigger"><i class="icon-add"></i><span class="button-label">Add Contact/Lead</span><i class="icon-trigger"></i></a><ul class="button-actions open-on-left"><li><form id="marketing-list-member-select-contact-or-report-form" action="/zurmo/app/index.php/marketingLists/default/details?id=1" method="post">
+<div style="display:none"><input type="hidden" value="c6596366fead89feb99c2cc5db27b0041f14c087" name="YII_CSRF_TOKEN" /></div><a class="close-flyout">Z</a><th><label for="MarketingListMemberSelectForm_"></label></th><td colspan="1"><div id="select-contact-or-report-radio"><th></th><td colspan="1"><input id="ytMarketingListMemberSelectForm_selectContactOrReportRadioButton" type="hidden" value="" name="MarketingListMemberSelectForm[selectContactOrReportRadioButton]" /><input id="MarketingListMemberSelectForm_selectContactOrReportRadioButton_0" class="selectContactOrReportRadioButton" value="0" type="radio" name="MarketingListMemberSelectForm[selectContactOrReportRadioButton]" /><label for="MarketingListMemberSelectForm_selectContactOrReportRadioButton_0">From Contacts/Leads</label> <input id="MarketingListMemberSelectForm_selectContactOrReportRadioButton_1" class="selectContactOrReportRadioButton" value="1" type="radio" name="MarketingListMemberSelectForm[selectContactOrReportRadioButton]" /><label for="MarketingListMemberSelectForm_selectContactOrReportRadioButton_1">From Report</label></td></div><div id="select-contact-or-lead-search-box" class="search-without-scope"><td colspan="1"><input onfocus="$(this).val(&quot;&quot;);" id="MarketingListMemberSelectForm_selectContactOrLeadSearchBox" type="text" name="MarketingListMemberSelectForm[selectContactOrLeadSearchBox]" /><div class="has-model-select"><input type="hidden" value="" name="MarketingListMemberSelectForm_selectContactOrLeadSearchBox-transfer" id="MarketingListMemberSelectForm_selectContactOrLeadSearchBox-transfer" /><a id="MarketingListMemberSelectForm_selectContactOrLeadSearchBox-select-link" href="#"><span class="model-select-icon"></span></a></div></td><span class="z-spinner"></span></div><div id="select-report-search-box" class="search-without-scope"><td colspan="1"><input onfocus="$(this).val(&quot;&quot;);" id="MarketingListMemberSelectForm_selectReportSearchBox" type="text" name="MarketingListMemberSelectForm[selectReportSearchBox]" /><div class="has-model-select"><input type="hidden" value="" name="MarketingListMemberSelectForm_selectReportSearchBox-transfer" id="MarketingListMemberSelectForm_selectReportSearchBox-transfer" /><a id="MarketingListMemberSelectForm_selectReportSearchBox-select-link" href="#"><span class="model-select-icon"></span></a></div></td><span class="z-spinner"></span></div></td></form></li></ul></div><div id="MarketingListMembersSubscribeMenuActionElement-1-yt6" class="default-button">
+<a class="button-action-trigger"><i class="icon-edit"></i><span class="button-label">Subscribe</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="list-viewMarketingListMembersPortletView-massSubscribeSelected"><a href="/ZurmoBajakan/public/marketing/marketing/listmasssubcribe">Selected</a></li><li id="list-viewMarketingListMembersPortletView-massSubscribeAll"><a href="/ZurmoBajakan/public/marketing/marketing/listmasssubcribe">All Results</a></li></ul></div><div id="MarketingListMembersUnsubscribeMenuActionElement-1-yt7" class="default-button">
+<a class="button-action-trigger"><i class="icon-edit"></i><span class="button-label">Unsubscribe</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="list-viewMarketingListMembersPortletView-massUnsubscribeSelected"><a href="/ZurmoBajakan/public/marketing/marketing/listmassunsubcribe">Selected</a></li><li id="list-viewMarketingListMembersPortletView-massUnsubscribeAll"><a href="/ZurmoBajakan/public/marketing/marketing/listmassunsubcribe">All Results</a></li></ul></div><div id="MassDeleteMenuActionElement-1-yt8" class="default-button">
+<a class="button-action-trigger"><i class="icon-delete"></i><span class="button-label">Delete</span><i class="icon-trigger"></i></a><ul class="button-actions"><li id="list-viewMarketingListMembersPortletView-deleteMassActionSelected"><a href="/ZurmoBajakan/public/marketing/marketing/listmassdelete">Selected</a></li><li id="list-viewMarketingListMembersPortletView-deleteMassActionAll"><a href="/ZurmoBajakan/public/marketing/marketing/listmassdelete">All Results</a></li></ul></div></nav><div class="marketing-list-members-list"><div class="MarketingListMembersListView SecuredListView ListView ModelView ConfigurableMetadataView MetadataView"><form id="marketing-list-member-configuration-form" action="/zurmo/app/index.php/marketingLists/default/details?id=1" method="post">
+<div style="display:none"><input type="hidden" value="c6596366fead89feb99c2cc5db27b0041f14c087" name="YII_CSRF_TOKEN" /></div><div id="list-viewMarketingListMembersPortletView-summary-clone" class="list-view-items-summary-clone"></div><div id="MarketingListMembersConfigurationForm_filteredBySearchTerm_area" class="search-without-scope"><input id="MarketingListMembersConfigurationForm_filteredBySearchTerm" name="MarketingListMembersConfigurationForm[filteredBySearchTerm]" type="text" /></div><div id="MarketingListMembersConfigurationForm_filteredBySubscriptionType_area" class="filters-bar"><strong>View:</strong><input id="ytMarketingListMembersConfigurationForm_filteredBySubscriptionType" type="hidden" value="" name="MarketingListMembersConfigurationForm[filteredBySubscriptionType]" /><input id="MarketingListMembersConfigurationForm_filteredBySubscriptionType_0" value="all" checked="checked" type="radio" name="MarketingListMembersConfigurationForm[filteredBySubscriptionType]" /><label for="MarketingListMembersConfigurationForm_filteredBySubscriptionType_0">All</label><input id="MarketingListMembersConfigurationForm_filteredBySubscriptionType_1" value="subscribers" type="radio" name="MarketingListMembersConfigurationForm[filteredBySubscriptionType]" /><label for="MarketingListMembersConfigurationForm_filteredBySubscriptionType_1">Subscribed</label><input id="MarketingListMembersConfigurationForm_filteredBySubscriptionType_2" value="unsubscribers" type="radio" name="MarketingListMembersConfigurationForm[filteredBySubscriptionType]" /><label for="MarketingListMembersConfigurationForm_filteredBySubscriptionType_2">Unsubscribed</label></div></form><div class="cgrid-view type-marketingLists" id="list-viewMarketingListMembersPortletView">
+<div class="summary">1 result(s)</div><div class="items-wrapper"><table class="items">
+<thead>
+<tr>
+<th class="checkbox-column" id="list-viewMarketingListMembersPortletView-rowSelector"><label class="hasCheckBox"><input type="checkbox" value="1" name="list-viewMarketingListMembersPortletView-rowSelector_all" id="list-viewMarketingListMembersPortletView-rowSelector_all" /></label></th><th id="list-viewMarketingListMembersPortletView_c1">Name</th><th id="list-viewMarketingListMembersPortletView_c2">&#160;</th></tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="checkbox-column"><label class="hasCheckBox"><input value="1" id="list-viewMarketingListMembersPortletView-rowSelector_0" type="checkbox" name="list-viewMarketingListMembersPortletView-rowSelector[]" /></label></td><td><a href="/zurmo/app/index.php/contacts/default/details?id=1">wewe woeo</a>	 (Unsubscribed)</td><td><ul class="options-menu edit-row-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span></span></a>
+<ul>
+<li><a id="list-viewMarketingListMembersPortletView-edit-1" class="marketing-list-member-actions-link" href="/ZurmoBajakan/public/marketing/marketing/listmasssubcribe"><span>Subscribe</span></a></li>
+<li class="last"><a id="list-viewMarketingListMembersPortletView-delete-1" class="marketing-list-member-actions-link" href="/zurmo/app/index.php/marketingLists/defaultPortlet/delete?id=1"><span>Unlink</span></a></li>
+</ul>
+</li>
+</ul></td></tr>
+</tbody>
+</table></div><div class="pager horizontal"><ul id="yw1" class="yiiPager"><li class="refresh hidden"><a href="/zurmo/app/index.php/marketingLists/defaultPortlet/listDetails?id=1&amp;portletId=2">refresh</a></li></ul></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/marketingLists/default/details?id=1"><span>1</span></div>
+</div>
+<input type="hidden" value="" name="list-viewMarketingListMembersPortletView-selectedIds" id="list-viewMarketingListMembersPortletView-selectedIds" />
+</div></div></div></div>
+</div>
+</li>
+<li class="juiportlet-widget AutorespondersPortletView portlet-with-toolbar type-marketingLists" id="MarketingListDetailsAndRelationsViewLeftBottomView_3">
+<div class="juiportlet-widget-head">
+<h3>Autoresponders</h3><div class="view-toolbar-container clearfix"><div class="portlet-toolbar"><a id="AutoresponderCreateLinkActionElement-1-yt11" href="/zurmo/app/index.php/autoresponders/default/create?marketingListId=1&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2FmarketingLists%2Fdefault%2Fdetails%3Fid%3D1"><span class="z-label">Create</span></a></div></div>
+</div>
+<div class="juiportlet-widget-content"  >
+<div id="AutorespondersPortletView" class="portlet-with-toolbar MarketingListMembersPortletView ConfigurableMetadataView MetadataView"><div class="marketing-list-autoresponder-portlet-container"><div class="marketing-list-autoresponders-list"><div class="AutorespondersListView ListView ModelView ConfigurableMetadataView MetadataView"><form id="marketing-list-autoresponder-configuration-form" action="/zurmo/app/index.php/marketingLists/default/details?id=1" method="post">
+<div style="display:none"><input type="hidden" value="c6596366fead89feb99c2cc5db27b0041f14c087" name="YII_CSRF_TOKEN" /></div><div class="list-view-items-summary-clone"></div></form><div class="cgrid-view type-marketingLists" id="list-viewAutorespondersPortletView">
+<div class="items-wrapper"><table class="items stacked-list">
+<tbody>
+<tr><td colspan="2" class="empty"><div class="general-issue-notice no-autoresponders-found"><span class="icon-notice"></span><p>No autoresponders created</p></div></td></tr>
+</tbody>
+</table></div><div class="pager horizontal"><ul id="yw2" class="yiiPager"><li class="refresh hidden"><a href="/zurmo/app/index.php/marketingLists/defaultPortlet/details?id=1&amp;portletId=3">refresh</a></li></ul></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/marketingLists/default/details?id=1"></div>
+</div>
+</div></div></div></div>
+</div>
+</li>
+<li class="juiportlet-widget CampaignsForMarketingListRelatedListView type-campaigns" id="MarketingListDetailsAndRelationsViewLeftBottomView_4">
+<div class="juiportlet-widget-head">
+<h3>Campaigns</h3><div class="view-toolbar-container clearfix"><div class="portlet-toolbar"><a id="CreateFromRelatedListLinkActionElement--yt14" href="/ZurmoBajakan/public/marketing/marketing/createcampaign"><span class="z-label">Create</span></a></div></div>
+</div>
+<div class="juiportlet-widget-content"  >
+<div class="CampaignsForMarketingListRelatedListView CampaignsRelatedListView SecuredRelatedListView RelatedListView ListView ModelView ConfigurableMetadataView MetadataView"><div class="cgrid-view type-campaigns" id="list-viewMarketingListDetailsAndRelationsViewLeftBottomView_4">
+
+<table class="items stacked-list">
+<tbody>
+<tr class="odd"><td>
+<div><a href="/zurmo/app/index.php/campaigns/default/details?id=1">10% discount for new clients</a></div></td>
+<td>
+<div><ul class="options-menu edit-row-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span></span></a>
+<ul>
+<li id="EditLinkActionElement" class="last"><a id="EditLinkActionElement-1-yt12" href="/zurmo/app/index.php/campaigns/default/edit?id=1&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2FmarketingLists%2Fdefault%2Fdetails%3Fid%3D1"><span>Edit</span></a></li>
+</ul>
+</li>
+</ul></div></td>
+</tr>
+<tr class="even"><td>
+<div><a href="/zurmo/app/index.php/campaigns/default/details?id=2">5% discount for existing clients</a></div></td>
+<td>
+<div><ul class="options-menu edit-row-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span></span></a>
+<ul>
+<li id="EditLinkActionElement" class="last"><a id="EditLinkActionElement-2-yt13" href="/zurmo/app/index.php/campaigns/default/edit?id=2&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2FmarketingLists%2Fdefault%2Fdetails%3Fid%3D1"><span>Edit</span></a></li>
+</ul>
+</li>
+</ul></div></td>
+</tr>
+</tbody>
+</table>
+<div class="pager horizontal"><ul id="yw3" class="yiiPager"><li class="refresh hidden"><a href="/zurmo/app/index.php/marketingLists/defaultPortlet/details?id=1&amp;portletId=4&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2FmarketingLists%2Fdefault%2Fdetails%3Fid%3D1">refresh</a></li></ul></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/marketingLists/default/details?id=1"><span>1</span><span>2</span></div>
+</div>
+</div>
+</div>
+</li>
+<li class="juiportlet-widget MarketingListOverallMetricsView type-marketingLists" id="MarketingListDetailsAndRelationsViewLeftBottomView_5">
+<div class="juiportlet-widget-head">
+<h3>List Dashboard</h3><ul class="options-menu edit-portlet-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span></span></a>
+<ul>
+<li class="last"><a class="edit" id="MarketingListDetailsAndRelationsViewLeftBottomView_5_EditLink" href="#"><span>Configure Portlet</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="juiportlet-widget-content"  >
+<div id="MarketingListOverallMetricsView" class="MarketingMetricsView ConfigurableMetadataView MetadataView"><div class="left-column full-width metrics-details marketing-list-metrics-container"><h3>What is going on with this list?</h3><div>10/27/13 - 11/26/13</div><form id="marketing-metrics-group-by-configuration-form-MarketingListDetailsAndRelationsViewLeftBottomView_5" action="/zurmo/app/index.php/marketingLists/default/details?id=1" method="post">
+<div style="display:none"><input type="hidden" value="c6596366fead89feb99c2cc5db27b0041f14c087" name="YII_CSRF_TOKEN" /></div><div id="marketing-metrics-group-by-configuration-form-MarketingListDetailsAndRelationsViewLeftBottomView_5_groupBy_area" class="mini-pillbox"><th><label for="ytMarketingOverallMetricsForm_groupBy">Group By</label></th><td colspan="1"><input type="hidden" value="" name="marketingMetricsGroupByNotUsedName" id="marketingMetricsGroupByNotUsedName" /><div class="pills"><a data-value="Day" class="marketing-metrics-group-by-configuration-form-MarketingListDetailsAndRelationsViewLeftBottomView_5marketingMetricsGroupByLink" href="#">Day</a><a data-value="Week" class="marketing-metrics-group-by-configuration-form-MarketingListDetailsAndRelationsViewLeftBottomView_5marketingMetricsGroupByLink active" href="#">Week</a><a data-value="Month" class="marketing-metrics-group-by-configuration-form-MarketingListDetailsAndRelationsViewLeftBottomView_5marketingMetricsGroupByLink" href="#">Month</a></div></td></div></form></div><div class="graph-container clearfix"><div class="third marketing-graph"><h3>Overall List Performance</h3><div id='chartContainerMarketingListDetailsAndRelationsViewLeftBottomView_5OverallListPerformance' style='width: 100%; height: 400px;'></div></div><div class="third marketing-graph"><h3>Emails in this List</h3><div id='chartContainerMarketingListDetailsAndRelationsViewLeftBottomView_5EmailsInThisList' style='width: 100%; height: 400px;'></div></div><div class="third marketing-graph"><h3>List Growth</h3><div id='chartContainerMarketingListDetailsAndRelationsViewLeftBottomView_5ListGrowth' style='width: 100%; height: 400px;'></div></div></div></div>
+</div>
+</li>
+</ul>
+</div></div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+jQuery('body').on('click','#MarketingListDeleteLinkActionElement-1-yt2',function(){return confirm('Are you sure you want to delete this marketing list?');});
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+
+                function toggleSelectContactOrReportByRadioButtonId(radioButtonIdSuffix)
+                {
+                    var selectContactBoxId  = "#select-contact-or-lead-search-box";
+                    var selectReportBoxId   = "#select-report-search-box";
+                    var hideBoxId           = selectReportBoxId;
+                    var showBoxId           = selectContactBoxId;
+                    if (radioButtonIdSuffix === undefined)
+                    {
+                        var radioButtonIdSuffix = 0;
+                    }
+                    else
+                    {
+                        var radioButtonIdSuffix = radioButtonIdSuffix;
+                    }
+                    var radioButtonId       = "#MarketingListMemberSelectForm_selectContactOrReportRadioButton_" + radioButtonIdSuffix;
+                    if ($(radioButtonId).attr("checked") !== "checked")
+                    {
+                        $(radioButtonId).attr("checked", "checked");
+                    }
+                    if (radioButtonIdSuffix == 1)
+                    {
+                        showBoxId = selectReportBoxId;
+                        hideBoxId = selectContactBoxId;
+                    }
+                    $(hideBoxId).hide();
+                    $(showBoxId).show();
+                }
+                toggleSelectContactOrReportByRadioButtonId(); // call it on page load to ensure proper radio buttons checked and divs shown
+                $(".selectContactOrReportRadioButton").unbind("change.action").bind("change.action", function(event)
+                    {
+                        radioButtonId       = ($(this)).attr("id");
+                        selectContactOrReportRadioButtonSuffix = radioButtonId.charAt(radioButtonId.length - 1);
+                        toggleSelectContactOrReportByRadioButtonId(selectContactOrReportRadioButtonSuffix);
+                    }
+                );
+            
+function subscribeContactsToMarketingListcontact (object, event, itemId, page, subscribedCount, skippedCount) {
+                            var searchBox           = object;
+                            var listGridViewId      = "list-viewMarketingListMembersPortletView";
+                            var notificationBarId   = "FlashMessageBar";
+                            var radioButtonClass    = "selectContactOrReportRadioButton";
+                            var url                 = "/zurmo/app/index.php/marketingLists/defaultPortlet/subscribeContacts";
+                            var modelId             = "1";
+                            var selectType          = "contact";
+                            var disableTextBox      = "1";
+                            var disableRadioButton  = "1";
+                            var event               = event;
+                            var itemId              = itemId;
+                            var page                = page;
+                            var subscribedCount     = subscribedCount;
+                            var skippedCount        = skippedCount;
+                            $.ajax(
+                                {
+                                    url:        url,
+                                    dataType:   "json",
+                                    data:       {
+                                                    marketingListId: modelId,
+                                                    id: itemId,
+                                                    type: selectType,
+                                                    page: page,
+                                                    subscribedCount: subscribedCount,
+                                                    skippedCount: skippedCount
+                                                },
+                                    beforeSend: function(request, settings)
+                                                {
+                                                    $(searchBox).makeSmallLoadingSpinner(listGridViewId);
+-                                                   $("#" + listGridViewId).addClass("loading");
+                                                    if (disableTextBox == true)
+                                                    {
+                                                        $(searchBox).attr("disabled", "disabled");
+                                                    }
+                                                    if (disableRadioButton == true)
+                                                    {
+                                                        $("." + radioButtonClass).attr("disabled", "disabled");
+                                                    }
+                                                },
+                                    success:    function(data, status, request)
+                                                {
+                                                    refreshMembersListGridView();
+                                                    updateFlashBar(data, notificationBarId);
+                                                    //todo: this is only a check if reporting.
+                                                    if (data.nextPage)
+                                                    {
+                                                        subscribeContactsToMarketingListcontact
+                                                            (object, event, itemId, data.nextPage, data.subscribedCount, data.skippedCount);
+                                                    }
+                                                },
+                                    error:      function(request, status, error)
+                                                {
+                                                    var data = {   "message" : "There was an error processing your request",
+                                                                    "type"    : "error"
+                                                                };
+                                                    updateFlashBar(data, notificationBarId);
+                                                },
+                                    complete:   function(request, status)
+                                                {
+                                                    $(searchBox).removeAttr("disabled");
+                                                    $(searchBox).val("");
+                                                    $("." + radioButtonClass).removeAttr("disabled");
+                                                    $("#" + listGridViewId).removeClass("loading");
+                                                    event.preventDefault();
+                                                    return false;
+                                                }
+                                }
+                            );
+                        }
+
+                    function updateFlashBar(data, flashBarId)
+                    {
+                        $("#" + flashBarId).jnotifyAddMessage(
+                        {
+                            text: data.message,
+                            permanent: true,
+                            showIcon: true,
+                            type: data.type,
+                            removeExisting: true
+                        });
+                    }
+                
+jQuery('#MarketingListMemberSelectForm_selectContactOrLeadSearchBox').autocomplete({'autoFill':false,'select': function(event, ui)
+                    {
+                        subscribeContactsToMarketingListcontact ($(this), event, ui.item.id, 1, 0, 0)
+                    },'search':function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true,  $(this).parent()) },'open':function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, $(this).parent()) },'close':function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, $(this).parent()) },'response':function(event, ui)
+                    {
+                        if (ui.content.length < 1)
+                        {
+                            $(this).makeOrRemoveTogglableSpinner(false, $(this).parent());
+                        }
+                    },'source':'/zurmo/app/index.php/contacts/variableContactState/autoCompleteAllContacts'});
+
+                    $('#MarketingListMemberSelectForm_selectContactOrLeadSearchBox-select-link').off();
+                    $('#MarketingListMemberSelectForm_selectContactOrLeadSearchBox-transfer').change(function(event){
+                        subscribeContactsToMarketingListcontact ($(this), event, $(this).val(), 1, 0, 0);
+                    });
+                
+$('body').on('click', '#MarketingListMemberSelectForm_selectContactOrLeadSearchBox-select-link', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'From Contacts/Leads',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/contacts/variableContactState/modalListAllContacts?modalTransferInformation%5BsourceIdFieldId%5D=MarketingListMemberSelectForm_selectContactOrLeadSearchBox-transfer&modalTransferInformation%5BsourceNameFieldId%5D=MarketingListMemberSelectForm_selectContactOrLeadSearchBox&modalTransferInformation%5BmodalId%5D=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+function subscribeContactsToMarketingListreport (object, event, itemId, page, subscribedCount, skippedCount) {
+                            var searchBox           = object;
+                            var listGridViewId      = "list-viewMarketingListMembersPortletView";
+                            var notificationBarId   = "FlashMessageBar";
+                            var radioButtonClass    = "selectContactOrReportRadioButton";
+                            var url                 = "/zurmo/app/index.php/marketingLists/defaultPortlet/subscribeContacts";
+                            var modelId             = "1";
+                            var selectType          = "report";
+                            var disableTextBox      = "1";
+                            var disableRadioButton  = "1";
+                            var event               = event;
+                            var itemId              = itemId;
+                            var page                = page;
+                            var subscribedCount     = subscribedCount;
+                            var skippedCount        = skippedCount;
+                            $.ajax(
+                                {
+                                    url:        url,
+                                    dataType:   "json",
+                                    data:       {
+                                                    marketingListId: modelId,
+                                                    id: itemId,
+                                                    type: selectType,
+                                                    page: page,
+                                                    subscribedCount: subscribedCount,
+                                                    skippedCount: skippedCount
+                                                },
+                                    beforeSend: function(request, settings)
+                                                {
+                                                    $(searchBox).makeSmallLoadingSpinner(listGridViewId);
+-                                                   $("#" + listGridViewId).addClass("loading");
+                                                    if (disableTextBox == true)
+                                                    {
+                                                        $(searchBox).attr("disabled", "disabled");
+                                                    }
+                                                    if (disableRadioButton == true)
+                                                    {
+                                                        $("." + radioButtonClass).attr("disabled", "disabled");
+                                                    }
+                                                },
+                                    success:    function(data, status, request)
+                                                {
+                                                    refreshMembersListGridView();
+                                                    updateFlashBar(data, notificationBarId);
+                                                    //todo: this is only a check if reporting.
+                                                    if (data.nextPage)
+                                                    {
+                                                        subscribeContactsToMarketingListreport
+                                                            (object, event, itemId, data.nextPage, data.subscribedCount, data.skippedCount);
+                                                    }
+                                                },
+                                    error:      function(request, status, error)
+                                                {
+                                                    var data = {   "message" : "There was an error processing your request",
+                                                                    "type"    : "error"
+                                                                };
+                                                    updateFlashBar(data, notificationBarId);
+                                                },
+                                    complete:   function(request, status)
+                                                {
+                                                    $(searchBox).removeAttr("disabled");
+                                                    $(searchBox).val("");
+                                                    $("." + radioButtonClass).removeAttr("disabled");
+                                                    $("#" + listGridViewId).removeClass("loading");
+                                                    event.preventDefault();
+                                                    return false;
+                                                }
+                                }
+                            );
+                        }
+jQuery('#MarketingListMemberSelectForm_selectReportSearchBox').autocomplete({'autoFill':false,'select': function(event, ui)
+                    {
+                        subscribeContactsToMarketingListreport ($(this), event, ui.item.id, 1, 0, 0)
+                    },'search':function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true,  $(this).parent()) },'open':function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, $(this).parent()) },'close':function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, $(this).parent()) },'response':function(event, ui)
+                    {
+                        if (ui.content.length < 1)
+                        {
+                            $(this).makeOrRemoveTogglableSpinner(false, $(this).parent());
+                        }
+                    },'source':'/zurmo/app/index.php/reports/default/autoComplete?moduleClassName=ContactsModule&type=RowsAndColumns'});
+
+                    $('#MarketingListMemberSelectForm_selectReportSearchBox-select-link').off();
+                    $('#MarketingListMemberSelectForm_selectReportSearchBox-transfer').change(function(event){
+                        subscribeContactsToMarketingListreport ($(this), event, $(this).val(), 1, 0, 0);
+                    });
+                
+$('body').on('click', '#MarketingListMemberSelectForm_selectReportSearchBox-select-link', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'From Report',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/reports/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=MarketingListMemberSelectForm_selectReportSearchBox-transfer&modalTransferInformation%5BsourceNameFieldId%5D=MarketingListMemberSelectForm_selectReportSearchBox&modalTransferInformation%5BmodalId%5D=modalContainer&stateMetadataAdapterClassName=ContactsAndLeadsMarketingListsStateMetadataAdapter','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+$('.close-flyout').click(function()
+                        {
+                            parent = $(this).parentsUntil('div.clickable-dividedmenu').parent();
+                            parent.removeClass('nav-open');
+                            return false;
+                        });
+
+                        function massActionMenuActionElementEventHandler(elementType, gridId, baseUrl, actionId, pageVarName)
+                        {
+                            selectAll = '';
+                            if (elementType == 1)
+                            {
+                                if ($('#' + gridId + '-selectedIds').val() == '')
+                                {
+                                    alert('You must select at least one record');
+                                    $(this).val('');
+                                    return false;
+                                }
+                            }
+                            else
+                            {
+                                selectAll = 1;
+                            }
+                            var options =
+                            {
+                                url     : $.fn.yiiGridView.getUrl(gridId),
+                                baseUrl : baseUrl
+                            }
+                            if (options.url.split( '?' ).length == 2)
+                            {
+                                options.url = options.baseUrl + '/' + actionId + '?' + options.url.split( '?' )[1];
+                            }
+                            else
+                            {
+                                options.url = options.baseUrl + '/' + actionId;
+                            }
+                            if (elementType == 1)
+                            {
+                                addListViewSelectedIdsToUrl(gridId, options);
+                            }
+                            var data = '' + actionId + '=' + '&selectAll=' + selectAll + '&ajax=&' + pageVarName + '=1';
+                            url = $.param.querystring(options.url, data);
+                            url += '&redirectUrl=/zurmo/app/index.php/marketingLists/default/details?id=1';
+                            window.location.href = url;
+                            return false;
+                        }
+                
+$('#list-viewMarketingListMembersPortletView-massSubscribeAll').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(0, 'list-viewMarketingListMembersPortletView', '/zurmo/app/index.php/marketingLists/member', 'massSubscribe', 'MarketingListMembersPortletView_page')
+                                }
+                            );
+$('#list-viewMarketingListMembersPortletView-massSubscribeSelected').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(1, 'list-viewMarketingListMembersPortletView', '/zurmo/app/index.php/marketingLists/member', 'massSubscribe', 'MarketingListMembersPortletView_page')
+                                }
+                            );
+$('#list-viewMarketingListMembersPortletView-massUnsubscribeAll').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(0, 'list-viewMarketingListMembersPortletView', '/zurmo/app/index.php/marketingLists/member', 'massUnsubscribe', 'MarketingListMembersPortletView_page')
+                                }
+                            );
+$('#list-viewMarketingListMembersPortletView-massUnsubscribeSelected').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(1, 'list-viewMarketingListMembersPortletView', '/zurmo/app/index.php/marketingLists/member', 'massUnsubscribe', 'MarketingListMembersPortletView_page')
+                                }
+                            );
+$('#list-viewMarketingListMembersPortletView-deleteMassActionAll').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(0, 'list-viewMarketingListMembersPortletView', '/zurmo/app/index.php/marketingLists/member', 'massDelete', 'MarketingListMembersPortletView_page')
+                                }
+                            );
+$('#list-viewMarketingListMembersPortletView-deleteMassActionSelected').unbind('click.action').bind('click.action', function()
+                                {
+                                    massActionMenuActionElementEventHandler(1, 'list-viewMarketingListMembersPortletView', '/zurmo/app/index.php/marketingLists/member', 'massDelete', 'MarketingListMembersPortletView_page')
+                                }
+                            );
+
+                    $(this).createButtonSetIfNotAlreadyExist('#MarketingListMembersConfigurationForm_filteredBySubscriptionType_area');
+                    $('#MarketingListMembersConfigurationForm_filteredBySubscriptionType_area').unbind('change.action').bind('change.action', function(event)
+                        {
+                            jQuery.ajax({'type':'GET','data':$("#marketing-list-member-configuration-form").serialize(),'url':$.param.querystring("/zurmo/app/index.php/marketingLists/defaultPortlet/details?id=1&portletId=2&uniqueLayoutId=MarketingListDetailsAndRelationsViewLeftBottomView_2", "MarketingListMembersPortletView_page=1"),'beforeSend':function(){$(this).makeSmallLoadingSpinner("list-viewMarketingListMembersPortletView"); $("#marketing-list-member-configuration-form").parent().children(".cgrid-view").addClass("loading");},'complete':function()
+                        {
+                                            $("#marketing-list-member-configuration-form").parent().children(".cgrid-view").removeClass("loading");
+                                            $("#filter-portlet-model-bar-MarketingListMembersPortletView").show();
+                        },'cache':false,'success':function(html){jQuery("#MarketingListMembersPortletView").html(html)}});
+                        }
+                    );
+                
+
+                $('#MarketingListMembersConfigurationForm_filteredBySearchTerm_area').unbind('change.action').bind('change.action', function(event)
+                    {
+                        jQuery.ajax({'type':'GET','data':$("#marketing-list-member-configuration-form").serialize(),'url':$.param.querystring("/zurmo/app/index.php/marketingLists/defaultPortlet/details?id=1&portletId=2&uniqueLayoutId=MarketingListDetailsAndRelationsViewLeftBottomView_2", "MarketingListMembersPortletView_page=1"),'beforeSend':function(){$(this).makeSmallLoadingSpinner("list-viewMarketingListMembersPortletView"); $("#marketing-list-member-configuration-form").parent().children(".cgrid-view").addClass("loading");},'complete':function()
+                        {
+                                            $("#marketing-list-member-configuration-form").parent().children(".cgrid-view").removeClass("loading");
+                                            $("#filter-portlet-model-bar-MarketingListMembersPortletView").show();
+                        },'cache':false,'success':function(html){jQuery("#MarketingListMembersPortletView").html(html)}});
+                    }
+                );
+                $('#MarketingListMembersConfigurationForm_filteredBySearchTerm_area').unbind('keypress.action').bind('keypress.action', function(event)
+                    {
+                        if (event.which == 13)
+                        {
+                            jQuery.ajax({'type':'GET','data':$("#marketing-list-member-configuration-form").serialize(),'url':$.param.querystring("/zurmo/app/index.php/marketingLists/defaultPortlet/details?id=1&portletId=2&uniqueLayoutId=MarketingListDetailsAndRelationsViewLeftBottomView_2", "MarketingListMembersPortletView_page=1"),'beforeSend':function(){$(this).makeSmallLoadingSpinner("list-viewMarketingListMembersPortletView"); $("#marketing-list-member-configuration-form").parent().children(".cgrid-view").addClass("loading");},'complete':function()
+                        {
+                                            $("#marketing-list-member-configuration-form").parent().children(".cgrid-view").removeClass("loading");
+                                            $("#filter-portlet-model-bar-MarketingListMembersPortletView").show();
+                        },'cache':false,'success':function(html){jQuery("#MarketingListMembersPortletView").html(html)}});
+                            return false;
+                        }
+                    }
+                );
+                
+jQuery('#list-viewMarketingListMembersPortletView-rowSelector_all').live('click', function()
+{
+    var checked = this.checked;
+
+    //custom checkbox style
+    if (this.checked){
+        jQuery(this).parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery(this).parent().removeClass('c_on');
+    }
+
+    jQuery("input[name='list-viewMarketingListMembersPortletView-rowSelector\[\]']").each(function()
+    {
+        this.checked = checked;
+        updateListViewSelectedIds('list-viewMarketingListMembersPortletView', $(this).val(), checked);
+
+        //custom checkbox style
+        if (this.checked){
+            jQuery(this).parent().addClass('c_on');
+        }
+        else
+        {
+            jQuery(this).parent().removeClass('c_on');
+        }
+    });
+});
+jQuery("input[name='list-viewMarketingListMembersPortletView-rowSelector\[\]']").live('click', function()
+{
+    jQuery('#list-viewMarketingListMembersPortletView-rowSelector_all').attr( 'checked', jQuery("input[name='list-viewMarketingListMembersPortletView-rowSelector\[\]']").length == jQuery("input[name='list-viewMarketingListMembersPortletView-rowSelector\[\]']:checked").length);
+    updateListViewSelectedIds('list-viewMarketingListMembersPortletView', $(this).val(), $(this).attr('checked'));
+
+    //custom checkbox style
+    if ( jQuery('#list-viewMarketingListMembersPortletView-rowSelector_all').attr( 'checked') === 'checked' ){
+        jQuery('#list-viewMarketingListMembersPortletView-rowSelector_all').parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery('#list-viewMarketingListMembersPortletView-rowSelector_all').parent().removeClass('c_on');
+    }
+    if ( this.checked )
+    {
+        jQuery(this).parent().addClass('c_on');
+    }
+    else
+    {
+        jQuery(this).parent().removeClass('c_on');
+    }
+});
+jQuery('#list-viewMarketingListMembersPortletView').yiiGridView({'ajaxUpdate':['list-viewMarketingListMembersPortletView'],'ajaxVar':'ajax','pagerClass':'pager horizontal','loadingClass':'loading','filterClass':'filters','tableClass':'items','selectableRows':2,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'MarketingListMembersPortletView_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); addListViewSelectedIdsToUrl(id, options); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                        var $data = $(data);
+                        jQuery.globalEval($data.filter("script").last().text());
+                    }});
+
+                processListViewSummaryClone("list-viewMarketingListMembersPortletView", "summary", "list-viewMarketingListMembersPortletView-summary-clone");
+            
+
+                    $("a.marketing-list-member-actions-link").unbind("click.action").bind("click.action", function(event)
+                        {
+                            linkUrl     = $(this).attr("href");
+                            linkId      = $(this).attr("id");
+                            refreshGrid = false;
+                            if (linkId.indexOf("delete") !== -1 && !$(this).onAjaxSubmitRelatedListAction("Are you sure you want to unlink this record?", "list-viewMarketingListMembersPortletView"))
+                            {
+                                refreshMembersListGridView();
+                            }
+                            else
+                            {
+                                $.ajax({
+                                    "error"     : function(xhr, textStatus, errorThrown)
+                                                    {
+                                                        alert("There was an error processing your request");
+                                                    },
+                                    "success"   : function()
+                                                    {
+                                                        refreshMembersListGridView();
+                                                    },
+                                    "url"       : linkUrl,
+                                    "cache"	    : false
+                                });
+                            }
+                            event.preventDefault();
+                            return false;
+                        }
+                    );
+                
+
+                    function updateMemberStats(newCount, oldContent, elementClass)
+                    {
+                        countStrippedOldContent = oldContent.substr(oldContent.indexOf(" "));
+                        $(elementClass).html(newCount + countStrippedOldContent);
+                    }
+
+                    $("#list-viewMarketingListMembersPortletView .pager .refresh a").unbind("click.dynamicMemberCountUpdate").bind("click.dynamicMemberCountUpdate", function (event)
+                    {
+                        var modelId                 = "1";
+                        var subscriberCountClass    = ".marketing-list-subscribers-stats";
+                        var unsubscriberCountClass  = ".marketing-list-unsubscribers-stats";
+                        var subscriberHtml          = $(subscriberCountClass).html();
+                        var unsubscriberHtml        = $(unsubscriberCountClass).html();
+                        var url                     = "/zurmo/app/index.php/marketingLists/defaultPortlet/countMembers";
+                        $.ajax(
+                                {
+                                    url:        url,
+                                    dataType:   "json",
+                                    data:       { marketingListId: modelId },
+                                    success:    function(data, status, request) {
+                                                    updateMemberStats(data.subscriberCount, subscriberHtml, subscriberCountClass);
+                                                    updateMemberStats(data.unsubscriberCount, unsubscriberHtml, unsubscriberCountClass);
+                                                },
+                                    error:      function(request, status, error) {
+                                                    // TODO: @Shoaibi/@Jason: Low: What should we do here?
+                                                },
+                                }
+                            );
+                        });
+                    
+
+                function refreshMembersListGridView()
+                {
+                    $("#list-viewMarketingListMembersPortletView .pager .refresh a").click();
+                }
+jQuery('#list-viewAutorespondersPortletView').yiiGridView({'ajaxUpdate':['list-viewAutorespondersPortletView'],'ajaxVar':'ajax','pagerClass':'pager horizontal','loadingClass':'loading','filterClass':'filters','tableClass':'items stacked-list','selectableRows':0,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'AutorespondersPortletView_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                        var $data = $(data);
+                        jQuery.globalEval($data.filter("script").last().text());
+                    }});
+
+                processListViewSummaryClone("list-viewAutorespondersPortletView", "summary", "list-viewAutorespondersPortletView-summary-clone");
+            
+jQuery('#list-viewMarketingListDetailsAndRelationsViewLeftBottomView_4').yiiGridView({'ajaxUpdate':['list-viewMarketingListDetailsAndRelationsViewLeftBottomView_4'],'ajaxVar':'ajax','pagerClass':'pager horizontal','loadingClass':'loading','filterClass':'filters','tableClass':'items','selectableRows':0,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'Campaign_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                    }});
+
+            $('.marketing-metrics-group-by-configuration-form-MarketingListDetailsAndRelationsViewLeftBottomView_5marketingMetricsGroupByLink').click(function()
+                {
+                    jQuery.ajax({'type':'POST','data':$("#marketing-metrics-group-by-configuration-form-MarketingListDetailsAndRelationsViewLeftBottomView_5").serialize() + '&MarketingOverallMetricsForm[groupBy]=' + $(this).data("value"),'url':'/zurmo/app/index.php/home/defaultPortlet/modalConfigSave?id=1&portletId=5&uniqueLayoutId=MarketingListDetailsAndRelationsViewLeftBottomView&portletParams%5BrelationModuleId%5D=marketingLists&portletParams%5BrelationModelId%5D=1','beforeSend':function(){$(this).makeSmallLoadingSpinner(true, ".graph-container");
+                                $("#MarketingDashboardView").addClass("loading");},'complete':function(XMLHttpRequest, textStatus){juiPortlets.refresh();},'cache':false,'success':function(html){jQuery("#MarketingListDetailsAndRelationsViewLeftBottomView_5").html(html)}});
+                    return false;
+                }
+            );
+            
+var chartData_MarketingListDetailsAndRelationsViewLeftBottomView_5OverallListPerformance = [{'uniqueClickThroughRate':0,'uniqueOpenRate':0,'displayLabel':'Oct 21','dateBalloonLabel':'Week of Oct 21'},{'uniqueClickThroughRate':0,'uniqueOpenRate':0,'displayLabel':'Oct 28','dateBalloonLabel':'Week of Oct 28'},{'uniqueClickThroughRate':0,'uniqueOpenRate':0,'displayLabel':'Nov 4','dateBalloonLabel':'Week of Nov 4'},{'uniqueClickThroughRate':0,'uniqueOpenRate':0,'displayLabel':'Nov 11','dateBalloonLabel':'Week of Nov 11'},{'uniqueClickThroughRate':0,'uniqueOpenRate':0,'displayLabel':'Nov 18','dateBalloonLabel':'Week of Nov 18'},{'uniqueClickThroughRate':0,'uniqueOpenRate':0,'displayLabel':'Nov 25','dateBalloonLabel':'Week of Nov 25'}]; $(document).ready(function () {     
+                        var chart           = new AmCharts.AmSerialChart();
+                        chart.dataProvider  = chartData_MarketingListDetailsAndRelationsViewLeftBottomView_5OverallListPerformance;
+                        chart.categoryField = 'displayLabel';
+                chart.fontFamily = "Arial";chart.color = '#545454';chart.lineColor = "#545454";chart.colors = ["#6C8092", "#933140", "#447799", "#44BBCC", "#4A3970", "#91A1DC",
+                                   "#ABBC42", "#C70151", "#8C1C03", "#A67417", "#BDBF7E", "#FFAA07",
+                                   "#274F73", "#D92949", "#29A649", "#46201C", "#D92525", "#7AA61B",
+                                   "#F28B0C", "#8F6181", "#605F53", "#65818C", "#E96151", "#366774",
+                                   "#70995C", "#592519", "#33664D", "#142933", "#F2E530", "#D94625"];chart.usePrefixes = 1;var graph0        = new AmCharts.AmGraph();
+                                     window.g1              = graph0;
+                                     graph0.valueField = 'uniqueClickThroughRate';
+                                     graph0.type       = 'column';graph0.type = 'line';graph0.bullet = 'round';graph0.colorField = 'color';graph0.lineAlpha = 1;graph0.title = 'Unique CTR';graph0.balloonText = 'CTR: [[value]]%';chart.addGraph(graph0);var graph1        = new AmCharts.AmGraph();
+                                     window.g1              = graph1;
+                                     graph1.valueField = 'uniqueOpenRate';
+                                     graph1.type       = 'column';graph1.type = 'line';graph1.bullet = 'round';graph1.colorField = 'color';graph1.lineAlpha = 1;graph1.title = 'Unique Open Rate';graph1.balloonText = 'Open Rate: [[value]]%';chart.addGraph(graph1);var categoryAxis = chart.categoryAxis;categoryAxis.title = '';categoryAxis.unitPosition = 'left';categoryAxis.unit = '';categoryAxis.usePrefixes = 1;categoryAxis.inside = 0;categoryAxis.dashLength = 2;categoryAxis.gridAlpha = 0;categoryAxis.autoGridCount = 'false';var valueAxis = new AmCharts.ValueAxis();valueAxis.maximum = 100;valueAxis.axisColor = "#545454";valueAxis.gridColor = "#545454";valueAxis.title = '';valueAxis.unitPosition = 'left';valueAxis.unit = '';valueAxis.usePrefixes = 1;valueAxis.minimum = 0;valueAxis.dashLength = 2;chart.addValueAxis(valueAxis);var legend = new AmCharts.AmLegend();legend.borderAlpha = 0.2;legend.valueWidth = 0;legend.horizontalGap = 10;chart.addLegend(legend);chart.write('chartContainerMarketingListDetailsAndRelationsViewLeftBottomView_5OverallListPerformance');
+                     });
+var chartData_MarketingListDetailsAndRelationsViewLeftBottomView_5EmailsInThisList = [{'queued':0,'sent':0,'uniqueClicks':0,'uniqueOpens':0,'bounced':0,'optedOut':0,'displayLabel':'Oct 21','dateBalloonLabel':'Week of Oct 21'},{'queued':0,'sent':0,'uniqueClicks':0,'uniqueOpens':0,'bounced':0,'optedOut':0,'displayLabel':'Oct 28','dateBalloonLabel':'Week of Oct 28'},{'queued':0,'sent':0,'uniqueClicks':0,'uniqueOpens':0,'bounced':0,'optedOut':0,'displayLabel':'Nov 4','dateBalloonLabel':'Week of Nov 4'},{'queued':0,'sent':0,'uniqueClicks':0,'uniqueOpens':0,'bounced':0,'optedOut':0,'displayLabel':'Nov 11','dateBalloonLabel':'Week of Nov 11'},{'queued':0,'sent':0,'uniqueClicks':0,'uniqueOpens':0,'bounced':0,'optedOut':0,'displayLabel':'Nov 18','dateBalloonLabel':'Week of Nov 18'},{'queued':0,'sent':0,'uniqueClicks':0,'uniqueOpens':0,'bounced':0,'optedOut':0,'displayLabel':'Nov 25','dateBalloonLabel':'Week of Nov 25'}]; $(document).ready(function () {     
+                        var chart           = new AmCharts.AmSerialChart();
+                        chart.dataProvider  = chartData_MarketingListDetailsAndRelationsViewLeftBottomView_5EmailsInThisList;
+                        chart.categoryField = 'displayLabel';
+                chart.fontFamily = "Arial";chart.color = '#545454';chart.lineColor = "#545454";chart.colors = ["#6C8092", "#933140", "#447799", "#44BBCC", "#4A3970", "#91A1DC",
+                                   "#ABBC42", "#C70151", "#8C1C03", "#A67417", "#BDBF7E", "#FFAA07",
+                                   "#274F73", "#D92949", "#29A649", "#46201C", "#D92525", "#7AA61B",
+                                   "#F28B0C", "#8F6181", "#605F53", "#65818C", "#E96151", "#366774",
+                                   "#70995C", "#592519", "#33664D", "#142933", "#F2E530", "#D94625"];chart.usePrefixes = 1;chart.plotAreaBorderColor = '#000000';chart.plotAreaBorderAlpha = 0;var graph0        = new AmCharts.AmGraph();
+                                     window.g1              = graph0;
+                                     graph0.valueField = 'queued';
+                                     graph0.type       = 'column';graph0.balloonText = '[[category]]: [[value]]';graph0.fillAlphas = 1;graph0.cornerRadiusTop = 0;graph0.cornerRadiusBottom = 0;graph0.lineAlpha = 0;graph0.colorField = 'color';graph0.labelText = '[[value]]';graph0.title = 'Queued';graph0.balloonText = 'Queued: [[value]]';chart.addGraph(graph0);var graph1        = new AmCharts.AmGraph();
+                                     window.g1              = graph1;
+                                     graph1.valueField = 'sent';
+                                     graph1.type       = 'column';graph1.balloonText = '[[category]]: [[value]]';graph1.fillAlphas = 1;graph1.cornerRadiusTop = 0;graph1.cornerRadiusBottom = 0;graph1.lineAlpha = 0;graph1.colorField = 'color';graph1.labelText = '[[value]]';graph1.title = 'Sent';graph1.balloonText = 'Sent: [[value]]';chart.addGraph(graph1);var graph2        = new AmCharts.AmGraph();
+                                     window.g1              = graph2;
+                                     graph2.valueField = 'uniqueOpens';
+                                     graph2.type       = 'column';graph2.balloonText = '[[category]]: [[value]]';graph2.fillAlphas = 1;graph2.cornerRadiusTop = 0;graph2.cornerRadiusBottom = 0;graph2.lineAlpha = 0;graph2.colorField = 'color';graph2.labelText = '[[value]]';graph2.title = 'Opened';graph2.balloonText = 'Opened: [[value]]';chart.addGraph(graph2);var graph3        = new AmCharts.AmGraph();
+                                     window.g1              = graph3;
+                                     graph3.valueField = 'uniqueClicks';
+                                     graph3.type       = 'column';graph3.balloonText = '[[category]]: [[value]]';graph3.fillAlphas = 1;graph3.cornerRadiusTop = 0;graph3.cornerRadiusBottom = 0;graph3.lineAlpha = 0;graph3.colorField = 'color';graph3.labelText = '[[value]]';graph3.title = 'Clicked';graph3.balloonText = 'Clicked: [[value]]';chart.addGraph(graph3);var graph4        = new AmCharts.AmGraph();
+                                     window.g1              = graph4;
+                                     graph4.valueField = 'bounced';
+                                     graph4.type       = 'column';graph4.balloonText = '[[category]]: [[value]]';graph4.fillAlphas = 1;graph4.cornerRadiusTop = 0;graph4.cornerRadiusBottom = 0;graph4.lineAlpha = 0;graph4.colorField = 'color';graph4.labelText = '[[value]]';graph4.title = 'Bounced';graph4.balloonText = 'Bounced: [[value]]';chart.addGraph(graph4);var graph5        = new AmCharts.AmGraph();
+                                     window.g1              = graph5;
+                                     graph5.valueField = 'optedOut';
+                                     graph5.type       = 'column';graph5.balloonText = '[[category]]: [[value]]';graph5.fillAlphas = 1;graph5.cornerRadiusTop = 0;graph5.cornerRadiusBottom = 0;graph5.lineAlpha = 0;graph5.colorField = 'color';graph5.labelText = '[[value]]';graph5.title = 'Unsubscribed';graph5.balloonText = 'Unsubscribed: [[value]]';chart.addGraph(graph5);var categoryAxis = chart.categoryAxis;categoryAxis.inside = 0;categoryAxis.title = '';categoryAxis.unitPosition = 'left';categoryAxis.unit = '';categoryAxis.usePrefixes = 1;categoryAxis.dashLength = 2;categoryAxis.gridAlpha = 0;categoryAxis.autoGridCount = 'false';var valueAxis = new AmCharts.ValueAxis();valueAxis.axisColor = "#545454";valueAxis.gridColor = "#545454";valueAxis.minimum = 0;valueAxis.dashLength = 2;valueAxis.stackType = 'regular';valueAxis.title = '';valueAxis.unitPosition = 'left';valueAxis.unit = '';valueAxis.usePrefixes = 1;chart.addValueAxis(valueAxis);var legend = new AmCharts.AmLegend();legend.borderAlpha = 0.2;legend.valueWidth = 0;legend.horizontalGap = 10;chart.addLegend(legend);chart.write('chartContainerMarketingListDetailsAndRelationsViewLeftBottomView_5EmailsInThisList');
+                     });
+var chartData_MarketingListDetailsAndRelationsViewLeftBottomView_5ListGrowth = [{'newSubscribersCount':0,'existingSubscribersCount':0,'displayLabel':'Oct 21','dateBalloonLabel':'Week of Oct 21'},{'newSubscribersCount':0,'existingSubscribersCount':0,'displayLabel':'Oct 28','dateBalloonLabel':'Week of Oct 28'},{'newSubscribersCount':0,'existingSubscribersCount':0,'displayLabel':'Nov 4','dateBalloonLabel':'Week of Nov 4'},{'newSubscribersCount':0,'existingSubscribersCount':0,'displayLabel':'Nov 11','dateBalloonLabel':'Week of Nov 11'},{'newSubscribersCount':0,'existingSubscribersCount':0,'displayLabel':'Nov 18','dateBalloonLabel':'Week of Nov 18'},{'newSubscribersCount':'1','existingSubscribersCount':'0','displayLabel':'Nov 25','dateBalloonLabel':'Week of Nov 25'}]; $(document).ready(function () {     
+                        var chart           = new AmCharts.AmSerialChart();
+                        chart.dataProvider  = chartData_MarketingListDetailsAndRelationsViewLeftBottomView_5ListGrowth;
+                        chart.categoryField = 'displayLabel';
+                chart.fontFamily = "Arial";chart.color = '#545454';chart.lineColor = "#545454";chart.colors = ["#6C8092", "#933140", "#447799", "#44BBCC", "#4A3970", "#91A1DC",
+                                   "#ABBC42", "#C70151", "#8C1C03", "#A67417", "#BDBF7E", "#FFAA07",
+                                   "#274F73", "#D92949", "#29A649", "#46201C", "#D92525", "#7AA61B",
+                                   "#F28B0C", "#8F6181", "#605F53", "#65818C", "#E96151", "#366774",
+                                   "#70995C", "#592519", "#33664D", "#142933", "#F2E530", "#D94625"];chart.usePrefixes = 1;chart.plotAreaBorderColor = '#000000';chart.plotAreaBorderAlpha = 0;var graph0        = new AmCharts.AmGraph();
+                                     window.g1              = graph0;
+                                     graph0.valueField = 'existingSubscribersCount';
+                                     graph0.type       = 'column';graph0.balloonText = '[[category]]: [[value]]';graph0.fillAlphas = 1;graph0.cornerRadiusTop = 0;graph0.cornerRadiusBottom = 0;graph0.lineAlpha = 0;graph0.colorField = 'color';graph0.labelText = '[[value]]';graph0.title = 'Existing Subscribers';graph0.balloonText = '[[dateBalloonLabel]]<br>Existing Subscribers: [[value]]';chart.addGraph(graph0);var graph1        = new AmCharts.AmGraph();
+                                     window.g1              = graph1;
+                                     graph1.valueField = 'newSubscribersCount';
+                                     graph1.type       = 'column';graph1.balloonText = '[[category]]: [[value]]';graph1.fillAlphas = 1;graph1.cornerRadiusTop = 0;graph1.cornerRadiusBottom = 0;graph1.lineAlpha = 0;graph1.colorField = 'color';graph1.labelText = '[[value]]';graph1.title = 'New Subscribers';graph1.balloonText = '[[dateBalloonLabel]]<br>New Subscribers: [[value]]';chart.addGraph(graph1);var categoryAxis = chart.categoryAxis;categoryAxis.inside = 0;categoryAxis.title = '';categoryAxis.unitPosition = 'left';categoryAxis.unit = '';categoryAxis.usePrefixes = 1;categoryAxis.dashLength = 2;categoryAxis.gridAlpha = 0;categoryAxis.autoGridCount = 'false';var valueAxis = new AmCharts.ValueAxis();valueAxis.axisColor = "#545454";valueAxis.gridColor = "#545454";valueAxis.minimum = 0;valueAxis.dashLength = 2;valueAxis.stackType = 'regular';valueAxis.title = '';valueAxis.unitPosition = 'left';valueAxis.unit = '';valueAxis.usePrefixes = 1;chart.addValueAxis(valueAxis);var legend = new AmCharts.AmLegend();legend.borderAlpha = 0.2;legend.valueWidth = 0;legend.horizontalGap = 10;chart.addLegend(legend);chart.write('chartContainerMarketingListDetailsAndRelationsViewLeftBottomView_5ListGrowth');
+                     });
+juiPortlets.init('MarketingListDetailsAndRelationsViewLeftBottomView','marketingLists', '/zurmo/app/index.php/marketingLists/defaultPortlet/SaveLayout', 'YII_CSRF_TOKEN', 'c6596366fead89feb99c2cc5db27b0041f14c087', '.juiportlet-columns-MarketingListDetailsAndRelationsViewLeftBottomView', '', '', 'This portlet will be removed, ok?');
+$('body').on('click', '#MarketingListDetailsAndRelationsViewLeftBottomView_5_EditLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Edit Portlet',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/marketingLists/defaultPortlet/ModalConfigEdit?uniqueLayoutId=MarketingListDetailsAndRelationsViewLeftBottomView&portletId=5&portletParams%5BrelationModuleId%5D=marketingLists&portletParams%5BrelationModelId%5D=1','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+});
+/*]]>*/
+</script>
+</body>

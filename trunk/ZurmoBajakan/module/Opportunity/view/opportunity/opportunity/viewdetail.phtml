@@ -1,0 +1,994 @@
+
+<!DOCTYPE html><!--[if IE 8]><html class="zurmo ie8" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="zurmo" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes" /><link rel="apple-touch-icon" sizes="144x144" href="/zurmo/app/themes/default/images/touch-icon-iphone4.png" /><style>@font-face{font-family: 'zurmo_gamification_symbly_rRg';src: url('/zurmo/app/assets/bcd37c44/zurmogamificationsymblyregular-regular-webfont.eot');src: url('/zurmo/app/assets/bcd37c44/zurmogamificationsymblyregular-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/zurmo/app/assets/bcd37c44/zurmogamificationsymblyregular-regular-webfont.woff') format('woff'), url('/zurmo/app/assets/bcd37c44/zurmogamificationsymblyregular-regular-webfont.ttf') format('truetype'), url('/zurmo/app/assets/bcd37c44/zurmogamificationsymblyregular-regular-webfont.svg#zurmo_gamification_symbly_rRg') format('svg');font-weight: normal;font-style: normal;unicode-range: U+00-FFFF;}</style><link rel="shortcut icon" href="/zurmo/app/themes/default/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/themes/default/css/keyframes.css" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/index.php/min/serve/g/css/lm/1384275748" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/assets/1d266a4d/jquery-ui-timepicker-addon.css" />
+<script type="text/javascript" src="/zurmo/app/index.php/min/serve/g/js/lm/1384275740"></script>
+<script type="text/javascript" src="/zurmo/app/assets/b5433bec/ZurmoDialog.js"></script>
+<script type="text/javascript" src="/zurmo/app/assets/b5433bec/mobile-interactions.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+            var desktopNotifications =
+            {
+                notify:function(image, title, body)
+                {
+                    
+                    return false;
+                },
+                isSupported:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        return true
+                    }
+                    else
+                    {
+                        return false
+                    }
+                },
+                requestAutorization:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        if (window.webkitNotifications.checkPermission() == 1)
+                        {
+                            window.webkitNotifications.requestPermission();
+                        }
+                        else if (window.webkitNotifications.checkPermission() == 2)
+                        {
+                            alert('You have blocked desktop notifications for this browser.');
+                        }
+                        else
+                        {
+                            alert('You have already activated desktop notifications for Chrome');
+                        }
+                    }
+                    else
+                    {
+                        alert('This is only available in Chrome.');
+                    }
+                }
+            };
+            
+$(document).ready(function()
+{
+    $('#FlashMessageBar').jnotifyInizialize(
+    {
+        oneAtTime: false,
+        appendType: 'append'
+    }
+    );
+}
+);
+/*]]>*/
+</script>
+<title>ZurmoCRM - Opportunities</title></head><body class="blue"><div id="OpportunitiesPageView" class="ZurmoDefaultPageView ZurmoPageView PageView"><div id="ZurmoDefaultView"><div class="GridView"><div id="HeaderView"><!-- Start of themes/default/templates/HeaderView.xhtml --><div id="MainLogo" class="zurmo-logo"></div>
+<div class="GridView"><div id="HeaderLinksView"><div class="clearfix"><a href="#" id="nav-trigger" title="Toggle Navigation">&rsaquo;</a><div id="corp-logo"><a href="/zurmo/app/index.php/home/default"><img src="/zurmo/app/themes/default/images/Zurmo_logo.png" alt="Zurmo Logo" height="32" width="107" /></a><span>Demo Company Inc.</span></div><div id="user-toolbar" class="clearfix"><div id="header-game-dashboard-link-wrapper" class="user-menu-item"><a id="header-game-dashboard-link" href="#">∂</a></div><ul id="user-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>super</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/users/default/profile"><span>My Profile</span></a></li>
+<li><a href="/zurmo/app/index.php/gamification/default/leaderboard"><span>Leaderboard</span></a></li>
+<li><a href="/zurmo/app/index.php/emailMessages/default/matchingList"><span>Data Cleanup</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/logout"><span>Sign out</span></a></li>
+</ul>
+</li>
+</ul><ul id="settings-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Administration</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/configuration"><span>Administration</span></a></li>
+<li><a href="/zurmo/app/index.php/designer/default"><span>Designer</span></a></li>
+<li><a href="/zurmo/app/index.php/import/default"><span>Import</span></a></li>
+<li><a href="/zurmo/app/index.php/users/default"><span>Users</span></a></li>
+<li><a href="http://www.zurmo.com/needSupport.php"><span>Need Support?</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/about"><span>About Zurmo</span></a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="GridView"><div id="GlobalSearchAndShortcutsCreateMenuView"><div id="app-search" class="clearfix"><select class="ignore-style" id="globalSearchScope" multiple="multiple" style="display:none;" size="4" name="globalSearchScope[]">
+<option value="All" selected="selected">All</option>
+<option value="accounts">Accounts</option>
+<option value="contacts">Contacts</option>
+<option value="leads">Leads</option>
+<option value="opportunities">Opportunities</option>
+</select><input class="global-search global-search-hint" onfocus="$(this).removeClass(&quot;global-search-hint&quot;); $(this).val(&quot;&quot;);" onblur="$(this).val(&quot;&quot;)" id="globalSearchInput" type="text" value="Search by name, phone, or e-mail" name="globalSearchInput" /><span class="z-spinner"></span></div><ul id="ShortcutsMenu" class="nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/accounts/default/create"><span>Account</span></a></li>
+<li><a href="/zurmo/app/index.php/contacts/default/create"><span>Contact</span></a></li>
+<li><a href="/zurmo/app/index.php/conversations/default/create"><span>Conversation</span></a></li>
+<li><a href="/zurmo/app/index.php/leads/default/create"><span>Lead</span></a></li>
+<li><a href="/zurmo/app/index.php/missions/default/create"><span>Mission</span></a></li>
+<li><a href="/zurmo/app/index.php/opportunities/default/create"><span>Opportunity</span></a></li>
+<li><a href="/zurmo/app/index.php/reports/default/selectType"><span>Report</span></a></li>
+<li class="last"><a href="#" id="yt0"><span>Task</span></a></li>
+</ul>
+</li>
+</ul></div></div></div>
+
+
+
+<!-- End of themes/default/templates/HeaderView.xhtml --></div><div class="AppContainer clearfix GridView"><div class="AppNavigation clearfix GridView"><div id="MenuView"><ul class="nav">
+<li id="home"><a href="/zurmo/app/index.php/home/default"><span></span><em></em><span>Home</span></a></li>
+<li id="mashableInbox"><a href="/zurmo/app/index.php/mashableInbox/default"><span></span><em></em><span>Inbox<span class="unread-inbox-count">8</span></span></a></li>
+<li id="accounts"><a href="/zurmo/app/index.php/accounts/default"><span></span><em></em><span>Accounts</span></a></li>
+<li id="leads"><a href="/zurmo/app/index.php/leads/default"><span></span><em></em><span>Leads</span></a></li>
+<li id="contacts"><a href="/zurmo/app/index.php/contacts/default"><span></span><em></em><span>Contacts</span></a></li>
+<li id="opportunities" class="active"><a href="/zurmo/app/index.php/opportunities/default"><span></span><em></em><span>Opportunities</span></a></li>
+<li id="marketing" class="hidden-nav-item"><a href="/zurmo/app/index.php/marketing/default/dashboardDetails"><span></span><em></em><span>Marketing</span></a></li>
+<li id="projects" class="hidden-nav-item"><a href="/zurmo/app/index.php/projects/default/dashboardDetails"><span></span><em></em><span>Projects</span></a></li>
+<li id="products" class="hidden-nav-item"><a href="/zurmo/app/index.php/products/default"><span></span><em></em><span>Products</span></a></li>
+<li id="reports" class="hidden-nav-item last"><a href="/zurmo/app/index.php/reports/default"><span></span><em></em><span>Reports</span></a></li>
+</ul><a class="toggle-hidden-nav-items"></a></div><div id="RecentlyViewedView"><h3>Recently Viewed</h3><ul class="nav">
+<li class="type-OpportunitiesModule last"><a href="/zurmo/app/index.php/opportunities/default/details?id=11"><span></span><em></em><span>Consulting Services</span></a></li>
+</ul></div></div><div class="AppContent GridView"><div id="StickyDetailsAndRelationsBreadCrumbView" class="BreadCrumbView"><div class="breadcrumbs">
+<a href="/zurmo/app/index.php/opportunities/default/index">Opportunities</a> &#47; <span>Consulting Services</span></div><div id="stickyListLoadingArea"><span class="loading"></span></div></div><div id="OpportunityDetailsAndRelationsView" class="ConfigurableDetailsAndRelationsView DetailsAndRelationsView ConfigurableMetadataView MetadataView"><div class="view-toolbar-container widgets-lock clearfix "><nav class="pillbox clearfix"><div class="default-button"><a title="View as Kanban Board" href="/zurmo/app/index.php/opportunities/default/details?id=11&amp;kanbanBoard=1"><i class="icon-kanban-board-view-type"><span>Kanban</span></i></a></div><div class="default-button active"><a title="View as Details" href="/zurmo/app/index.php/opportunities/default/details?id=11&amp;kanbanBoard="><i class="icon-grid-view-type active"><span>Details</span></i></a></div><nav class="default-button"><a title="Unlock to edit this screen&#039;s layout" href="/zurmo/app/index.php/opportunities/default/details?id=11&amp;lockPortlets="><i class="icon-lock"><!--Unlock--></i></a></nav></nav></div><div class="ModelRelationsSecuredPortletFrameView SecuredPortletFrameView PortletFrameView MetadataView"><div class="juiportlet-columns"> 
+<ul class="juiportlet-columns-OpportunityDetailsAndRelationsView juiportlet-widget-column1 juiportlet-column juiportlet-column-split-left-75">
+<li class="juiportlet-widget OpportunityDetailsPortletView type-opportunities" id="OpportunityDetailsAndRelationsView_1">
+<div class="juiportlet-widget-head">
+<h3>Consulting Services<a class="icon-star unstarred" id="star-Opportunity-11" href="#">w</a></h3><div class="view-toolbar-container toolbar-mbmenu clearfix"><div class="view-toolbar"><ul class="options-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Options</span></a>
+<ul>
+<li id="EditLinkActionElement"><a id="EditLinkActionElement-11-yt3" href="/ZurmoBajakan/public/opportunity/opportunity/editopportunity"><span>Edit</span></a></li>
+
+<li><a id="CopyLinkActionElement-11-yt5" href="/ZurmoBajakan/public/opportunity/opportunity/cloneopportunity"><span>Clone</span></a></li>
+<li class="last"><a id="OpportunityDeleteLinkActionElement-11-yt6" href="/zurmo/app/index.php/opportunities/default/delete?id=11"><span>Delete</span></a></li>
+</ul>
+</li>
+</ul></div></div>
+</div>
+<div class="juiportlet-widget-content"  >
+<div id="OpportunityDetailsPortletView" class="OpportunityEditAndDetailsView SecuredEditAndDetailsView EditAndDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="details-table"><div class="left-column full-width"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th>Name</th><td colspan="1">Consulting Services</td></tr><tr><th>Amount</th><td colspan="1">$193,000.00</td></tr><tr><th>Account</th><td colspan="1"><a href="/zurmo/app/index.php/accounts/default/details?id=5">St. Anky Beer</a></td></tr><tr><th>Close Date</th><td colspan="1">12/24/13</td></tr><tr><th>Stage</th><td colspan="1">Negotiating</td></tr><tr><th>Probability</th><td colspan="1">50%</td></tr><tr><th>Source</th><td colspan="1">Word of Mouth</td></tr><tr><th>Description</th><td colspan="1"></td></tr></tbody></table></div><p class="after-form-details-content">Last Modified 11/25/13 7:18 PM&#160;by&#160;Super User&#160;|&#160;Created On 11/25/13 7:17 PM&#160;by&#160;Super User&#160;|&#160;Owner <a href="/zurmo/app/index.php/users/default/details?id=10">Sam Smith</a>&#160;|&#160;Who can read and write Owner</p></div></div></div>
+</div>
+</li>
+<li class="juiportlet-widget NoteInlineEditForPortletView type-notes" id="OpportunityDetailsAndRelationsView_2">
+<div class="juiportlet-widget-head">
+<h3>Notes</h3>
+</div>
+<div class="juiportlet-widget-content"  >
+<div id="NoteInlineEditForPortletView" class="InlineEditForPortletView ConfigurableMetadataView MetadataView"><div class="NoteInlineEditView InlineEditView EditView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wide form"><form id="inline-edit-form" action="/zurmo/app/index.php/notes/default/inlineCreateSave?redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2FdefaultPortlet%2Fdetails%3Fid%3D11%26stickyOffset%3D0%26portletId%3D2%26uniqueLayoutId%3DOpportunityDetailsAndRelationsView_2" method="post">
+<div style="display:none"><input type="hidden" value="3a494af6956666c752fc7c885c945f0c519c2c52" name="YII_CSRF_TOKEN" /></div><div class="left-column full-width"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /></colgroup><tbody><tr><td colspan="1"><textarea id="Note_description" name="Note[description]" rows="6" cols="50"></textarea><div class="errorMessage" id="Note_description_em_" style="display:none"></div></td></tr><tr><td  colspan = "1"><a class="more-panels-link" id="show-more-panels-link-yt7" href="yt7">More Options</a><a class="more-panels-link" id="show-less-panels-link-yt7" style="display:none;" href="yt7">Fewer Options</a></td></tr></tbody></table></div><div class="panel more-view-panel-yt7" style="display:none;"><table class="form-fields"><colgroup><col class="col-0" /></colgroup><tbody><tr><td colspan="1"><div class="file-upload-box"><div id="fileUploadNote"><div class="fileupload-buttonbar clearfix"><div class="addfileinput-button"><span>Y</span><strong class="add-label">Add Files</strong><input id="Note_files" type="file" name="Note_files" /></div></div><div class="fileupload-content"><table class="files"><tbody></tbody></table></div></div><script id="template-upload" type="text/x-jquery-tmpl">
+    <tr class="template-upload{{if error}} ui-state-error{{/if}}">
+        <td class="name">
+            <span class="z-spinner"></span>
+            ${name} <span class="file-size">(${sizef})</span>
+            {{if error}}
+                <span class="upload-error">${error}</span>
+            {{else}}
+                <span class="upload-actions cancel">
+                    <button class="cancel" title="Cancel"><span>Cancel</span></button>
+                </span>
+            {{/if}}
+        </td>
+    </tr>
+</script><script id="template-download" type="text/x-jquery-tmpl">
+    <tr class="template-download{{if error}} ui-state-error{{/if}}">
+        {{if error}}
+            <td class="error" colspan="4">${error}</td>
+        {{else}}
+            <td class="name">
+                ${name} <span class="file-size">(${size})</span>
+                <span class="upload-actions delete">
+                    <button class="icon-delete" title="Remove" data-url="/zurmo/app/index.php/zurmo/fileModel/delete?id=${id}"><span><!--Delete--><span></button>
+                </span>
+                <input name="filesIds[]" type="hidden" value="${id}"/>
+            </td>
+        {{/if}}
+    </tr>
+</script></div></td></tr><tr><td colspan="1"><label for="Note_occurredOnDateTime">Occurred On</label><br/><div class="has-date-select"><input id="Note_occurredOnDateTime" name="Note[occurredOnDateTime]" style="position:relative;z-index:10000;" type="text" value="11/27/2013 5:17 AM" /></div><div class="errorMessage" id="Note_occurredOnDateTime_em_" style="display:none"></div></td></tr><tr><td>
+<label for="ActivityItemForm_Account_id">Account</label><br/><input name="ActivityItemForm[Account][id]" id="ActivityItemForm_Account_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;ActivityItemForm_Account_id&#039;);" id="ActivityItemForm_Account_name" type="text" value="" name="ActivityItemForm_Account_name" /><a id="ActivityItemForm_Account_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div><div class="errorMessage" id="ActivityItemForm_Account_em_" style="display:none"></div></td></tr>
+<tr><td>
+<label for="ActivityItemForm_Contact_id">Contact or Lead</label><br/><input name="ActivityItemForm[Contact][id]" id="ActivityItemForm_Contact_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;ActivityItemForm_Contact_id&#039;);" id="ActivityItemForm_Contact_name" type="text" value="" name="ActivityItemForm_Contact_name" /><a id="ActivityItemForm_Contact_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div><div class="errorMessage" id="ActivityItemForm_Contact_em_" style="display:none"></div></td></tr>
+<tr><td>
+<label for="ActivityItemForm_Opportunity_id">Opportunity</label><br/><input name="ActivityItemForm[Opportunity][id]" id="ActivityItemForm_Opportunity_id" value="11" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;ActivityItemForm_Opportunity_id&#039;);" id="ActivityItemForm_Opportunity_name" type="text" value="Consulting Services" name="ActivityItemForm_Opportunity_name" /><a id="ActivityItemForm_Opportunity_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div><div class="errorMessage" id="ActivityItemForm_Opportunity_em_" style="display:none"></div></td></tr>
+<tr><td colspan="1"><div class="permissions-box"><label>Who can read and write</label><br/><div class="radio-input"><input id="Note_explicitReadWriteModelPermissions_type_0" value="" type="radio" name="Note[explicitReadWriteModelPermissions][type]" /><label for="Note_explicitReadWriteModelPermissions_type_0">Owner</label></div><div class="radio-input"><input id="Note_explicitReadWriteModelPermissions_type_1" value="2" type="radio" name="Note[explicitReadWriteModelPermissions][type]" /><label for="Note_explicitReadWriteModelPermissions_type_1">Owner and users in</label>&#160;<div class="hasDropDown"><span class="select-arrow"></span><select id="Note_explicitReadWriteModelPermissions_nonEveryoneGroup" onclick="document.getElementById(&quot;Note_explicitReadWriteModelPermissions_type_1&quot;).checked=&quot;checked&quot;;" name="Note[explicitReadWriteModelPermissions][nonEveryoneGroup]">
+<option value="3">East</option>
+<option value="5">East Channel Sales</option>
+<option value="7">East Direct Sales</option>
+<option value="4">West</option>
+<option value="6">West Channel Sales</option>
+<option value="8">West Direct Sales</option>
+</select></div></div><div class="radio-input"><input id="Note_explicitReadWriteModelPermissions_type_2" value="1" checked="checked" type="radio" name="Note[explicitReadWriteModelPermissions][type]" /><label for="Note_explicitReadWriteModelPermissions_type_2">Everyone</label></div></div></td></tr></tbody></table></div></div><div class="view-toolbar-container clearfix"><div class="form-toolbar clearfix"><a id="save" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Save</span></a><div class="post-to-profile clearfix"><span>Post to Profile</span><span id="post-to-profile-note-tooltip" class="tooltip" title="Post this note to your profile to share with your colleagues">?</span><label class="hasCheckBox"><input type="checkbox" value="1" name="postToProfile" id="postToProfile" /></label></div></div></div></form><div id="modalContainer-inline-edit-form"></div></div></div></div>
+</div>
+</li>
+<li class="juiportlet-widget OpportunityLatestActivitiesForPortletView type-activities" id="OpportunityDetailsAndRelationsView_3">
+<div class="juiportlet-widget-head">
+<h3>Latest Activities</h3><div class="view-toolbar-container toolbar-mbmenu clearfix"><div class="view-toolbar"><ul class="options-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li class="last"><a id="CreateConversationFromRelatedListLinkActionElement--yt14" href="/zurmo/app/index.php/conversations/default/createFromRelation?relationAttributeName=notUsed&amp;relationModelClassName=Opportunity&amp;relationModelId=11&amp;relationModuleId=opportunities&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0"><span>Conversation</span></a></li>
+</ul>
+</li>
+</ul></div></div>
+</div>
+<div class="juiportlet-widget-content"  >
+<div id="OpportunityLatestActivitiesForPortletView" class="LatestActivitiesForPortletView ConfigurableMetadataView MetadataView"><div class="LatestActivitiesForOpportunityListView LatestActivitiesListView ListView ModelView ConfigurableMetadataView MetadataView"><form id="latest-activity-configuration-form" action="/zurmo/app/index.php/opportunities/default/details?id=11&amp;stickyOffset=0" method="post">
+<div style="display:none"><input type="hidden" value="3a494af6956666c752fc7c885c945f0c519c2c52" name="YII_CSRF_TOKEN" /></div><div class="horizontal-line latest-activity-toolbar"><div id="LatestActivitiesConfigurationForm_ownedByFilter_area"><strong>View</strong>:<input id="ytLatestActivitiesConfigurationForm_ownedByFilter" type="hidden" value="" name="LatestActivitiesConfigurationForm[ownedByFilter]" /><input id="LatestActivitiesConfigurationForm_ownedByFilter_0" value="user" type="radio" name="LatestActivitiesConfigurationForm[ownedByFilter]" /><label for="LatestActivitiesConfigurationForm_ownedByFilter_0">Mine</label><input id="LatestActivitiesConfigurationForm_ownedByFilter_1" value="all" checked="checked" type="radio" name="LatestActivitiesConfigurationForm[ownedByFilter]" /><label for="LatestActivitiesConfigurationForm_ownedByFilter_1">Everyone</label></div><div id="LatestActivitiesConfigurationForm_rollup_area">Roll Up:<span id="activities-rollup-tooltip" class="tooltip" title="Turn roll up on to see activities from related records.">?</span><input id="ytLatestActivitiesConfigurationForm_rollup" type="hidden" value="" name="LatestActivitiesConfigurationForm[rollup]" /><input id="LatestActivitiesConfigurationForm_rollup_0" value="" checked="checked" type="radio" name="LatestActivitiesConfigurationForm[rollup]" /><label for="LatestActivitiesConfigurationForm_rollup_0">Off</label><input id="LatestActivitiesConfigurationForm_rollup_1" value="1" type="radio" name="LatestActivitiesConfigurationForm[rollup]" /><label for="LatestActivitiesConfigurationForm_rollup_1">On</label></div><a id="filter-latest-activities-link" href="#">Filters</a></div>
+<div id="filter-portlet-model-bar-OpportunityLatestActivitiesForPortletView" class="filter-portlet-model-bar" style="display:none"><div id="LatestActivitiesConfigurationForm_filteredByModelName_area"><input id="ytLatestActivitiesConfigurationForm_filteredByModelName" type="hidden" value="" name="LatestActivitiesConfigurationForm[filteredByModelName]" /><input id="LatestActivitiesConfigurationForm_filteredByModelName_0" value="all" checked="checked" type="radio" name="LatestActivitiesConfigurationForm[filteredByModelName]" /><label for="LatestActivitiesConfigurationForm_filteredByModelName_0">All Activities</label><input id="LatestActivitiesConfigurationForm_filteredByModelName_1" value="Conversation" type="radio" name="LatestActivitiesConfigurationForm[filteredByModelName]" /><label for="LatestActivitiesConfigurationForm_filteredByModelName_1">Conversations</label><input id="LatestActivitiesConfigurationForm_filteredByModelName_2" value="EmailMessage" type="radio" name="LatestActivitiesConfigurationForm[filteredByModelName]" /><label for="LatestActivitiesConfigurationForm_filteredByModelName_2">Emails</label><input id="LatestActivitiesConfigurationForm_filteredByModelName_3" value="Meeting" type="radio" name="LatestActivitiesConfigurationForm[filteredByModelName]" /><label for="LatestActivitiesConfigurationForm_filteredByModelName_3">Meetings</label><input id="LatestActivitiesConfigurationForm_filteredByModelName_4" value="Note" type="radio" name="LatestActivitiesConfigurationForm[filteredByModelName]" /><label for="LatestActivitiesConfigurationForm_filteredByModelName_4">Notes</label><input id="LatestActivitiesConfigurationForm_filteredByModelName_5" value="Task" type="radio" name="LatestActivitiesConfigurationForm[filteredByModelName]" /><label for="LatestActivitiesConfigurationForm_filteredByModelName_5">Tasks</label></div></div>
+</form><div class="cgrid-view type-activities" id="list-viewOpportunityLatestActivitiesForPortletView">
+
+<table class="items">
+<tbody>
+<tr class="odd">
+<td><div class="activity-item"><em class="Meeting"></em><strong class="activity-date">November 24, 2013</strong><span><a id="DetailsLinkActionElement-32-yt8" href="/zurmo/app/index.php/meetings/default/details?id=32&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11">Discuss new pricing</a> </span><span class='less-pronounced-text'>owned by Sam Smith </span></div></td></tr>
+<tr class="even">
+<td><div class="activity-item"><em class="Meeting"></em><strong class="activity-date">November 19, 2013</strong><span><a id="DetailsLinkActionElement-33-yt10" href="/zurmo/app/index.php/meetings/default/details?id=33&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11">Project kick-off</a> </span><span class='less-pronounced-text'>owned by Sam Smith </span></div></td></tr>
+<tr class="odd">
+<td><div class="activity-item"><em class="Note"></em><strong class="activity-date">August 8, 2013</strong><span><a id="DetailsLinkActionElement-3-yt12" href="/zurmo/app/index.php/notes/default/details?id=3&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11">E-mail: Re: Follow up call.</a> </span><span class='less-pronounced-text'>by Sam Smith</span><span></span></div></td></tr>
+</tbody>
+</table>
+<div class="pager horizontal"><ul id="yw1" class="yiiPager"><li class="refresh hidden"><a href="/zurmo/app/index.php/opportunities/defaultPortlet/details?id=11&amp;stickyOffset=0&amp;portletId=3">refresh</a></li></ul></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/opportunities/default/details?id=11&amp;stickyOffset=0"><span>32</span><span>33</span><span>3</span></div>
+</div>
+</div></div>
+</div>
+</li>
+</ul>
+<ul class="juiportlet-columns-OpportunityDetailsAndRelationsView juiportlet-widget-column2 juiportlet-column juiportlet-column-split-right-25">
+<li class="juiportlet-widget UpcomingMeetingsForOpportunityCalendarView type-meetings" id="OpportunityDetailsAndRelationsView_4">
+<div class="juiportlet-widget-head">
+<h3>Upcoming Meetings</h3><div class="view-toolbar-container clearfix"><div class="portlet-toolbar"><a id="CreateFromRelatedListLinkActionElement--yt15" href="/zurmo/app/index.php/meetings/default/createFromRelation?relationAttributeName=Opportunity&amp;relationModelId=11&amp;relationModuleId=opportunities&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0"><span class="z-label">Create</span></a></div></div>
+</div>
+<div class="juiportlet-widget-content"  >
+<div id="UpcomingMeetingsForOpportunityCalendarView" class="UpcomingMeetingsRelatedCalendarView UpcomingMeetingsCalendarView CalendarView ModelView ConfigurableMetadataView MetadataView"><div id="calendarOpportunityDetailsAndRelationsView_4_container"></div><input id="calendarSelectedDateOpportunityDetailsAndRelationsView_4" style="display:none;" type="text" name="calendarSelectedDateOpportunityDetailsAndRelationsView_4" /></div>
+</div>
+</li>
+<li class="juiportlet-widget OpenTasksForOpportunityRelatedListView type-tasks" id="OpportunityDetailsAndRelationsView_5">
+<div class="juiportlet-widget-head">
+<h3>Open Tasks</h3><div class="view-toolbar-container clearfix"><div class="portlet-toolbar"><a id="CreateFromRelatedModalLinkActionElement--yt19" href="#"><span class="z-label">Create</span></a></div></div>
+</div>
+<div class="juiportlet-widget-content"  >
+<div class="OpenTasksForOpportunityRelatedListView OpenTasksRelatedListView SecuredRelatedListView RelatedListView ListView ModelView ConfigurableMetadataView MetadataView"><div class="cgrid-view type-tasks" id="list-viewOpportunityDetailsAndRelationsView_5">
+
+<table class="items stacked-list">
+<tbody>
+<tr class="odd"><td>
+<div class="checkbox-column"><label class="hasCheckBox"><input class="close-task-checkbox" onclick="closeOpenTaskByCheckBoxClick(&#039;closeTask10&#039;, &#039;10&#039;)" type="checkbox" value="1" name="closeTask10" id="closeTask10" /></label></div><div><a namespace="modalLink" class="task-kanban-detail-link" id="task-10" href="#">Make a proposal</a></div></td>
+<td>
+<div><ul class="options-menu edit-row-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span></span></a>
+<ul>
+<li><a id="EditModalLinkActionElement-10-yt16" href="#"><span>Edit</span></a></li>
+<li><a id="CopyModalLinkActionElement-10-yt17" href="#"><span>Clone</span></a></li>
+<li class="last"><a id="list-viewOpportunityDetailsAndRelationsView_5-delete-10" href="#"><span>Delete</span></a></li>
+</ul>
+</li>
+</ul></div></td>
+</tr>
+</tbody>
+</table>
+<div class="pager horizontal"><ul id="yw2" class="yiiPager"><li class="refresh hidden"><a href="/zurmo/app/index.php/opportunities/defaultPortlet/details?id=11&amp;stickyOffset=0&amp;portletId=5&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0">refresh</a></li></ul></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/opportunities/default/details?id=11&amp;stickyOffset=0"><span>10</span></div>
+</div>
+</div>
+</div>
+</li>
+<li class="juiportlet-widget ContactsForOpportunityRelatedListView type-contacts" id="OpportunityDetailsAndRelationsView_6">
+<div class="juiportlet-widget-head">
+<h3>Contacts</h3><div class="view-toolbar-container toolbar-mbmenu clearfix"><div class="view-toolbar"><ul class="options-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Options</span></a>
+<ul>
+<li><a id="CreateFromRelatedListLinkActionElement--yt24" href="/zurmo/app/index.php/contacts/default/createFromRelation?relationAttributeName=opportunities&amp;relationModelId=11&amp;relationModuleId=opportunities&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0"><span>Create</span></a></li>
+<li class="last"><a id="SelectContactsForOpportunityFromRelatedListLink" href="#"><span>Select</span></a></li>
+</ul>
+</li>
+</ul></div></div>
+</div>
+<div class="juiportlet-widget-content"  >
+<div class="ContactsForOpportunityRelatedListView ContactsRelatedListView SecuredRelatedListView RelatedListView ListView ModelView ConfigurableMetadataView MetadataView"><div class="cgrid-view type-contacts" id="list-viewOpportunityDetailsAndRelationsView_6">
+
+<table class="items stacked-list">
+<tbody>
+<tr class="odd"><td>
+<div><a href="/zurmo/app/index.php/contacts/default/details?id=12">Jose Davis</a></div><div><a href="/zurmo/app/index.php/accounts/default/details?id=5">St. Anky Beer</a></div><div class="phone">574-694-8898</div><div class="email"><a id="composeEmailLink-12" class="composeEmailLink" href="/zurmo/app/index.php/emailMessages/default/createEmailMessage?toAddress=Jose.Davis%40StAnkyBeer.com&amp;relatedId=12&amp;relatedModelClassName=Contact&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0">Jose.Davis@StAnkyBeer.com</a></div></td>
+<td>
+<div><ul class="options-menu edit-row-menu nav">
+<li class="parent last"><a href="javascript:void(0);"><span></span></a>
+<ul>
+<li id="EditLinkActionElement"><a id="EditLinkActionElement-12-yt20" href="/zurmo/app/index.php/contacts/default/edit?id=12&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0"><span>Edit</span></a></li>
+<li><a id="list-viewOpportunityDetailsAndRelationsView_6-createEmail-12" href="#"><span>Email</span></a></li>
+<li><a id="list-viewOpportunityDetailsAndRelationsView_6-delete-12" href="#"><span>Delete</span></a></li>
+<li class="last"><a id="list-viewOpportunityDetailsAndRelationsView_6-unlink-12" href="#"><span>Unlink</span></a></li>
+</ul>
+</li>
+</ul></div></td>
+</tr>
+</tbody>
+</table>
+<div class="pager horizontal"><ul id="yw3" class="yiiPager"><li class="refresh hidden"><a href="/zurmo/app/index.php/opportunities/defaultPortlet/details?id=11&amp;stickyOffset=0&amp;portletId=6&amp;redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0">refresh</a></li></ul></div><div class="list-preloader"><span class="z-spinner"></span></div><div class="keys" style="display:none" title="/zurmo/app/index.php/opportunities/default/details?id=11&amp;stickyOffset=0"><span>12</span></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+                       
+            jQuery.datepicker._gotoToday = function (id) {            
+                var inst = this._getInst($(id)[0]);
+                dp = inst.dpDiv;                                
+                var now = new Date();
+                jQuery.datepicker._base_gotoToday(id);
+                now.setMinutes(now.getMinutes()+(420)+now.getTimezoneOffset());
+                this._setTime(inst, now);     
+                $('.ui-datepicker-today', dp).click();
+            };            
+        
+
+                function clearIdFromAutoCompleteField(value, id)
+                {
+                    if (value == '')
+                    {
+                        $('#' + id).val('');
+                    }
+                }
+            
+
+                function closeOpenTaskByCheckBoxClick(checkboxId, modelId)
+                {
+                    if ($('#' + checkboxId).attr('checked') == 'checked')
+                    {
+                        $('#' + checkboxId).attr('disabled', true);
+                        $('#' + checkboxId).parent().addClass('c_on');
+                        $('#' + checkboxId).parent().addClass('disabled');
+                        $('#' + checkboxId).parentsUntil('tr').parent().children().css('text-decoration', 'line-through');
+                        $.ajax({
+                            url : '/zurmo/app/index.php/tasks/default/closeTask?id=' + modelId,
+                            type : 'GET',
+                            dataType : 'json',
+                            success : function(data)
+                            {
+                                //find if there is a latest activities portlet
+                                $('.LatestActivitiesForPortletView').each(function(){
+                                    $(this).find('.pager').find('.refresh').find('a').click();
+                                });
+                            },
+                            error : function()
+                            {
+                                //todo: error call
+                            }
+                        });
+                    }
+                }
+            
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+$(document).ready(function () { jQuery.ajax({'type':'GET','url':'/zurmo/app/index.php/opportunities/default/renderStickyListBreadCrumbContent?stickyKey=OpportunitiesSearchView&stickyOffset=0&stickyModelId=11','cache':false,'data':jQuery(this).parents("form").serialize(),'success':function(html){jQuery("#stickyListLoadingArea").html(html)}});});
+$('body').off('click.update', '#star-Opportunity-11'); $('body').on('click.update', '#star-Opportunity-11', function(){jQuery.ajax({'success':function(data){$('#star-Opportunity-11').removeClass().addClass(data)},'url':'/zurmo/app/index.php/zurmo/default/toggleStar?modelClassName=Opportunity&modelId=11','cache':false});return false;});
+$('body').on('click', '#AuditEventsModalListLinkActionElement-11-yt4', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#AuditEventsModalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#AuditEventsModalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#AuditEventsModalContainer').dialog({
+                    'title' : 'Audit Trail',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#AuditEventsModalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#AuditEventsModalContainer').parent().removeClass('openingModal');
+                                                     $('#AuditEventsModalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/opportunities/default/auditEventsModalList?id=11','cache':false,'success':function(html){jQuery("#AuditEventsModalContainer").html(html)}});return false;});
+jQuery('body').on('click','#OpportunityDeleteLinkActionElement-11-yt6',function(){return confirm('Are you sure you want to delete this opportunity?');});
+$(function () {
+    'use strict';
+
+    // Initialize the jQuery File Upload widget:
+    $('#fileUploadNote').fileupload({
+        dataType: 'json',
+        url: '/zurmo/app/index.php/zurmo/fileModel/upload?filesVariableName=Note_files',
+        autoUpload: true,
+        sequentialUploads: true,
+        maxFileSize: 1048576,
+        add: function (e, data) {
+            
+            
+            var that = $(this).data('fileupload');
+            that._adjustMaxNumberOfFiles(-data.files.length);
+            data.isAdjusted = true;
+            data.isValidated = that._validate(data.files);
+            data.context = that._renderUpload(data.files)
+                .appendTo($(this).find('.files')).fadeIn(function () {
+                    // Fix for IE7 and lower:
+                    $(this).show();
+                    $(this).makeOrRemoveTogglableSpinner(true, '#'+'fileUploadNote');
+                }).data('data', data);
+            if ((that.options.autoUpload || data.autoUpload) &&
+                    data.isValidated) {
+                data.jqXHR = data.submit();
+            }
+        }
+    });
+    // Open download dialogs via iframes,
+    // to prevent aborting current uploads:
+    $('#fileUploadNote .files a:not([target^=_blank])').live('click', function (e) {
+        e.preventDefault();
+        $('<iframe style="display:none;"></iframe>')
+            .prop('src', this.href)
+            .appendTo('body');
+    });
+    $('.fileupload-buttonbar').removeClass('ui-widget-header ui-corner-top');
+    $('.fileupload-content').removeClass('ui-widget-content ui-corner-bottom');
+    $('#fileUploadNote').bind('fileuploaddestroy', function (e, data) {
+            
+
+    });
+    $('#fileUploadNote').bind('fileuploadalways', function (e, data) {
+        if (data == undefined || data.result == undefined ||
+          ((data.result[0] != undefined && data.result[0].error != undefined) || data.result.error != undefined))
+        {
+            setTimeout(function () {
+               $('#inline-edit-form').find('.files > tbody').children(':last').fadeOut('slow', function() { $(this).remove();});
+               
+            }, 1000);
+        }
+    });
+    //load existing files
+    var existingFiles = [];
+    var fu = $('#fileUploadNote').data('fileupload');
+    fu._adjustMaxNumberOfFiles(-existingFiles.length);
+    fu._renderDownload(existingFiles)
+        .appendTo($('#fileUploadNote .files'))
+        .fadeIn(function () {
+            // Fix for IE7 and lower:
+            $(this).show();
+    });
+});
+
+jQuery('#Note_occurredOnDateTime').datetimepicker({'stepMinute':5,'timeText':'Time','hourText':'Hour','minuteText':'Minute','secondText':'Second','showOn':'both','buttonText':'<span><!--Date--><\/span>','buttonImageOnly':false,'timeFormat':'h:mm tt','dateFormat':'m/d/yy','currentText':'<span class=\"z-label\">Now<\/span>','closeText':'<span class=\"z-label\">Done<\/span>'});
+jQuery('#ActivityItemForm_Account_name').autocomplete({'select':function(event, ui){ jQuery("#ActivityItemForm_Account_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#ActivityItemForm_Account_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Account_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Account_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Account_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#ActivityItemForm_Account_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/accounts/default/autoComplete'});
+$('body').off('click.selectLink', '#ActivityItemForm_Account_SelectLink'); $('body').on('click.selectLink', '#ActivityItemForm_Account_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-inline-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-inline-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-inline-edit-form').dialog({
+                    'title' : 'Account Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-inline-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-inline-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-inline-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/accounts/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=ActivityItemForm_Account_id&modalTransferInformation%5BsourceNameFieldId%5D=ActivityItemForm_Account_name&modalTransferInformation%5BmodalId%5D=modalContainer-inline-edit-form&modalTransferInformation%5BsourceModelId%5D=','cache':false,'success':function(html){jQuery("#modalContainer-inline-edit-form").html(html)}});return false;});
+jQuery('#ActivityItemForm_Contact_name').autocomplete({'select':function(event, ui){ jQuery("#ActivityItemForm_Contact_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#ActivityItemForm_Contact_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Contact_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Contact_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Contact_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#ActivityItemForm_Contact_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/contacts/variableContactState/autoCompleteAllContacts'});
+$('body').off('click.selectLink', '#ActivityItemForm_Contact_SelectLink'); $('body').on('click.selectLink', '#ActivityItemForm_Contact_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-inline-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-inline-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-inline-edit-form').dialog({
+                    'title' : 'Contact Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-inline-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-inline-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-inline-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/contacts/variableContactState/modalListAllContacts?modalTransferInformation%5BsourceIdFieldId%5D=ActivityItemForm_Contact_id&modalTransferInformation%5BsourceNameFieldId%5D=ActivityItemForm_Contact_name&modalTransferInformation%5BmodalId%5D=modalContainer-inline-edit-form&modalTransferInformation%5BsourceModelId%5D=','cache':false,'success':function(html){jQuery("#modalContainer-inline-edit-form").html(html)}});return false;});
+jQuery('#ActivityItemForm_Opportunity_name').autocomplete({'select':function(event, ui){ jQuery("#ActivityItemForm_Opportunity_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#ActivityItemForm_Opportunity_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Opportunity_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Opportunity_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#ActivityItemForm_Opportunity_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#ActivityItemForm_Opportunity_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/opportunities/default/autoComplete'});
+$('body').off('click.selectLink', '#ActivityItemForm_Opportunity_SelectLink'); $('body').on('click.selectLink', '#ActivityItemForm_Opportunity_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-inline-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-inline-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-inline-edit-form').dialog({
+                    'title' : 'Opportunity Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-inline-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-inline-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-inline-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/opportunities/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=ActivityItemForm_Opportunity_id&modalTransferInformation%5BsourceNameFieldId%5D=ActivityItemForm_Opportunity_name&modalTransferInformation%5BmodalId%5D=modalContainer-inline-edit-form&modalTransferInformation%5BsourceModelId%5D=','cache':false,'success':function(html){jQuery("#modalContainer-inline-edit-form").html(html)}});return false;});
+
+                    $('#show-more-panels-link-yt7').click( function()
+                        {
+                            $('.more-view-panel-' + $(this).attr('href')).show();
+                            $('#show-more-panels-link-yt7').hide();
+                            $('#show-less-panels-link-yt7').show();
+                            return false;
+                        }
+                    );
+                    $('#show-less-panels-link-yt7').click( function()
+                        {
+                            $('.more-view-panel-' + $(this).attr('href')).hide();
+                            $('#show-more-panels-link-yt7').show();
+                            $('#show-less-panels-link-yt7').hide();
+                            return false;
+                        }
+                    );
+$("#post-to-profile-note-tooltip").qtip([]);
+$('#inline-edit-form').yiiactiveform({'validateOnSubmit':true,'validateOnChange':false,'beforeValidate':$(this).beforeValidateAction,'afterValidate':$(this).afterValidateAjaxAction,'afterValidateAjax':'jQuery.ajax({\'type\':\'POST\',\'data\':$(\"#inline-edit-form\").serialize(),\'url\':\'/zurmo/app/index.php/notes/default/inlineCreateSave?redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2FdefaultPortlet%2Fdetails%3Fid%3D11%26stickyOffset%3D0%26portletId%3D2%26uniqueLayoutId%3DOpportunityDetailsAndRelationsView_2\',\'complete\':function(XMLHttpRequest, textStatus){\n                        //find if there is a latest activities portlet\n                        $(\'.LatestActivitiesForPortletView\').each(function(){\n                            $(this).find(\'.pager\').find(\'.refresh\').find(\'a\').click();\n                        });},\'cache\':false,\'success\':function(html){jQuery(\"#NoteInlineEditForPortletView\").html(html)}});','attributes':[{'id':'Note_description','inputID':'Note_description','errorID':'Note_description_em_','model':'Note','name':'description','enableAjaxValidation':true},{'id':'Note_occurredOnDateTime','inputID':'Note_occurredOnDateTime','errorID':'Note_occurredOnDateTime_em_','model':'Note','name':'occurredOnDateTime','enableAjaxValidation':true},{'id':'ActivityItemForm_Account','inputID':'ActivityItemForm_Account','errorID':'ActivityItemForm_Account_em_','model':'ActivityItemForm','name':'Account','enableAjaxValidation':true},{'id':'ActivityItemForm_Contact','inputID':'ActivityItemForm_Contact','errorID':'ActivityItemForm_Contact_em_','model':'ActivityItemForm','name':'Contact','enableAjaxValidation':true},{'id':'ActivityItemForm_Opportunity','inputID':'ActivityItemForm_Opportunity','errorID':'ActivityItemForm_Opportunity_em_','model':'ActivityItemForm','name':'Opportunity','enableAjaxValidation':true}],'summaryID':'inline-edit-form_es_'});
+$("#activities-rollup-tooltip").qtip([]);
+
+            $('#LatestActivitiesConfigurationForm_rollup_area').buttonset();
+            $('#LatestActivitiesConfigurationForm_ownedByFilter_area').buttonset();
+            $('#LatestActivitiesConfigurationForm_filteredByModelName_area').buttonset();
+            $('#LatestActivitiesConfigurationForm_rollup_area').change(function()
+                {
+                    jQuery.ajax({'type':'GET','data':$("#latest-activity-configuration-form").serialize(),'url':$.param.querystring("/zurmo/app/index.php/opportunities/defaultPortlet/details?id=11&stickyOffset=0&portletId=3&uniqueLayoutId=OpportunityDetailsAndRelationsView_3", "OpportunityLatestActivitiesForPortletView_page=1"),'beforeSend':function(){$(this).makeSmallLoadingSpinner(true, "#list-viewOpportunityLatestActivitiesForPortletView"); $("#latest-activity-configuration-form").parent().children(".cgrid-view").addClass("loading");},'complete':function()
+                    {
+                                        $("#latest-activity-configuration-form").parent().children(".cgrid-view").removeClass("loading");
+                                        $("#filter-portlet-model-bar-OpportunityLatestActivitiesForPortletView").show();
+                    },'cache':false,'success':function(html){jQuery("#OpportunityLatestActivitiesForPortletView").html(html)}});
+                }
+            );
+            $('#LatestActivitiesConfigurationForm_ownedByFilter_area').change(function()
+                {
+                    jQuery.ajax({'type':'GET','data':$("#latest-activity-configuration-form").serialize(),'url':$.param.querystring("/zurmo/app/index.php/opportunities/defaultPortlet/details?id=11&stickyOffset=0&portletId=3&uniqueLayoutId=OpportunityDetailsAndRelationsView_3", "OpportunityLatestActivitiesForPortletView_page=1"),'beforeSend':function(){$(this).makeSmallLoadingSpinner(true, "#list-viewOpportunityLatestActivitiesForPortletView"); $("#latest-activity-configuration-form").parent().children(".cgrid-view").addClass("loading");},'complete':function()
+                    {
+                                        $("#latest-activity-configuration-form").parent().children(".cgrid-view").removeClass("loading");
+                                        $("#filter-portlet-model-bar-OpportunityLatestActivitiesForPortletView").show();
+                    },'cache':false,'success':function(html){jQuery("#OpportunityLatestActivitiesForPortletView").html(html)}});
+                }
+            );
+            $('#LatestActivitiesConfigurationForm_filteredByModelName_area').change(function()
+                {
+                    jQuery.ajax({'type':'GET','data':$("#latest-activity-configuration-form").serialize(),'url':$.param.querystring("/zurmo/app/index.php/opportunities/defaultPortlet/details?id=11&stickyOffset=0&portletId=3&uniqueLayoutId=OpportunityDetailsAndRelationsView_3", "OpportunityLatestActivitiesForPortletView_page=1"),'beforeSend':function(){$(this).makeSmallLoadingSpinner(true, "#list-viewOpportunityLatestActivitiesForPortletView"); $("#latest-activity-configuration-form").parent().children(".cgrid-view").addClass("loading");},'complete':function()
+                    {
+                                        $("#latest-activity-configuration-form").parent().children(".cgrid-view").removeClass("loading");
+                                        $("#filter-portlet-model-bar-OpportunityLatestActivitiesForPortletView").show();
+                    },'cache':false,'success':function(html){jQuery("#OpportunityLatestActivitiesForPortletView").html(html)}});
+                }
+            );
+            $('#filter-latest-activities-link').click( function()
+                {
+                    $('#filter-portlet-model-bar-OpportunityLatestActivitiesForPortletView').toggle();
+                    return false;
+                }
+            );
+            
+$(document).on('click', '#list-viewOpportunityLatestActivitiesForPortletView .task-kanban-detail-link', function()
+                          {
+                            var id = $(this).attr('id');
+                            var idParts = id.split('-');
+                            var taskId = parseInt(idParts[1]);
+                            $.ajax(
+                            {
+                                'type' : 'GET',
+                                'url'  : '/zurmo/app/index.php/tasks/default/modalDetails' + '?id=' + taskId,
+                                'beforeSend' : function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Collaborate On This Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     $.fn.yiiGridView.update('list-viewOpportunityLatestActivitiesForPortletView');
+                                                     }
+                });
+                return true;
+            },
+                                'update'     : '#modalContainer',
+                                'success': function(html){jQuery('#modalContainer').html(html)}
+                            });
+                          }
+                        );
+jQuery('#list-viewOpportunityLatestActivitiesForPortletView').yiiGridView({'ajaxUpdate':['list-viewOpportunityLatestActivitiesForPortletView'],'ajaxVar':'ajax','pagerClass':'pager horizontal','loadingClass':'loading','filterClass':'filters','tableClass':'items','selectableRows':0,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'OpportunityLatestActivitiesForPortletView_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                    }});
+var calendarEvents = {}; 
+calendarEvents[new Date('Nov 24, 2013')] = new CalendarEvent('1 Meeting', 'calendar-events-1'); 
+calendarEvents[new Date('Nov 19, 2013')] = new CalendarEvent('1 Meeting', 'calendar-events-1'); 
+
+jQuery('#calendarOpportunityDetailsAndRelationsView_4_container').datepicker({'dateFormat':'m/d/y','onChangeMonthYear':function(year, month, inst) {
+                //Call to render new events
+                $.ajax({
+                    url      : $.param.querystring('/zurmo/app/index.php/opportunities/defaultPortlet/viewAction?id=11&stickyOffset=0&action=renderMonthEvents&portletId=4&uniqueLayoutId=OpportunityDetailsAndRelationsView_4', '&month=' + month + '&year=' + year),
+                    async    : false,
+                    type     : 'GET',
+                    dataType : 'html',
+                    success  : function(data)
+                    {
+                        eval(data);
+                        //Since the home page for some reason cannot render this properly in beforeShow, we are using a trick.
+                        setTimeout('addSpansToDatesOnCalendar("' + inst.id + '")', 100);
+                    },
+                    error : function()
+                    {
+                        //todo: error call
+                    }
+                });
+            },'onSelect':function(dateText, inst) {
+                $.ajax({
+                    url      : $.param.querystring('/zurmo/app/index.php/meetings/default/daysMeetingsFromCalendarModalList?id=11&stickyOffset=0&redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0&relationModelId=11&relationModelClassName=Opportunity', '&stringTime=' + $('#calendarSelectedDateOpportunityDetailsAndRelationsView_4').val()),
+                    async    : false,
+                    type     : 'GET',
+                    'beforeSend' : function(){
+                                        jQuery('#modalContainer').html('');
+                                        $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                                        jQuery('#modalContainer').dialog({'title': dateText,
+                                                                          'autoOpen':true,
+                                                                          'modal': true,
+                                                                          'height': 'auto',
+                                                                          'position': 'center',
+                                                                          'width':600}); return true;},
+                    success  : function(data)
+                    {
+                        jQuery('#modalContainer').html(data)
+                        //Since the home page for some reason cannot render this properly in beforeShow, we are using a trick.
+                        setTimeout('addSpansToDatesOnCalendar("' + inst.id + '")', 100);
+                    },
+                    error : function()
+                    {
+                        //todo: error call
+                    }
+                });
+            },'altFormat':'yy-mm-dd','altField':'#calendarSelectedDateOpportunityDetailsAndRelationsView_4','beforeShowDay':function(date) {
+                var event = calendarEvents[date];
+                if (event) {
+                    return [true, event.className, event.text];
+                }
+                else {
+                    return [true, '', ''];
+                }
+            }});addSpansToDatesOnCalendar("calendarOpportunityDetailsAndRelationsView_4_container");
+jQuery('#list-viewOpportunityDetailsAndRelationsView_5').yiiGridView({'ajaxUpdate':['list-viewOpportunityDetailsAndRelationsView_5'],'ajaxVar':'ajax','pagerClass':'pager horizontal','loadingClass':'loading','filterClass':'filters','tableClass':'items','selectableRows':0,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'Task_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                    }});
+$('body').on('click', '#EditModalLinkActionElement-10-yt16', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Edit Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalEdit?id=10&modalId=modalContainer&portletId=5&uniqueLayoutId=OpportunityDetailsAndRelationsView_5&sourceId=list-viewOpportunityDetailsAndRelationsView_5&relationAttributeName=Opportunity&relationModelId=11&relationModuleId=opportunities&redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+$('body').on('click', '#CopyModalLinkActionElement-10-yt17', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Copy Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCopy?id=10&action=copy&modalId=modalContainer&portletId=5&uniqueLayoutId=OpportunityDetailsAndRelationsView_5&sourceId=list-viewOpportunityDetailsAndRelationsView_5&relationAttributeName=Opportunity&relationModelId=11&relationModuleId=opportunities&redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+$('body').on('click', '#list-viewOpportunityDetailsAndRelationsView_5-delete-10', function(){if (!$(this).onAjaxSubmitRelatedListAction("Are you sure you want to delete this task?", "list-viewOpportunityDetailsAndRelationsView_5")){return;};jQuery.ajax({'error':function(xhr, textStatus, errorThrown) {alert("There was an error processing your request");},'success':function(){$('#list-viewOpportunityDetailsAndRelationsView_5-delete-10').closest('.items').parent()
+                                                        .find('.pager').find('.refresh').find('a').click();},'url':'/zurmo/app/index.php/tasks/default/delete?id=10&redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0','cache':false});return false;});
+$(document).on('click', '#list-viewOpportunityDetailsAndRelationsView_5 .task-kanban-detail-link', function()
+                          {
+                            var id = $(this).attr('id');
+                            var idParts = id.split('-');
+                            var taskId = parseInt(idParts[1]);
+                            $.ajax(
+                            {
+                                'type' : 'GET',
+                                'url'  : '/zurmo/app/index.php/tasks/default/modalDetails' + '?id=' + taskId,
+                                'beforeSend' : function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Collaborate On This Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     $.fn.yiiGridView.update('list-viewOpportunityDetailsAndRelationsView_5');
+                                                     }
+                });
+                return true;
+            },
+                                'update'     : '#modalContainer',
+                                'success': function(html){jQuery('#modalContainer').html(html)}
+                            });
+                          }
+                        );
+$('body').on('click', '#CreateFromRelatedModalLinkActionElement--yt19', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreateFromRelation?modalId=modalContainer&portletId=5&uniqueLayoutId=OpportunityDetailsAndRelationsView_5&sourceId=list-viewOpportunityDetailsAndRelationsView_5&relationAttributeName=Opportunity&relationModelId=11&relationModuleId=opportunities&redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+jQuery('#list-viewOpportunityDetailsAndRelationsView_6').yiiGridView({'ajaxUpdate':['list-viewOpportunityDetailsAndRelationsView_6'],'ajaxVar':'ajax','pagerClass':'pager horizontal','loadingClass':'loading','filterClass':'filters','tableClass':'items','selectableRows':0,'enableHistory':false,'updateSelector':'{page}, {sort}','filterSelector':'{filter}','pageVar':'Contact_page','beforeAjaxUpdate':function(id, options) { $(this).makeSmallLoadingSpinner(true, "#" + id); },'afterAjaxUpdate':function(id, data) {
+                        processAjaxSuccessError(id, data);
+                    }});
+$('body').on('click', '.composeEmailLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Compose Email',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : {"my":"top","at":"bottom","of":"#HeaderView"},
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':$(this).attr("href"),'cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+$('body').on('click', '#list-viewOpportunityDetailsAndRelationsView_6-createEmail-12', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Compose Email',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : {"my":"top","at":"bottom","of":"#HeaderView"},
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/emailMessages/default/createEmailMessage?relatedModelClassName=Contact&relatedId=12','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+$('body').on('click', '#list-viewOpportunityDetailsAndRelationsView_6-delete-12', function(){if (!$(this).onAjaxSubmitRelatedListAction("Are you sure you want to delete this contact?", "list-viewOpportunityDetailsAndRelationsView_6")){return;};jQuery.ajax({'error':function(xhr, textStatus, errorThrown) {alert("There was an error processing your request");},'success':function(){$('#list-viewOpportunityDetailsAndRelationsView_6-delete-12').closest('.items').parent()
+                                                        .find('.pager').find('.refresh').find('a').click();},'url':'/zurmo/app/index.php/contacts/default/delete?id=12&redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0','cache':false});return false;});
+$('body').on('click', '#list-viewOpportunityDetailsAndRelationsView_6-unlink-12', function(){if (!$(this).onAjaxSubmitRelatedListAction("Are you sure you want to unlink this contact?", "list-viewOpportunityDetailsAndRelationsView_6")){return;};jQuery.ajax({'error':function(xhr, textStatus, errorThrown) {alert("There was an error processing your request");},'success':function(){$('#list-viewOpportunityDetailsAndRelationsView_6-unlink-12').closest('.items').parent()
+                                                        .find('.pager').find('.refresh').find('a').click();},'url':'/zurmo/app/index.php/contacts/default/unlink?id=12&relationModelClassName=Opportunity&relationModelId=11&relationModelRelationName=contacts&redirectUrl=%2Fzurmo%2Fapp%2Findex.php%2Fopportunities%2Fdefault%2Fdetails%3Fid%3D11%26stickyOffset%3D0','cache':false});return false;});
+$('#SelectContactsForOpportunityFromRelatedListLink').on('click', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Contact Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/contacts/default/selectFromRelatedList?uniqueLayoutId=OpportunityDetailsAndRelationsView_6&portletId=6&relationAttributeName=opportunities&relationModelId=11&relationModuleId=opportunities&relationModelClassName=','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+juiPortlets.init('OpportunityDetailsAndRelationsView','opportunities', '/zurmo/app/index.php/opportunities/defaultPortlet/SaveLayout', 'YII_CSRF_TOKEN', '3a494af6956666c752fc7c885c945f0c519c2c52', '.juiportlet-columns-OpportunityDetailsAndRelationsView', '', '', 'This portlet will be removed, ok?');
+});
+/*]]>*/
+</script>
+</body></html>

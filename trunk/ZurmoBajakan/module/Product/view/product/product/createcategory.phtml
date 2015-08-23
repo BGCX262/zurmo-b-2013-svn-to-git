@@ -1,0 +1,147 @@
+<body>
+<?php include 'header.phtml';?>
+</div>
+<div class="AppContent GridView"><div id="ProductBreadCrumbView" class="BreadCrumbView"><div class="breadcrumbs">
+<a href="/zurmo/app/index.php/products/default/list">Products</a> &#47; <a href="/zurmo/app/index.php/productTemplates/category/list">Categories</a> &#47; <span>Create</span></div></div><div id="ProductCategoryEditAndDetailsView" class="SecuredEditAndDetailsView EditAndDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wrapper"><h1><span class="truncated-title"><span class="ellipsis-content">Create Category</span></span></h1><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;edit-form&quot;)" id="edit-form" action="/zurmo/app/index.php/productTemplates/category/create" method="post">
+<div style="display:none"><input type="hidden" value="f8f36e7cc33f2441e518fd2793407cab829385ab" name="YII_CSRF_TOKEN" /></div><div class="attributesContainer"><div class="left-column full-width"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label for="ProductCategory_name" class="required">Name <span class="required">*</span></label></th><td colspan="1"><input id="ProductCategory_name" name="ProductCategory[name]" type="text" maxlength="64" /></td></tr><tr><th>Parent Category</th><td colspan="1"><input name="ProductCategory[productCategory][id]" id="ProductCategory_productCategory_id" value="" type="hidden" /><div class="has-model-select"><input disabled="disabled" id="ProductCategory_productCategory_name" name="ProductCategory_productCategory_name" value="" type="text" /><a id="ProductCategory_productCategory_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr></tbody></table></div></div></div><div class="float-bar"><div class="view-toolbar-container clearfix dock"><div class="form-toolbar"><a id="CancelLinkActionElement--25-yt2" href="/zurmo/app/index.php/productTemplates/category"><span class="z-label">Cancel</span></a><a id="saveyt3" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Save</span></a></div></div></div></form><div id="modalContainer-edit-form"></div></div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+$('body').off('click.selectLink', '#ProductCategory_productCategory_SelectLink'); $('body').on('click.selectLink', '#ProductCategory_productCategory_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'Select a Parent Category',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/productTemplates/category/modalParentList?modalTransferInformation%5BsourceIdFieldId%5D=ProductCategory_productCategory_id&modalTransferInformation%5BsourceNameFieldId%5D=ProductCategory_productCategory_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=-25','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+});
+/*]]>*/
+</script>
+</body>

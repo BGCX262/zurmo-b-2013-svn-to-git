@@ -1,0 +1,380 @@
+
+<!DOCTYPE html><!--[if IE 8]><html class="zurmo ie8" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="zurmo" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes" /><link rel="apple-touch-icon" sizes="144x144" href="/zurmo/app/themes/default/images/touch-icon-iphone4.png" /><style>@font-face{font-family: 'zurmo_gamification_symbly_rRg';src: url('/zurmo/app/assets/6c39ab69/zurmogamificationsymblyregular-regular-webfont.eot');src: url('/zurmo/app/assets/6c39ab69/zurmogamificationsymblyregular-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/zurmo/app/assets/6c39ab69/zurmogamificationsymblyregular-regular-webfont.woff') format('woff'), url('/zurmo/app/assets/6c39ab69/zurmogamificationsymblyregular-regular-webfont.ttf') format('truetype'), url('/zurmo/app/assets/6c39ab69/zurmogamificationsymblyregular-regular-webfont.svg#zurmo_gamification_symbly_rRg') format('svg');font-weight: normal;font-style: normal;unicode-range: U+00-FFFF;}</style><link rel="shortcut icon" href="/zurmo/app/themes/default/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/themes/default/css/keyframes.css" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/index.php/min/serve/g/css/lm/1384300948" />
+<script type="text/javascript" src="/zurmo/app/index.php/min/serve/g/js/lm/1384300940"></script>
+<script type="text/javascript" src="/zurmo/app/assets/65a9ecc1/ZurmoDialog.js"></script>
+<script type="text/javascript" src="/zurmo/app/assets/65a9ecc1/mobile-interactions.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+            var desktopNotifications =
+            {
+                notify:function(image, title, body)
+                {
+                    
+                    return false;
+                },
+                isSupported:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        return true
+                    }
+                    else
+                    {
+                        return false
+                    }
+                },
+                requestAutorization:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        if (window.webkitNotifications.checkPermission() == 1)
+                        {
+                            window.webkitNotifications.requestPermission();
+                        }
+                        else if (window.webkitNotifications.checkPermission() == 2)
+                        {
+                            alert('You have blocked desktop notifications for this browser.');
+                        }
+                        else
+                        {
+                            alert('You have already activated desktop notifications for Chrome');
+                        }
+                    }
+                    else
+                    {
+                        alert('This is only available in Chrome.');
+                    }
+                }
+            };
+            
+$(document).ready(function()
+{
+    $('#FlashMessageBar').jnotifyInizialize(
+    {
+        oneAtTime: false,
+        appendType: 'append'
+    }
+    );
+}
+);
+/*]]>*/
+</script>
+<title>ZurmoCRM - Opportunities</title></head><body class="blue"><div id="OpportunitiesPageView" class="ZurmoDefaultPageView ZurmoPageView PageView"><div id="ZurmoDefaultView"><div class="GridView"><div id="HeaderView"><!-- Start of themes/default/templates/HeaderView.xhtml --><div id="MainLogo" class="zurmo-logo"></div>
+<div class="GridView"><div id="HeaderLinksView"><div class="clearfix"><a href="#" id="nav-trigger" title="Toggle Navigation">&rsaquo;</a><div id="corp-logo"><a href="/zurmo/app/index.php/home/default"><img src="/zurmo/app/themes/default/images/Zurmo_logo.png" alt="Zurmo Logo" height="32" width="107" /></a></div><div id="user-toolbar" class="clearfix"><div id="header-game-dashboard-link-wrapper" class="user-menu-item"><a id="header-game-dashboard-link" href="#">∂</a></div><ul id="user-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>super</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/users/default/profile"><span>My Profile</span></a></li>
+<li><a href="/zurmo/app/index.php/gamification/default/leaderboard"><span>Leaderboard</span></a></li>
+<li><a href="/zurmo/app/index.php/emailMessages/default/matchingList"><span>Data Cleanup</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/logout"><span>Sign out</span></a></li>
+</ul>
+</li>
+</ul><ul id="settings-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Administration</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/configuration"><span>Administration</span></a></li>
+<li><a href="/zurmo/app/index.php/designer/default"><span>Designer</span></a></li>
+<li><a href="/zurmo/app/index.php/import/default"><span>Import</span></a></li>
+<li><a href="/zurmo/app/index.php/users/default"><span>Users</span></a></li>
+<li><a href="http://www.zurmo.com/needSupport.php"><span>Need Support?</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/about"><span>About Zurmo</span></a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="GridView"><div id="GlobalSearchAndShortcutsCreateMenuView"><div id="app-search" class="clearfix"><select class="ignore-style" id="globalSearchScope" multiple="multiple" style="display:none;" size="4" name="globalSearchScope[]">
+<option value="All" selected="selected">All</option>
+<option value="accounts">Accounts</option>
+<option value="contacts">Contacts</option>
+<option value="leads">Leads</option>
+<option value="opportunities">Opportunities</option>
+</select><input class="global-search global-search-hint" onfocus="$(this).removeClass(&quot;global-search-hint&quot;); $(this).val(&quot;&quot;);" onblur="$(this).val(&quot;&quot;)" id="globalSearchInput" type="text" value="Search by name, phone, or e-mail" name="globalSearchInput" /><span class="z-spinner"></span></div><ul id="ShortcutsMenu" class="nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/accounts/default/create"><span>Account</span></a></li>
+<li><a href="/zurmo/app/index.php/contacts/default/create"><span>Contact</span></a></li>
+<li><a href="/zurmo/app/index.php/conversations/default/create"><span>Conversation</span></a></li>
+<li><a href="/zurmo/app/index.php/leads/default/create"><span>Lead</span></a></li>
+<li><a href="/zurmo/app/index.php/missions/default/create"><span>Mission</span></a></li>
+<li><a href="/zurmo/app/index.php/opportunities/default/create"><span>Opportunity</span></a></li>
+<li><a href="/zurmo/app/index.php/reports/default/selectType"><span>Report</span></a></li>
+<li class="last"><a href="#" id="yt0"><span>Task</span></a></li>
+</ul>
+</li>
+</ul></div></div></div>
+
+
+
+<!-- End of themes/default/templates/HeaderView.xhtml --></div><div class="AppContainer clearfix GridView"><div class="AppNavigation clearfix GridView"><div id="MenuView"><ul class="nav">
+<li id="home"><a href="/zurmo/app/index.php/home/default"><span></span><em></em><span>Home</span></a></li>
+<li id="mashableInbox"><a href="/zurmo/app/index.php/mashableInbox/default"><span></span><em></em><span>Inbox<span class="unread-inbox-count">1</span></span></a></li>
+<li id="accounts"><a href="/zurmo/app/index.php/accounts/default"><span></span><em></em><span>Accounts</span></a></li>
+<li id="leads"><a href="/zurmo/app/index.php/leads/default"><span></span><em></em><span>Leads</span></a></li>
+<li id="contacts"><a href="/zurmo/app/index.php/contacts/default"><span></span><em></em><span>Contacts</span></a></li>
+<li id="opportunities" class="active"><a href="/zurmo/app/index.php/opportunities/default"><span></span><em></em><span>Opportunities</span></a></li>
+<li id="marketing" class="hidden-nav-item"><a href="/zurmo/app/index.php/marketing/default/dashboardDetails"><span></span><em></em><span>Marketing</span></a></li>
+<li id="projects" class="hidden-nav-item"><a href="/zurmo/app/index.php/projects/default/dashboardDetails"><span></span><em></em><span>Projects</span></a></li>
+<li id="products" class="hidden-nav-item"><a href="/zurmo/app/index.php/products/default"><span></span><em></em><span>Products</span></a></li>
+<li id="reports" class="hidden-nav-item last"><a href="/zurmo/app/index.php/reports/default"><span></span><em></em><span>Reports</span></a></li>
+</ul><a class="toggle-hidden-nav-items"></a></div><div id="RecentlyViewedView"><h3>Recently Viewed</h3><ul class="nav">
+<li class="type-OpportunitiesModule"><a href="/zurmo/app/index.php/opportunities/default/details?id=1"><span></span><em></em><span>Opportunity</span></a></li>
+<li class="type-LeadsModule last"><a href="/zurmo/app/index.php/leads/default/details?id=1"><span></span><em></em><span>A</span></a></li>
+</ul></div></div><div id="OpportunityEditAndDetailsView" class="AppContent SecuredEditAndDetailsView EditAndDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wrapper"><h1><span class="truncated-title"><span class="ellipsis-content">Opportunity</span></span></h1><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;edit-form&quot;)" id="edit-form" action="/zurmo/app/index.php/opportunities/default/edit?id=1" method="post">
+<div style="display:none"><input type="hidden" value="5add997d33639b03aa704405e23a860f5cfbf8b1" name="YII_CSRF_TOKEN" /></div><div class="attributesContainer"><div class="left-column"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label for="Opportunity_name" class="required">Name <span class="required">*</span></label></th><td colspan="1"><input id="Opportunity_name" name="Opportunity[name]" type="text" maxlength="64" value="Opportunity" /></td></tr><tr><th><label for="Opportunity_amount_value" class="required">Amount <span class="required">*</span></label></th><td colspan="1"><div class="hasParallelFields"><div class="quarter"><div class="hasDropDown"><span class="select-arrow"></span><select name="Opportunity[amount][currency][id]" id="Opportunity_amount_currency_id">
+<option value="1" selected="selected">USD</option>
+</select></div></div><div class="threeQuarters"><input name="Opportunity[amount][value]" id="Opportunity_amount_value" value="1000" type="text" /></div></div></td></tr><tr><th><label for="Opportunity_account_id">Account</label></th><td colspan="1"><input name="Opportunity[account][id]" id="Opportunity_account_id" value="" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Opportunity_account_id&#039;);" id="Opportunity_account_name" type="text" value="" name="Opportunity_account_name" /><a id="Opportunity_account_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr><tr><th><label for="Opportunity_closeDate" class="required">Close Date <span class="required">*</span></label></th><td colspan="1"><div class="has-date-select"><input id="Opportunity_closeDate" name="Opportunity[closeDate]" type="text" value="11/26/2013" /></div></td></tr><tr><th><label for="Opportunity_stage_value" class="required">Stage <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="Opportunity[stage][value]" id="Opportunity_stage_value">
+<option value="">(None)</option>
+<option value="Prospecting" selected="selected">Prospecting</option>
+<option value="Qualification">Qualification</option>
+<option value="Negotiating">Negotiating</option>
+<option value="Verbal">Verbal</option>
+<option value="Closed Won">Closed Won</option>
+<option value="Closed Lost">Closed Lost</option>
+</select></div></td></tr><tr><th><label for="Opportunity_probability" class="required">Probability <span class="required">*</span></label></th><td colspan="1"><input id="Opportunity_probability" name="Opportunity[probability]" disabled="disabled" type="text" value="10" /></td></tr><tr><th><label for="Opportunity_source_value">Source</label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="Opportunity[source][value]" id="Opportunity_source_value">
+<option value="">(None)</option>
+<option value="Self-Generated">Self-Generated</option>
+<option value="Inbound Call">Inbound Call</option>
+<option value="Tradeshow">Tradeshow</option>
+<option value="Word of Mouth">Word of Mouth</option>
+</select></div></td></tr><tr><th><label for="Opportunity_description">Description</label></th><td colspan="1"><textarea id="Opportunity_description" name="Opportunity[description]" rows="6" cols="50"></textarea></td></tr></tbody></table></div></div><div class="right-column"><div class="right-side-edit-view-panel"><h3>Rights and Permissions</h3><div id="owner-box"><label for="Opportunity_owner_id" class="required">Owner <span class="required">*</span></label><input name="Opportunity[owner][id]" id="Opportunity_owner_id" value="1" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;Opportunity_owner_id&#039;);" id="Opportunity_owner_name" type="text" value="Super User" name="Opportunity_owner_name" /><a id="Opportunity_owner_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></div><label>Who can read and write</label><div class="radio-input"><input id="Opportunity_explicitReadWriteModelPermissions_type_0" value="" type="radio" name="Opportunity[explicitReadWriteModelPermissions][type]" /><label for="Opportunity_explicitReadWriteModelPermissions_type_0">Owner</label></div><div class="radio-input"><input id="Opportunity_explicitReadWriteModelPermissions_type_1" value="1" checked="checked" type="radio" name="Opportunity[explicitReadWriteModelPermissions][type]" /><label for="Opportunity_explicitReadWriteModelPermissions_type_1">Everyone</label></div></div></div></div><div class="float-bar"><div class="view-toolbar-container clearfix dock"><div class="form-toolbar"><a id="saveyt2" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Save</span></a><a id="CancelLinkActionElement-1-yt3" href="/zurmo/app/index.php/opportunities/default/details?id=1"><span class="z-label">Cancel</span></a></div></div></div></form><div id="modalContainer-edit-form"></div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+
+                function clearIdFromAutoCompleteField(value, id)
+                {
+                    if (value == '')
+                    {
+                        $('#' + id).val('');
+                    }
+                }
+            
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+jQuery('#Opportunity_owner_name').autocomplete({'select':function(event, ui){ jQuery("#Opportunity_owner_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Opportunity_owner_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Opportunity_owner_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Opportunity_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Opportunity_owner_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Opportunity_owner_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/users/default/autoComplete'});
+$('body').off('click.selectLink', '#Opportunity_owner_SelectLink'); $('body').on('click.selectLink', '#Opportunity_owner_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'User Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/users/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Opportunity_owner_id&modalTransferInformation%5BsourceNameFieldId%5D=Opportunity_owner_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=1','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Opportunity_account_name').autocomplete({'select':function(event, ui){ jQuery("#Opportunity_account_id").val(ui.item["id"]).trigger("change");},'appendTo':$("#Opportunity_account_name").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#Opportunity_account_name").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#Opportunity_account_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#Opportunity_account_name").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#Opportunity_account_name").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/accounts/default/autoComplete'});
+$('body').off('click.selectLink', '#Opportunity_account_SelectLink'); $('body').on('click.selectLink', '#Opportunity_account_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-edit-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-edit-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-edit-form').dialog({
+                    'title' : 'Account Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-edit-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-edit-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-edit-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/accounts/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=Opportunity_account_id&modalTransferInformation%5BsourceNameFieldId%5D=Opportunity_account_name&modalTransferInformation%5BmodalId%5D=modalContainer-edit-form&modalTransferInformation%5BsourceModelId%5D=1','cache':false,'success':function(html){jQuery("#modalContainer-edit-form").html(html)}});return false;});
+jQuery('#Opportunity_closeDate').datepicker({'showOn':'both','buttonText':'<span><!--Date--><\/span>','showButtonPanel':true,'buttonImageOnly':false,'dateFormat':'m/d/yy','currentText':'<span class=\"z-label\">Now<\/span>','closeText':'<span class=\"z-label\">Done<\/span>'});
+
+                $('#Opportunity_stage_value').unbind('change');
+                $('#Opportunity_stage_value').bind('change', function()
+                    {
+                        stageToProbabilityMapping($(this));
+                    }
+                );
+                function stageToProbabilityMapping(stageInput)
+                {
+                    var value  = stageInput.val();
+                    var result = $.parseJSON('{"Prospecting":10,"Qualification":25,"Negotiating":50,"Verbal":75,"Closed Won":100,"Closed Lost":0}');
+                    $('#Opportunity_probability').val(0);
+                    $.each(result, function(stage, probability)
+                    {
+                        if (value == stage)
+                        {
+                            $('#Opportunity_probability').val(probability);
+                            return false;
+                        }
+                    });
+                 }
+                 
+});
+/*]]>*/
+</script>
+</body></html>

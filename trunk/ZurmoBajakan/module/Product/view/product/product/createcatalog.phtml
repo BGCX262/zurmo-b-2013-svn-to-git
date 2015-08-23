@@ -1,0 +1,302 @@
+<body>
+<?php include 'header.phtml';?>
+</div><div class="AppContent GridView"><div id="ProductBreadCrumbView" class="BreadCrumbView"><div class="breadcrumbs">
+<a href="/zurmo/app/index.php/products/default/list">Products</a> &#47; <a href="/zurmo/app/index.php/productTemplates/default/list">Catalog Items</a> &#47; <span>Create</span></div></div><div id="ProductTemplateEditAndDetailsView" class="SecuredEditAndDetailsView EditAndDetailsView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wrapper"><h1><span class="truncated-title"><span class="ellipsis-content">Create Catalog Item</span></span></h1><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;edit-form&quot;)" id="edit-form" action="/zurmo/app/index.php/productTemplates/default/create" method="post">
+<div style="display:none"><input type="hidden" value="f8f36e7cc33f2441e518fd2793407cab829385ab" name="YII_CSRF_TOKEN" /></div><div class="attributesContainer"><div class="left-column full-width"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label for="ProductTemplate_name" class="required">Name <span class="required">*</span></label></th><td colspan="1"><input id="ProductTemplate_name" name="ProductTemplate[name]" type="text" maxlength="255" /></td></tr><tr><th><label for="ProductTemplate_description">Description</label></th><td colspan="1"><textarea id="ProductTemplate_description" name="ProductTemplate[description]" rows="6" cols="50"></textarea></td></tr><tr><th><label>Categories</label></th><td colspan="1"><input id="ProductTemplateCategoriesForm_ProductCategory_ids" type="text" name="ProductTemplateCategoriesForm[categoryIds]" /></td></tr><tr><th><label for="ProductTemplate_status_value" class="required">Status <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="ProductTemplate[status]" id="ProductTemplate_status_value">
+<option value="2">Active</option>
+<option value="1">Inactive</option>
+</select></div></td></tr><tr><th><label for="ProductTemplate_type_value" class="required">Type <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="ProductTemplate[type]" id="ProductTemplate_type_value">
+<option value="1">Product</option>
+<option value="2">Service</option>
+<option value="3">Subscription</option>
+</select></div></td></tr><tr><th><label for="ProductTemplate_priceFrequency_value" class="required">Price Frequency <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="ProductTemplate[priceFrequency]" id="ProductTemplate_priceFrequency_value">
+<option value="1">One Time</option>
+<option value="2">Monthly</option>
+<option value="3">Annually</option>
+</select></div></td></tr><tr><th><label for="ProductTemplate_sellPriceFormula" class="required">Sell Price Formula <span class="required">*</span></label></th><td colspan="1"><div class="hasDropDown"><span class="select-arrow"></span><select name="ProductTemplate[sellPriceFormula][type]" id="ProductTemplate_sellPriceFormula_type" onchange="showHideDiscountOrMarkupPercentageTextField($(this).val(), &#039;ProductTemplate_sellPriceFormula_discountOrMarkupPercentage&#039;);
+                              enableDisableSellPriceElementBySellPriceFormula($(this).val(), &#039;ProductTemplate_sellPrice_value&#039;, &quot;sellPrice&quot;);
+                              calculateSellPriceBySellPriceFormula()">
+<option value="1">Editable</option>
+<option value="4">Discount From List Percent</option>
+<option value="3">Markup Over Cost Percent</option>
+<option value="2">Profit Margin Percent</option>
+<option value="5">Same As List</option>
+</select></div>
+<input name="ProductTemplate[sellPriceFormula][discountOrMarkupPercentage]" id="ProductTemplate_sellPriceFormula_discountOrMarkupPercentage" style="display:none" onkeyup="calculateSellPriceBySellPriceFormula()" type="text" />
+</td></tr><tr><th><label for="ProductTemplate_cost_value" class="required">Cost <span class="required">*</span></label></th><td colspan="1"><div class="hasParallelFields"><div class="quarter"><div class="hasDropDown"><span class="select-arrow"></span><select name="ProductTemplate[cost][currency][id]" id="ProductTemplate_cost_currency_id">
+<option value="3">CAD</option>
+<option value="2">EUR</option>
+<option value="4">JPY</option>
+<option value="1" selected="selected">USD</option>
+</select></div></div><div class="threeQuarters"><input name="ProductTemplate[cost][value]" id="ProductTemplate_cost_value" value="0" type="text" /></div></div></td></tr><tr><th><label for="ProductTemplate_listPrice_value" class="required">List Price <span class="required">*</span></label></th><td colspan="1"><div class="hasParallelFields"><div class="quarter"><div class="hasDropDown"><span class="select-arrow"></span><select name="ProductTemplate[listPrice][currency][id]" id="ProductTemplate_listPrice_currency_id">
+<option value="3">CAD</option>
+<option value="2">EUR</option>
+<option value="4">JPY</option>
+<option value="1" selected="selected">USD</option>
+</select></div></div><div class="threeQuarters"><input name="ProductTemplate[listPrice][value]" id="ProductTemplate_listPrice_value" value="0" type="text" /></div></div></td></tr><tr><th><label for="ProductTemplate_sellPrice_value" class="required">Sell Price <span class="required">*</span></label></th><td colspan="1"><div class="hasParallelFields"><div class="quarter"><div class="hasDropDown"><span class="select-arrow"></span><select name="ProductTemplate[sellPrice][currency][id]" id="ProductTemplate_sellPrice_currency_id">
+<option value="3">CAD</option>
+<option value="2">EUR</option>
+<option value="4">JPY</option>
+<option value="1" selected="selected">USD</option>
+</select></div></div><div class="threeQuarters"><input name="ProductTemplate[sellPrice][value]" id="ProductTemplate_sellPrice_value" value="0" type="text" /></div></div></td></tr></tbody></table></div></div></div><div class="float-bar"><div class="view-toolbar-container clearfix dock"><div class="form-toolbar"><a id="CancelLinkActionElement--26-yt2" href="/zurmo/app/index.php/productTemplates/default"><span class="z-label">Cancel</span></a><a id="saveyt3" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Save</span></a></div></div></div></form><div id="modalContainer-edit-form"></div></div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+
+                function showHideDiscountOrMarkupPercentageTextField(helperValue, textFieldId)
+                {
+                    var typeProfitMargin = 2;
+                    var typeMarkOverCost = 3;
+                    var typeDiscountFromList = 4;
+                    if (helperValue == typeProfitMargin || helperValue == typeMarkOverCost || helperValue == typeDiscountFromList)
+                    {
+                        $('#' + textFieldId).show();
+                    }
+                    else
+                    {
+                        $('#' + textFieldId).hide();
+                    }
+                }
+            
+
+                function enableDisableSellPriceElementBySellPriceFormula(helperValue, elementId, attribute)
+                {
+                    var typeEditable = 1;
+                    if (helperValue != typeEditable)
+                    {
+                        $('#' + elementId).attr('readonly', true);
+                        $('#ProductTemplate_' + attribute + '_currency_id').attr('readonly', 'true');
+                        $('#ProductTemplate_' + attribute + '_currency_id').addClass('disabled');
+                        $('#' + elementId).addClass('disabled');
+                    }
+                    else
+                    {
+                        $('#' + elementId).removeAttr('readonly');
+                        $('#ProductTemplate_' + attribute + '_currency_id').removeAttr('readonly');
+                        $('#ProductTemplate_' + attribute + '_currency_id').removeClass('disabled');
+                        $('#' + elementId).removeClass('disabled');
+                    }
+                }
+            
+
+                $('#ProductTemplate_cost_currency_id').change(function(){calculateSellPriceBySellPriceFormula()});
+                $('#ProductTemplate_listPrice_currency_id').change(function(){calculateSellPriceBySellPriceFormula()});
+                function calculateSellPriceBySellPriceFormula()
+                {
+                    var priceCurrency = '';
+                    var typeEditable = 1;
+                    var typeProfitMargin = 2;
+                    var typeMarkOverCost = 3;
+                    var typeDiscountFromList = 4;
+                    var typeSameAsList = 5;
+                    var helperValue = $('#ProductTemplate_sellPriceFormula_type').val();
+                    var calculatedSellPrice = 0;
+                    var discountOrMarkupPercentage = $('#ProductTemplate_sellPriceFormula_discountOrMarkupPercentage').val();
+                    if (discountOrMarkupPercentage == '')
+                    {
+                        discountOrMarkupPercentage = 0;
+                    }
+                    else
+                    {
+                        discountOrMarkupPercentage = parseFloat(discountOrMarkupPercentage)/100;
+                    }
+                    if (helperValue == typeProfitMargin)
+                    {
+                        var cost = parseFloat($('#ProductTemplate_cost_value').val());
+                        calculatedSellPrice = parseFloat(cost/(1-discountOrMarkupPercentage));
+                        modCalculatesSellPrice = (Math.round(calculatedSellPrice * 100)/100).toFixed(2);
+                        $('#ProductTemplate_sellPrice_value').val(modCalculatesSellPrice);
+                        priceCurrency = $('#ProductTemplate_cost_currency_id').val();
+                        $('#ProductTemplate_sellPrice_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_listPrice_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_listPrice_currency_id').attr('readonly','readonly');
+                        $('#ProductTemplate_listPrice_currency_id').addClass('disabled');
+                        $('#ProductTemplate_cost_currency_id').removeAttr('readonly');
+                        $('#ProductTemplate_cost_currency_id').removeClass('disabled');
+                    }
+
+                    if (helperValue == typeMarkOverCost)
+                    {
+                        var cost = parseFloat($('#ProductTemplate_cost_value').val());
+                        calculatedSellPrice = (discountOrMarkupPercentage * cost) + cost;
+                        $('#ProductTemplate_sellPrice_value').val(calculatedSellPrice);
+                        priceCurrency = $('#ProductTemplate_cost_currency_id').val();
+                        $('#ProductTemplate_sellPrice_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_listPrice_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_listPrice_currency_id').attr('readonly','readonly');
+                        $('#ProductTemplate_listPrice_currency_id').addClass('disabled');
+                        $('#ProductTemplate_cost_currency_id').removeAttr('readonly');
+                        $('#ProductTemplate_cost_currency_id').removeClass('disabled');
+                    }
+
+                    if (helperValue == typeDiscountFromList)
+                    {
+                        var listPrice = parseFloat($('#ProductTemplate_listPrice_value').val());
+                        calculatedSellPrice = listPrice - (listPrice * discountOrMarkupPercentage);
+                        $('#ProductTemplate_sellPrice_value').val(calculatedSellPrice);
+                        priceCurrency = $('#ProductTemplate_listPrice_currency_id').val();
+                        $('#ProductTemplate_sellPrice_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_cost_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_cost_currency_id').attr('readonly','readonly');
+                        $('#ProductTemplate_cost_currency_id').addClass('disabled');
+                        $('#ProductTemplate_listPrice_currency_id').removeAttr('readonly');
+                        $('#ProductTemplate_listPrice_currency_id').removeClass('disabled');
+                    }
+
+                    if (helperValue == typeSameAsList)
+                    {
+                        var listPrice = parseFloat($('#ProductTemplate_listPrice_value').val());
+                        $('#ProductTemplate_sellPrice_value').val(listPrice);
+                        priceCurrency = $('#ProductTemplate_listPrice_currency_id').val();
+                        $('#ProductTemplate_sellPrice_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_cost_currency_id').val(priceCurrency);
+                        $('#ProductTemplate_cost_currency_id').attr('readonly','readonly');
+                        $('#ProductTemplate_cost_currency_id').addClass('disabled');
+                        $('#ProductTemplate_listPrice_currency_id').removeAttr('readonly');
+                        $('#ProductTemplate_listPrice_currency_id').removeClass('disabled');
+                    }
+
+                    if (helperValue == typeEditable)
+                    {
+                        $('#ProductTemplate_cost_currency_id').removeAttr('readonly');
+                        $('#ProductTemplate_listPrice_currency_id').removeAttr('readonly');
+                        $('#ProductTemplate_listPrice_currency_id').removeClass('disabled');
+                        $('#ProductTemplate_cost_currency_id').removeClass('disabled');
+                    }
+                }
+            
+
+                $(document).ready(function()
+                {
+                   $('#ProductTemplate_cost_value').bind('keyup', function()
+                       {
+                            calculateSellPriceBySellPriceFormula();
+                       }
+                   );
+                   $('#ProductTemplate_listPrice_value').bind('keyup', function()
+                       {
+                            calculateSellPriceBySellPriceFormula();
+                       }
+                   );
+                });
+            
+jQuery(function($) {
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+$(document).ready(function () { $('#ProductTemplateCategoriesForm_ProductCategory_ids').tokenInput('/zurmo/app/index.php/productTemplates/default/autoCompleteAllProductCategoriesForMultiSelectAutoComplete', { queryParam: 'term',hintText: 'Type a product category',prePopulate: [],propertyToSearch: 'name',searchDelay: 300,minChars: 1,preventDuplicates: 'true',resultsLimit: 'null',classes: {tokenList: 'token-input-list'}});});
+});
+/*]]>*/
+</script>
+</body>

@@ -1,0 +1,352 @@
+<!DOCTYPE html><!--[if IE 8]><html class="zurmo ie8" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="zurmo" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport"  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes" /><link rel="apple-touch-icon" sizes="144x144" href="/zurmo/app/themes/default/images/touch-icon-iphone4.png" /><style>@font-face{font-family: 'zurmo_gamification_symbly_rRg';src: url('/zurmo/app/assets/90cfd0f9/zurmogamificationsymblyregular-regular-webfont.eot');src: url('/zurmo/app/assets/90cfd0f9/zurmogamificationsymblyregular-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/zurmo/app/assets/90cfd0f9/zurmogamificationsymblyregular-regular-webfont.woff') format('woff'), url('/zurmo/app/assets/90cfd0f9/zurmogamificationsymblyregular-regular-webfont.ttf') format('truetype'), url('/zurmo/app/assets/90cfd0f9/zurmogamificationsymblyregular-regular-webfont.svg#zurmo_gamification_symbly_rRg') format('svg');font-weight: normal;font-style: normal;unicode-range: U+00-FFFF;}</style><link rel="shortcut icon" href="/zurmo/app/themes/default/ico/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/themes/default/css/keyframes.css" />
+<link rel="stylesheet" type="text/css" href="/zurmo/app/index.php/min/serve/g/css/lm/1384275748" />
+<script type="text/javascript" src="/zurmo/app/index.php/min/serve/g/js/lm/1384275740"></script>
+<script type="text/javascript" src="/zurmo/app/assets/2550be6e/ZurmoDialog.js"></script>
+<script type="text/javascript" src="/zurmo/app/assets/2550be6e/mobile-interactions.js"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+            var desktopNotifications =
+            {
+                notify:function(image, title, body)
+                {
+                    
+                    return false;
+                },
+                isSupported:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        return true
+                    }
+                    else
+                    {
+                        return false
+                    }
+                },
+                requestAutorization:function()
+                {
+                    if (typeof window.webkitNotifications != 'undefined')
+                    {
+                        if (window.webkitNotifications.checkPermission() == 1)
+                        {
+                            window.webkitNotifications.requestPermission();
+                        }
+                        else if (window.webkitNotifications.checkPermission() == 2)
+                        {
+                            alert('You have blocked desktop notifications for this browser.');
+                        }
+                        else
+                        {
+                            alert('You have already activated desktop notifications for Chrome');
+                        }
+                    }
+                    else
+                    {
+                        alert('This is only available in Chrome.');
+                    }
+                }
+            };
+            
+$(document).ready(function()
+{
+    $('#FlashMessageBar').jnotifyInizialize(
+    {
+        oneAtTime: false,
+        appendType: 'append'
+    }
+    );
+}
+);
+/*]]>*/
+</script>
+<title>ZurmoCRM - Leads</title></head><body class="blue"><div id="LeadsPageView" class="ZurmoDefaultPageView ZurmoPageView PageView"><div id="ZurmoDefaultView"><div class="GridView"><div id="HeaderView"><!-- Start of themes/default/templates/HeaderView.xhtml --><div id="MainLogo" class="zurmo-logo"></div>
+<div class="GridView"><div id="HeaderLinksView"><div class="clearfix"><a href="#" id="nav-trigger" title="Toggle Navigation">&rsaquo;</a><div id="corp-logo"><a href="/zurmo/app/index.php/home/default"><img src="/zurmo/app/themes/default/images/Zurmo_logo.png" alt="Zurmo Logo" height="32" width="107" /></a></div><div id="user-toolbar" class="clearfix"><div id="header-game-dashboard-link-wrapper" class="user-menu-item"><a id="header-game-dashboard-link" href="#">∂</a><div id="game-notification"><h5>Congratulations!</h5><p><img src="/zurmo/app/themes/default/images/collections/Transportation/Plane.png" alt="" />You discovered the Plane<br/><a id="go-to-dashboard-link" href="#">Go to game dashboard</a> or <a id="close-game-notification-link" href="#">Close</a></p></div></div><ul id="user-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>super</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/users/default/profile"><span>My Profile</span></a></li>
+<li><a href="/zurmo/app/index.php/gamification/default/leaderboard"><span>Leaderboard</span></a></li>
+<li><a href="/zurmo/app/index.php/emailMessages/default/matchingList"><span>Data Cleanup</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/logout"><span>Sign out</span></a></li>
+</ul>
+</li>
+</ul><ul id="settings-header-menu" class="user-menu-item nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Administration</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/configuration"><span>Administration</span></a></li>
+<li><a href="/zurmo/app/index.php/designer/default"><span>Designer</span></a></li>
+<li><a href="/zurmo/app/index.php/import/default"><span>Import</span></a></li>
+<li><a href="/zurmo/app/index.php/users/default"><span>Users</span></a></li>
+<li><a href="http://www.zurmo.com/needSupport.php"><span>Need Support?</span></a></li>
+<li class="last"><a href="/zurmo/app/index.php/zurmo/default/about"><span>About Zurmo</span></a></li>
+</ul>
+</li>
+</ul></div></div></div><div class="GridView"><div id="GlobalSearchAndShortcutsCreateMenuView"><div id="app-search" class="clearfix"><select class="ignore-style" id="globalSearchScope" multiple="multiple" style="display:none;" size="4" name="globalSearchScope[]">
+<option value="All" selected="selected">All</option>
+<option value="accounts">Accounts</option>
+<option value="contacts">Contacts</option>
+<option value="leads">Leads</option>
+<option value="opportunities">Opportunities</option>
+</select><input class="global-search global-search-hint" onfocus="$(this).removeClass(&quot;global-search-hint&quot;); $(this).val(&quot;&quot;);" onblur="$(this).val(&quot;&quot;)" id="globalSearchInput" type="text" value="Search by name, phone, or e-mail" name="globalSearchInput" /><span class="z-spinner"></span></div><ul id="ShortcutsMenu" class="nav">
+<li class="parent last"><a href="javascript:void(0);"><span>Create</span></a>
+<ul>
+<li><a href="/zurmo/app/index.php/accounts/default/create"><span>Account</span></a></li>
+<li><a href="/zurmo/app/index.php/contacts/default/create"><span>Contact</span></a></li>
+<li><a href="/zurmo/app/index.php/conversations/default/create"><span>Conversation</span></a></li>
+<li><a href="/zurmo/app/index.php/leads/default/create"><span>Lead</span></a></li>
+<li><a href="/zurmo/app/index.php/missions/default/create"><span>Mission</span></a></li>
+<li><a href="/zurmo/app/index.php/opportunities/default/create"><span>Opportunity</span></a></li>
+<li><a href="/zurmo/app/index.php/reports/default/selectType"><span>Report</span></a></li>
+<li class="last"><a href="#" id="yt0"><span>Task</span></a></li>
+</ul>
+</li>
+</ul></div></div></div>
+
+
+
+<!-- End of themes/default/templates/HeaderView.xhtml --></div><div class="AppContainer clearfix GridView"><div class="AppNavigation clearfix GridView"><div id="MenuView"><ul class="nav">
+<li id="home" class="active"><a href="/zurmobajakan/public/application/index/index"><span></span><em></em><span>Home</span></a></li>
+<li id="mashableInbox"><a href="/zurmobajakan/public/inbox/inbox/index"><span></span><em></em><span>Inbox<span class="unread-inbox-count">1</span></span></a></li>
+<li id="accounts"><a href="/zurmobajakan/public/account/account/index"><span></span><em></em><span>Accounts</span></a></li>
+<li id="leads"><a href="/zurmobajakan/public/leads/leads/index"><span></span><em></em><span>Leads</span></a></li>
+<li id="contacts"><a href="/zurmobajakan/public/contact/contact/index"><span></span><em></em><span>Contacts</span></a></li>
+<li id="opportunities"><a href="/zurmobajakan/public/opportunity/opportunity/index"><span></span><em></em><span>Opportunities</span></a></li>
+<li id="marketing" class="hidden-nav-item"><a href="/zurmobajakan/public/marketing/marketing/index"><span></span><em></em><span>Marketing</span></a></li>
+<li id="projects" class="hidden-nav-item"><a href="/zurmobajakan/public/project/project/index"><span></span><em></em><span>Projects</span></a></li>
+<li id="products" class="hidden-nav-item"><a href="/zurmobajakan/public/product/"><span></span><em></em><span>Products</span></a></li>
+<li id="reports" class="hidden-nav-item last"><a href="/zurmobajakan/public/report/report/index"><span></span><em></em><span>Reports</span></a></li>
+</ul><a class="toggle-hidden-nav-items"></a></div><div id="RecentlyViewedView"><h3>Recently Viewed</h3><ul class="nav">
+<li class="type-LeadsModule"><a href="/zurmo/app/index.php/leads/default/details?id=30"><span></span><em></em><span>Ryeowook Kim</span></a></li>
+<li class="type-LeadsModule last"><a href="/zurmo/app/index.php/leads/default/details?id=29"><span></span><em></em><span>Ryeowook Kim</span></a></li>
+</ul></div></div><div id="LeadConvertView" class="DetailsView AppContent GridView"><div class="wrapper"><h1><span class="truncated-title"><span class="ellipsis-content">Lead Conversion: Ryeowook Kim</span></span></h1><div class="lead-conversion-actions"><div id="account-select-title"><a class="account-create-link" href="#">Create Account</a>&#160;or&#160;Select Account&#160;or&#160;<a class="account-skip-link" href="#">Skip Account</a></div><div id="account-create-title">Create Account&#160;or&#160;<a class="account-select-link" href="#">Select Account</a>&#160;or&#160;<a class="account-skip-link" href="#">Skip Account</a></div><div id="account-skip-title"><a class="account-create-link" href="#">Create Account</a>&#160;or&#160;<a class="account-select-link" href="#">Select Account</a>&#160;or&#160;Skip Account&#160;</div></div><div class="left-column full-width clearfix"><div id="AccountSelectView" class="MetadataView"><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;select-account-form&quot;)" id="select-account-form" action="/zurmo/app/index.php/leads/default/convert?id=30" method="post">
+<div style="display:none"><input type="hidden" value="80cefa3181a9c9aa42c5c6e3f506b2ff74dc71dd" name="YII_CSRF_TOKEN" /></div><table><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label for="AccountSelectForm_accountName" class="required">Account Name <span class="required">*</span></label></th><td colspan="1"><input name="AccountSelectForm[accountId]" id="AccountSelectForm_accountId" type="hidden" /><div class="has-model-select"><input onblur="clearIdFromAutoCompleteField($(this).val(), &#039;AccountSelectForm_accountId&#039;);" id="AccountSelectForm_accountName" type="text" name="AccountSelectForm[accountName]" /><a id="AccountSelectForm_accounts_SelectLink" href="#"><span class="model-select-icon"></span><span class="z-spinner"></span></a></div></td></tr></tbody></table><div class="view-toolbar-container clearfix"><div class="form-toolbar"><a id="CancelConvertLinkActionElement-30-yt1" href="/ZurmoBajakan/public/leads/leads/viewdetail"><span class="z-label">Cancel</span></a>&#160;<a id="AccountSelect" name="AccountSelect" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Complete Conversion</span></a><div id="modalContainer-select-account-form"></div></div></div></form></div></div><div id="AccountConvertToView" class="EditView DetailsView ModelView ConfigurableMetadataView MetadataView"><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;edit-form&quot;)" id="edit-form" action="/zurmo/app/index.php/leads/default/convert?id=30" method="post">
+<div style="display:none"><input type="hidden" value="80cefa3181a9c9aa42c5c6e3f506b2ff74dc71dd" name="YII_CSRF_TOKEN" /></div><div class="attributesContainer"><div class="left-column full-width"><div class="panel"><table class="form-fields"><colgroup><col class="col-0" /><col class="col-1" /></colgroup><tbody><tr><th><label for="Account_name" class="required">Name <span class="required">*</span></label></th><td colspan="1"><input id="Account_name" name="Account[name]" type="text" maxlength="64" value="SM Entertainment" /></td></tr></tbody></table></div></div></div><div class="view-toolbar-container clearfix dock"><div class="form-toolbar"><a id="CancelConvertLinkActionElement-30-yt4" href="/zurmo/app/index.php/leads/default/details?id=30"><span class="z-label">Cancel</span></a><a id="saveyt5" name="save" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;save&#039;:&#039;save&#039;}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Complete Conversion</span></a></div></div></form><div id="modalContainer-edit-form"></div></div></div><div id="LeadConvertAccountSkipView" class="MetadataView"><div class="wide form"><form onSubmit="js:return $(this).attachLoadingOnSubmit(&quot;account-skip-form&quot;)" id="account-skip-form" action="/zurmo/app/index.php/leads/default/convert?id=30" method="post">
+<div style="display:none"><input type="hidden" value="80cefa3181a9c9aa42c5c6e3f506b2ff74dc71dd" name="YII_CSRF_TOKEN" /></div><table><colgroup><col style="width:100%" /></colgroup><tbody><tr><th>Complete lead conversion without selecting or creating an account.</th></tr></tbody></table><div class="view-toolbar-container clearfix"><div class="form-toolbar"><a id="CancelConvertLinkActionElement-30-yt6" href="/zurmo/app/index.php/leads/default/details?id=30"><span class="z-label">Cancel</span></a>&#160;<a id="AccountSkip" name="AccountSkip" class="attachLoading z-button" onclick="jQuery.yii.submitForm(this, &#039;&#039;, {&#039;AccountSkip&#039;:true}); return false;" href="#"><span class="z-spinner"></span><span class="z-icon"></span><span class="z-label">Complete Conversion</span></a></div></div></form></div></div></div></div></div><div id="FlashMessageView"><div id = "FlashMessageBar"></div></div></div><div id="ModalContainerView"><div id="modalContainer"></div></div><div id="ModalGameNotificationContainerView"></div><div id="GameCoinContainerView"></div><div id="FooterView"><a href="http://www.zurmo.com" id="credit-link" class="clearfix"><span>Copyright &#169; Zurmo Inc., 2013. All rights reserved.</span></a><div class="ui-chooser"><a class="icon-mobile" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Mobile"><span>Show Mobile</span></a><a class="icon-desktop active" href="/zurmo/app/index.php/zurmo/default/userInterface?userInterface=Desktop"><span>Show Full</span></a></div></div></div></div></div><script type="text/javascript">
+/*<![CDATA[*/
+function closeGamificationDashboard(){
+                           $('#UserGameDashboardView').remove();
+                           $('body').removeClass('gd-dashboard-active');
+                           $('#header-game-dashboard-link').html('∂').toggleClass('highlighted');
+                       }
+
+                function clearIdFromAutoCompleteField(value, id)
+                {
+                    if (value == '')
+                    {
+                        $('#' + id).val('');
+                    }
+                }
+            
+jQuery(function($) {
+
+                        $(document).ready(function()
+                            {
+                                $('#AccountSelectView').hide();
+                                $('#LeadConvertAccountSkipView').hide();
+                                $('#account-skip-title').hide();
+                                $('#account-select-title').hide();
+                            }
+                        );
+                    
+
+                    jQuery("body").ajaxComplete(
+                        function(event, request, options)
+                        {
+                            if (request.responseText == "sessionTimeout")
+                            {
+                                $.cookie("sessionTimeoutCookie", 1,
+                                        {
+                                            expires : 1,
+                                            path:  "/"
+                                        });
+                                window.location.reload(true);
+                            }
+                        }
+                    );
+                
+$('#go-to-dashboard-link, #close-game-notification-link').click(function(event){
+                           event.preventDefault();
+                           $('#game-notification').fadeOut(300, function(){
+                               $('#game-notification').remove();
+                           });
+                       });
+                       $('.gd-dashboard-active').on('click', function(){
+                           if($('#UserGameDashboardView').length){
+                               closeGamificationDashboard();
+                           }
+                           return false;
+                       });
+$('body').on('click', '#header-game-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+$('body').on('click', '#go-to-dashboard-link', function(){jQuery.ajax({'beforeSend':function(){
+                    if($("#UserGameDashboardView").length){
+                        closeGamificationDashboard();
+                        return false;
+                    }
+                    $("body").addClass("gd-dashboard-active");
+                    $("#header-game-dashboard-link").html("‰").toggleClass("highlighted");
+                },'success':function(data){$("#FooterView").after(data);},'url':'/zurmo/app/index.php/users/default/gameDashboard?id=1','cache':false});return false;});
+  $(".nav li").hover(
+    function () {
+      if ($(this).hasClass("parent")) {
+        $(this).addClass("over");
+      }
+    },
+    function () {
+      $(this).removeClass("over");
+    }
+  );
+
+$("#globalSearchScope").bind("multiselectclick", function(event, ui){
+                            if ($("#globalSearchScope").multiselect("widget").find(":checkbox:checked").length == 0)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && !this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            if (ui.value == "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value != "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                            else if (ui.value != "All" && ui.checked)
+                            {
+                                $("#globalSearchScope").multiselect("widget").find(":checkbox").each(function(){
+                                    if (this.value == "All" && this.checked)
+                                    {
+                                        this.click();
+                                    }
+                                });
+                            }
+                        });
+                       
+$('#globalSearchScope').multiselect({'selectedText':'','noneSelectedText':'','header':false,'position':{'my':'right top','at':'right bottom'}}); $(this).setupCheckboxStyling($('#globalSearchScope').parent())
+$("#globalSearchInput").bind("focus", function(event, ui){
+                            $("#globalSearchInput").autocomplete("option", "source", "/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete?" + $.param($("#globalSearchScope").serializeArray()));
+                        });
+                       
+jQuery('#globalSearchInput').autocomplete({'select': function(event, ui) {if (ui.item.href.length > 0){window.location = ui.item.href;} return false;},'search': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(true, "#app-search") },'open': function(event, ui) { $(this).makeOrRemoveTogglableSpinner(false, "#app-search") },'position':{'my':'right top','at':'right bottom'},'source':'/zurmo/app/index.php/zurmo/default/globalSearchAutoComplete'});
+ $("#globalSearchInput").data( "autocomplete" )._renderItem = function( ul, item ) {
+                            return $( "<li></li>" ).data( "item.autocomplete", item )
+                                    .append( "<a><span class=" + item.iconClass + "></span><span>" + item.label + "</span></a>" )
+                                    .appendTo( ul );
+                        };
+$('body').on('click', '#yt0', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer').dialog({
+                    'title' : 'Create Task',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : 'task-dialog',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer').parent().removeClass('openingModal');
+                                                     $('#modalContainer').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/tasks/default/modalCreate?modalId=modalContainer','cache':false,'success':function(html){jQuery("#modalContainer").html(html)}});return false;});
+
+                $('.account-select-link').click( function()
+                    {
+                        $('#AccountConvertToView').hide();
+                        $('#LeadConvertAccountSkipView').hide();
+                        $('#AccountSelectView').show();
+                        $('#account-create-title').hide();
+                        $('#account-skip-title').hide();
+                        $('#account-select-title').show();
+                        return false;
+                    }
+                );
+                $('.account-create-link').click( function()
+                    {
+                        $('#AccountConvertToView').show();
+                        $('#LeadConvertAccountSkipView').hide();
+                        $('#AccountSelectView').hide();
+                        $('#account-create-title').show();
+                        $('#account-skip-title').hide();
+                        $('#account-select-title').hide();
+                        return false;
+                    }
+                );
+                $('.account-skip-link').click( function()
+                    {
+                        $('#AccountConvertToView').hide();
+                        $('#LeadConvertAccountSkipView').show();
+                        $('#AccountSelectView').hide();
+                        $('#account-create-title').hide();
+                        $('#account-skip-title').show();
+                        $('#account-select-title').hide();
+                        return false;
+                    }
+                );
+            
+
+                    $(function() {
+                        $('.truncated-title').ThreeDots({ max_rows:1 });
+                    });
+jQuery('#AccountSelectForm_accountName').autocomplete({'select':function(event, ui){ jQuery("#AccountSelectForm_accountId").val(ui.item["id"]).trigger("change");},'appendTo':$("#AccountSelectForm_accountName").parent().parent(),'search': function(event, ui)
+                                  {
+                                       var context = $("#AccountSelectForm_accountName").parent();
+                                       $(".model-select-icon", context).fadeOut(100);
+                                       $(this).makeOrRemoveTogglableSpinner(true, context);
+                                  },'open': function(event, ui)
+                                  {
+                                       var context = $("#AccountSelectForm_accountName").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'close': function(event, ui)
+                                  {
+                                       var context = $("#AccountSelectForm_accountName").parent();
+                                       $(".model-select-icon", context).fadeIn(250);
+                                       $(this).makeOrRemoveTogglableSpinner(false, context);
+                                  },'response': function(event, ui)
+                                  {
+                                       if (ui.content.length < 1)
+                                       {
+                                           var context = $("#AccountSelectForm_accountName").parent();
+                                           $(".model-select-icon", context).fadeIn(250);
+                                           $(this).makeOrRemoveTogglableSpinner(false, context);
+                                       }
+                                  },'source':'/zurmo/app/index.php/accounts/default/autoComplete'});
+$('body').off('click.selectLink', '#AccountSelectForm_accounts_SelectLink'); $('body').on('click.selectLink', '#AccountSelectForm_accounts_SelectLink', function(){jQuery.ajax({'beforeSend':function(){
+                jQuery('#modalContainer-select-account-form').html('');
+                $(this).makeLargeLoadingSpinner(true, '#modalContainer-select-account-form');
+                window.scrollTo(0, 0);
+                jQuery('#modalContainer-select-account-form').dialog({
+                    'title' : 'Account Search',
+                    'autoOpen' : true,
+                    'modal' : true,
+                    'position' : 'center top+25',
+                    'dialogClass' : '',
+                    'height' : 'auto',
+                    'open': function( event, ui )  { jQuery('#modalContainer-select-account-form').parent().addClass('openingModal'); },
+                    'close': function( event, ui ) { jQuery('#modalContainer-select-account-form').parent().removeClass('openingModal');
+                                                     $('#modalContainer-select-account-form').dialog('destroy');
+                                                     
+                                                     }
+                });
+                return true;
+            },'url':'/zurmo/app/index.php/accounts/default/modalList?modalTransferInformation%5BsourceIdFieldId%5D=AccountSelectForm_accountId&modalTransferInformation%5BsourceNameFieldId%5D=AccountSelectForm_accountName&modalTransferInformation%5BmodalId%5D=modalContainer-select-account-form','cache':false,'success':function(html){jQuery("#modalContainer-select-account-form").html(html)}});return false;});
+});
+/*]]>*/
+</script>
+</body></html>
